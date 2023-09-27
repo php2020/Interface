@@ -1,0 +1,9 @@
+## Interface: 11200
+## Version: 4.43
+## Title: MSBT<战斗伤害数值设置>
+## Notes: Load on demand options for Mik's Scrolling Battle Text
+## Dependencies: MikScrollingBattleText
+## LoadOnDemand: 1
+localization_options.lua
+MSBTOptions.lua
+MSBTOptions.xml
