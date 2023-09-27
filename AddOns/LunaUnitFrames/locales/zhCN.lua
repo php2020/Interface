@@ -235,7 +235,6 @@ local function zhCN() return {
 ["Counterspell - Silenced"] = "法术反制 - 沉默",
 ["Kick - Silenced"] = "脚踢 - 沉默",
 ["Shield Bash - Silenced"] = "盾击 - 沉默",
-["Eye Beam"] = "眼棱",
 ["Energy / mp5 ticker"] = "能量/5秒回蓝计时",
 ["Show Mana Usage"] = "显示法力使用",
 ["Auratracker"] = "光环追踪",
