@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file="fun\exapi.lua"/>	
+	<Include file="PlayerLinkEnhance\PlayerLinkEnhance.xml"/>
+	<Include file="coms\FreeBagSlots.lua"/>
+	<Include file="coms\social-colors.lua"/>
+	<Include file="coms\zAutoRepair.lua"/>
+	<Include file="coms\zFont.lua"/>
+	<Include file="coms\zJunk.lua"/>
+	<Include file="coms\zpfQuestDB.lua"/>
+	<Include file="ShaguCopy\ShaguCopy.lua"/>
+	<Include file="BetterCharacterStats\BetterCharacterStats.xml"/>
+</Ui>
