@@ -1,0 +1,46 @@
+## Interface: 11200
+## Title: Luna Unit Frames
+## Notes: Lightweight Unit Frames in a modern look.
+## Title-zhCN:|CFFDD66DD[界面]|R露娜头像框架
+## Notes-zhCN:|CFFDD66DDLunaUnitFrames|R|N轻量级现代风头像框架。|N命令：/luf menu
+## X-Repple: 界面
+## Author: Avi
+## Author-zhCN: 原作者Avi，中文协作者zerosnake0
+## Author-deDE: Avi
+##
+## Dependencies:
+## SavedVariables: LunaDB, LunaBuffDB
+## OptionalDeps: Ace2, RosterLib, BanzaiLib, HealComm, DruidManaLib, MobHealth, Clique, FuBar, FuBarPlugin-2.0, Babble-2.2, CompostLib, SurfaceLib, Surfaces, DewdropLib, TabletLib
+## X-Category: UnitFrame
+
+LunaUnitFrames.lua
+
+locales\enUS.lua
+locales\zhCN.lua
+
+
+modules\defaults.lua
+modules\cooldown.lua
+modules\units.lua
+modules\health.lua
+modules\power.lua
+modules\portrait.lua
+modules\auras.lua
+modules\tags.lua
+modules\range.lua
+modules\incheal.lua
+modules\combopoints.lua
+modules\indicators.lua
+modules\cast.lua
+modules\combattext.lua
+modules\xp.lua
+modules\totems.lua
+modules\druid.lua
+modules\highlight.lua
+modules\fader.lua
+modules\squares.lua
+modules\reckstacks.lua
+modules\emptyBar.lua
+modules\borders.lua
+
+modules\options.lua
