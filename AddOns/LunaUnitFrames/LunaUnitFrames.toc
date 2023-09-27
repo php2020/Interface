@@ -5,7 +5,7 @@
 ## Notes-zhCN:|CFFDD66DDLunaUnitFrames|R|N轻量级现代风头像框架。|N命令：/luf menu
 ## X-Repple: 界面
 ## Author: Avi
-## Author-zhCN: 原作者Avi，中文协作者zerosnake0
+## Author-zhCN: 原作者Avi
 ## Author-deDE: Avi
 ##
 ## Dependencies:
