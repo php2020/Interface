@@ -1086,8 +1086,8 @@ end
 			CreateConfig(nil, T[zUI.mlocals["Timer Day Color"]], C.appearance.cd, "daycolor", "color")
 			
 		end)
+		
 		--mrbcat20230814 移除小地图方形
-
 		CreateGUIEntry(zUI.mlocals["Map"], nil, function()
 			CreateConfig(nil, T[zUI.mlocals["Minimap"]], nil, nil, "header")
 			CreateConfig(nil, T[zUI.mlocals["Square Minimap"]], C.minimap, "square", "checkbox")
@@ -1096,13 +1096,27 @@ end
 			CreateConfig(nil, T["启用集采宝箱稀有飞点开关"], C.minimap, "zpfQueset_btn", "checkbox")
 		end)
 
+		-- 自定义函数，用于检查值是否存在于数组中
+		local function containsValue(array, value)
+			for _, v in pairs(array) do
+				if v == value then
+					return true
+				end
+			end
+			return false
+		end
+
 		CreateGUIEntry(T[zUI.mlocals["Components"]], nil, function()
 			table.sort(zUI.components)
 			for i,c in pairs(zUI.components) do
 				if c ~= "zOptions" then
 					-- create disabled entry if not existing and display
-					zUI:UpdateConfig("disabled", nil, c, "0")
-					CreateConfig(nil, T[zUI.mlocals["Disable Component"]] .. " " .. c, C.disabled, c, "checkbox")
+					if containsValue(T[zUI.mlocals], c) then
+						cTrans = T[zUI.mlocals[c]];
+					else
+						cTrans = "";
+					end
+					CreateConfig(nil, T[zUI.mlocals["Disable Component"]] .. " " .. c .. cTrans, C.disabled, c, "checkbox")
 				end
 			end
 		end)

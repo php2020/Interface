@@ -383,13 +383,11 @@ zUI:RegisterComponent("zActionbars", function ()
 -- actionbar paging
 		MainMenuBarPageNumber, ActionBarUpButton, ActionBarDownButton,
 	}
-
 	if  UnitLevel("player") == MAX_PLAYER_LEVEL  then
 		ReputationWatchBar:ClearAllPoints()
 		ReputationWatchBar:SetPoint("BOTTOMLEFT",MainMenuBar,5,Reputbarh)
 	end
 	local frames = {
-		
 		-- xp and reputation bar
 		MainMenuXPBarTexture2, MainMenuXPBarTexture3,
 		ReputationWatchBarTexture2, ReputationWatchBarTexture3,
@@ -412,10 +410,6 @@ zUI:RegisterComponent("zActionbars", function ()
 	end
 	--隐藏姿态栏背景材质
 	for id, frame in pairs(normtextures) do zUI.api.hide(frame, 2) end
-	
-	
-
-	
 	LoadActionBarBFA();
-	
+
 end)
