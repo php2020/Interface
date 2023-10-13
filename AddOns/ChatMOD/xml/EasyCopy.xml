@@ -1,0 +1,61 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Frame name="EasyCopy" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+		<Size>
+			<AbsDimension x="340" y="30"/>
+		</Size>
+		<Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+			<TileSize>
+				<AbsValue val="16"/>
+			</TileSize>
+			<BackgroundInsets>
+				<AbsInset left="5" right="5" top="5" bottom="5"/>
+			</BackgroundInsets>
+		</Backdrop>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="EasyCopyclose" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="EasyCopy" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="25" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<EditBox name="EasyCopyText">
+				<Size>
+					<AbsDimension x="330" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="5" y="-4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEscapePressed>
+						EasyCopy:Hide()
+					</OnEscapePressed>
+					<OnEditFocusGained>
+						this:HighlightText(0)
+					</OnEditFocusGained>
+				</Scripts>
+				<FontString font="Fonts\ARIALN.TTF" nonspacewrap="true" justifyH="LEFT">
+				  <FontHeight>
+					<AbsValue val="16" />
+				  </FontHeight>
+				</FontString>
+			</EditBox>
+		</Frames>
+	</Frame>
+</Ui>

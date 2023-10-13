@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: Gustave's Neavo_ChatBar
+## Notes: Gustave's Neavo_ChatBar
+## Title-zhCN:S_ChatBar 聊天频道按钮
+## Notes-zhCN:在聊天框下显示切换聊天频道的按钮
+## Author: 1.12
+S_ChatBar.lua

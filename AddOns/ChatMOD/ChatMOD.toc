@@ -1,0 +1,26 @@
+## Interface: 11200
+## Title: ChatMOD |cff00ffff1.1
+## Notes: General Purpose full featured Chat Enhancement Collection
+## Title:|CFF33AAFF[辅助]|R聊天辅助Chatmod
+## Notes-zhCN:|CFF33AAFFChatMOD|R|N聊天窗口以及某些功能的增强。|N命令：/chatmod
+## X-Repple: 辅助
+## Author: Marco 'solariz' Goetze, 1.12 modify by 狗血编剧男
+## Version: 1.1
+## eMail: http://www.solariz.de
+
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: SCCN_AutoSendWho,SCCN_mousescroll,SCCN_hidechanname,SCCN_colornicks,SCCN_topeditbox,SCCN_timestamp,SCCN_colormap,SCCN_hyperlinker,SCCN_selfhighlight,SCCN_clickinvite,SCCN_editboxkeys,SCCN_chatstring,SCCN_selfhighlightmsg,SCCN_ts_format,SCCN_HideChatButtons,SCCN_AutoBGMap,SCCN_WELCOMESHOWED,SCCN_Highlight_Text,SCCN_Highlight,SCCN_shortchanname,SCCN_AutoDismount,SCCN_AutoGossipSkip,SCCN_Chan_Replace,SCCN_Chan_ReplaceWith,SCCN_chatsound,SCCN_InChatHighlight,SCCN_AllSticky,SCCN_NOFADE,SCCN_disablewhocheck,ErrorRedirect_IsEnabled,ErrorRedirect_Frame,SCCN_storage
+localization.lua
+ErrorList.lua
+ChatMOD.lua
+
+xml\Changes_Form.xml
+xml\solColorChatNicksForm.xml
+xml\solColorChatNicks_scroller.xml
+xml\EasyCopy.xml
+xml\Config_Form.xml
+xml\Highlight_Form.xml
+xml\ShortChan_Form.xml
+xml\ChatSound_Form.xml
+xml\Welcome_Form.xml

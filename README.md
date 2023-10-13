@@ -46,6 +46,7 @@ Cartographer_Mining = 地图插件-矿物的过滤器
 7、聊天频道
 ChatMOD = 聊天辅助插件
 命令：/chatmod
+S_ChatBar = 聊天频道按钮，下方（未在整合的包里，心情就像夜单独整理的）
 
 8、盗贼专题
 

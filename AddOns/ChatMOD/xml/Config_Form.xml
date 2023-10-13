@@ -1,0 +1,670 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Frame name="SCCNConfigForm" hidden="true" alpha="0.95" movable="true" enableMouse="true" enableKeyboard="true">
+    <Size>
+      <AbsDimension x="280" y="400" />
+    </Size>
+    <Anchors>
+      <Anchor point="CENTER" relativeTo="UIParent">
+        <Offset>
+          <AbsDimension x="0" y="0" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+      <BackgroundInsets>
+        <AbsInset left="11" right="12" top="12" bottom="11" />
+      </BackgroundInsets>
+      <TileSize>
+        <AbsValue val="32" />
+      </TileSize>
+      <EdgeSize>
+        <AbsValue val="32" />
+      </EdgeSize>
+    </Backdrop>
+    <Layers>
+      <Layer>
+        <Texture name="$parentTitleBorder" file="Interface\DialogFrame\UI-DialogBox-Header">
+          <Size>
+            <AbsDimension x="160" y="32" />
+          </Size>
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset>
+                <AbsDimension x="0" y="5" />
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <TexCoords left="0.2" right="0.8" top="0" bottom="0.6" />
+        </Texture>
+        <FontString name="$parentTitleString" inherits="GameFontNormal" text="SCCN_Config">
+          <Size>
+            <AbsDimension x="140" y="0" />
+          </Size>
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset>
+                <AbsDimension x="0" y="-4" />
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="$parentButton2" inherits="OptionsButtonTemplate" text="?">
+        <Size>
+          <AbsDimension x="18" y="19" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="250" y="-10" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+			<OnClick>
+				SCCNConfigForm:Hide();
+				SCCN_WELCOMESCREEN:Show();
+			</OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parentButton1" inherits="OptionsButtonTemplate" text="文本高亮">
+        <Size>
+          <AbsDimension x="60" y="26" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="19" y="-340" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+			<OnClick>
+				SCCNConfigForm:Hide();
+				if SCCN_Highlight_Text[1] ~= nil then getglobal( "SCCN_highlightBOX1" ):SetText(SCCN_Highlight_Text[1]); end
+				if SCCN_Highlight_Text[2] ~= nil then getglobal( "SCCN_highlightBOX2" ):SetText(SCCN_Highlight_Text[2]); end
+				if SCCN_Highlight_Text[3] ~= nil then getglobal( "SCCN_highlightBOX3" ):SetText(SCCN_Highlight_Text[3]); end
+				SCCN_Highlight_Form:Show();
+			</OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parentComponent1" inherits="OptionsButtonTemplate" text="频道设置">
+        <Size>
+          <AbsDimension x="60" y="26" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="80" y="-340" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+			<OnClick>
+				SCCNConfigForm:Hide();
+				SCCNShortchanForm:Show();
+			</OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parentComponent2" inherits="OptionsButtonTemplate" text="音效提示">
+        <Size>
+          <AbsDimension x="60" y="26" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="140" y="-340" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+			<OnClick>
+				SCCNConfigForm:Hide();
+				SCCNchatsound:Show();
+			</OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parentComponent19" inherits="OptionsButtonTemplate" text="关闭">
+        <Size>
+          <AbsDimension x="60" y="26" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="200" y="-340" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+			<OnClick>
+				if UIDropDownMenu_GetSelectedValue(ErrorRedirectOptionsFrameCombo) == 1 then
+				  ErrorRedirect_IsEnabled = false;
+				  ErrorRedirect_Frame = "";
+				elseif UIDropDownMenu_GetSelectedValue(ErrorRedirectOptionsFrameCombo) == 2 then
+				  ErrorRedirect_IsEnabled = true;
+				  ErrorRedirect_Frame = "";
+				elseif UIDropDownMenu_GetSelectedValue(ErrorRedirectOptionsFrameCombo) == 3 then
+				  ErrorRedirect_IsEnabled = true;
+				  ErrorRedirect_Frame = "ChatFrame1";
+				elseif UIDropDownMenu_GetSelectedValue(ErrorRedirectOptionsFrameCombo) == 4 then
+				  ErrorRedirect_IsEnabled = true;
+				  ErrorRedirect_Frame = "ChatFrame2";
+				else
+				  ErrorRedirect_IsEnabled = true;
+				  ErrorRedirect_Frame = "ChatFrame2";
+				end
+				
+				SCCNConfigForm:Hide();
+			</OnClick>
+        </Scripts>
+      </Button>
+      <CheckButton name="SCCN_CONF_CHK2" inherits="OptionsCheckButtonTemplate">
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="19" y="-32" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="姓名着色">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('colornicks');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("姓名着色");
+				GameTooltip:AddLine("按职业着色姓名", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK3" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="SCCN_CONF_CHK2" relativePoint="RIGHT">
+				<Offset><AbsDimension x="100" y="0"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="快速翻页">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('mousescroll');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("快速翻页");
+				GameTooltip:AddLine("快速翻页[shift]+鼠标滚轮", 0, .85, .85);
+				GameTooltip:AddLine("首页/尾页[ctrl]+鼠标滚轮", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK4" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK2" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="置顶输入框">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('topeditbox');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("置顶输入框");
+				GameTooltip:AddLine("输入框在聊天框顶部", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK5" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK3" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="时间戳（复制）">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('timestamp');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("时间戳（点击时间可复制）");
+				GameTooltip:AddLine("每条信息前显示时间", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK6" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK4" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="链接复制">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('hyperlink');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("链接复制");
+				GameTooltip:AddLine("聊天框内的链接能被复制", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK9" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK5" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="快捷编辑">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('editboxkeys');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("快捷编辑");
+				GameTooltip:AddLine("不按住[ALT]键就能用方向键做编辑", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK8" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK6" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="快捷邀请">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('clickinvite');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("快速翻页");
+				GameTooltip:AddLine("让对话中的[邀请]能直接被点选以加入队伍", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK11" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK9" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="显示玩家等级">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('showlevel');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("显示玩家等级");
+				GameTooltip:AddLine("在玩家姓名前显示等级", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK14" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK8" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="置顶聊天信息">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('sticky');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("置顶聊天信息");
+				GameTooltip:AddLine("置顶聊天信息", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK12" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK14" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="战场小地图">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('autogossipskip');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("战场小地图");
+				GameTooltip:AddLine("自动弹出战场迷你地图", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+      <CheckButton name="SCCN_CONF_CHK15" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK11" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="禁用渐隐">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('nofade');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("禁用渐隐");
+				GameTooltip:AddLine("禁用聊天文本的渐隐", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+
+      <CheckButton name="SCCN_CONF_CHK16" inherits="OptionsCheckButtonTemplate">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK15" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="0" y="-5"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentText" inherits="GameFontNormal" text="自动查询">
+              <Anchors>
+                <Anchor point="LEFT" relativePoint="RIGHT">
+                  <Offset>
+                    <AbsDimension x="-2" y="0" />
+                  </Offset>
+                </Anchor>
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Scripts>
+			<OnClick>
+				solColorChatNicks_SlashCommand('autosendwho');
+			</OnClick>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+				GameTooltip:AddLine("自动查询");
+				GameTooltip:AddLine("切换自动查询未知职业开关", 0, .85, .85);
+				GameTooltip:Show();
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+        </Scripts>
+      </CheckButton>
+
+	<!-- 屏蔽红字错误，by Bastian Pflieger <wb@illogical.de> -->
+      <Frame name="ErrorRedirectOptionsFrameCombo" inherits="UIDropDownMenuTemplate" enableMouse="true">
+		<Anchors>
+			<Anchor point="TOP" relativeTo="SCCN_CONF_CHK12" relativePoint="BOTTOM">
+				<Offset><AbsDimension x="110" y="-40"/></Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+          <Layer level="BACKGROUND">
+            <FontString name="$parentText" inherits="GameFontNormal" text="Error_Filter" justifyH="LEFT">
+				<Anchors>
+					<Anchor point="BOTTOM" relativeTo="ErrorRedirectOptionsFrameCombo" relativePoint="TOP">
+						<Offset><AbsDimension x="-50" y="10"/></Offset>
+					</Anchor>
+				</Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        table.insert(UISpecialFrames, "SCCNConfigForm");
+
+        UIDropDownMenu_Initialize(ErrorRedirectOptionsFrameCombo, function()
+          local info1 = { text = ERRORREDIRECT_COMBOTEXT[1],
+                          value = 1,
+                          func = function()
+                            UIDropDownMenu_SetSelectedValue(ErrorRedirectOptionsFrameCombo, 1);
+                          end }
+
+          local info2 = { text = ERRORREDIRECT_COMBOTEXT[2],
+                          value = 2,
+                          func = function()
+                            UIDropDownMenu_SetSelectedValue(ErrorRedirectOptionsFrameCombo, 2);
+                          end }
+
+          local info3 = { text = ERRORREDIRECT_COMBOTEXT[3],
+                          value = 3,
+                          func = function()
+                            UIDropDownMenu_SetSelectedValue(ErrorRedirectOptionsFrameCombo, 3);
+                          end }
+          local info4 = { text = ERRORREDIRECT_COMBOTEXT[4],
+                          value = 4,
+                          func = function()
+                            UIDropDownMenu_SetSelectedValue(ErrorRedirectOptionsFrameCombo, 4);
+                          end }
+
+          UIDropDownMenu_AddButton(info1);
+          UIDropDownMenu_AddButton(info2);
+          UIDropDownMenu_AddButton(info3);
+          UIDropDownMenu_AddButton(info4);
+        end);
+        UIDropDownMenu_SetWidth(200, ErrorRedirectOptionsFrameCombo);
+        ErrorRedirectOptionsFrameComboText:ClearAllPoints();
+        ErrorRedirectOptionsFrameComboText:SetPoint("LEFT", "ErrorRedirectOptionsFrameCombo", "LEFT", 25, 3);
+        ErrorRedirectOptionsFrameComboText:SetJustifyH("LEFT");
+      </OnLoad>
+      <OnShow>
+        local currentConfig = 0;
+        if ErrorRedirect_IsEnabled and ErrorRedirect_Frame == "ChatFrame1" then
+          currentConfig = 3;
+        elseif ErrorRedirect_IsEnabled and ErrorRedirect_Frame == "ChatFrame2" then
+          currentConfig = 4;
+        elseif ErrorRedirect_IsEnabled then
+          currentConfig = 2;
+        else
+          currentConfig = 1;
+        end
+        UIDropDownMenu_SetSelectedValue(ErrorRedirectOptionsFrameCombo, currentConfig);
+        UIDropDownMenu_SetText(ERRORREDIRECT_COMBOTEXT[currentConfig], ErrorRedirectOptionsFrameCombo);
+      </OnShow>
+		<OnHide>
+			if ( this.isMoving ) then
+				this:StopMovingOrSizing();
+				this.isMoving = false;
+				this.x="400";
+				this.y="256";
+			end
+		</OnHide>
+		<OnMouseDown>
+			if ( ( ( not this.isLocked ) or ( this.isLocked == 0 ) ) and ( arg1 == "LeftButton" ) ) then
+				this:StartMoving();
+				this.isMoving = true;
+			end
+		</OnMouseDown>
+		<OnMouseUp>
+			if ( this.isMoving ) then
+				this:StopMovingOrSizing();
+				this.isMoving = false;
+			end
+		</OnMouseUp>
+    </Scripts>
+  </Frame>
+</Ui>
