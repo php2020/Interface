@@ -1,7 +1,7 @@
 -- ## Author: Shagu, 2016
 -- ## Notes: Allows you to copy chat messages
 -- ## Version: 0.1 DEVEL
-zUI:RegisterComponent("zShaguCopy", function ()
+zUI:RegisterComponent("聊天复制", function ()
   if C.global.copy_chat~="1" then return end
 local ShaguCopy = CreateFrame("Frame")
 local texture ="Interface\\AddOns\\zUI\\extend\\ShaguCopy\\button"

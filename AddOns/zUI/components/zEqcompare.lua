@@ -1,19 +1,10 @@
 -- Credits to Shagu, pfUI
-zUI:RegisterComponent("zEqcompare", function()
-  local loc = zUI.cache["locale"]
+zUI:RegisterComponent("装备比较按住SHIFT", function()
   for key, value in pairs(L["itemtypes"]) do setglobal(key, value) end
   INVTYPE_WEAPON_OTHER = INVTYPE_WEAPON .. "_other";
   INVTYPE_FINGER_OTHER = INVTYPE_FINGER .. "_other";
   INVTYPE_TRINKET_OTHER = INVTYPE_TRINKET .. "_other";
-  local mange = {
-    ["(.+) Intellect"] = "%1 智力",
-    ["(.+) Spirit"] = "%1 精神",
-    ["(.+) Stamina"] = "%1 耐力",
-    ["(.+) Strength"] = "%1 力量",
-    ["(.+) Agility"] = "%1 敏捷",
-    ['(.+) Armor'] = '%1 护甲',
-    ['(.+) Attack Power'] ='%1 攻击强度',
-  }
+
   local slotTable = {
     [INVTYPE_2HWEAPON] = "MainHandSlot",
     [INVTYPE_BODY] = "ShirtSlot",

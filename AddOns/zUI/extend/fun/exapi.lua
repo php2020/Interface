@@ -20,6 +20,15 @@ zUI.api.rgbhex = function(r, g, b, a)
 
     return ""
 end
+
+
+function zUI.api.ToggleFrame(frame)
+	if frame:IsShown() then
+		HideUIPanel(frame)
+	else
+		ShowUIPanel(frame)
+	end
+end
 function zUI.api.hide(frame, texture)
     if not frame then return end
 
@@ -104,6 +113,28 @@ local function toInt(x)
 
     return x
 end
+function GetTimeFrompoints(str, func)
+    local PointtoTime = {}
+    local i, j, combatpoint, duration 
+    i, j, combatpoint, duration = string.find(str, func) 
+    while (i and j) do 
+         PointtoTime[tonumber(combatpoint)] = tonumber(duration) 
+     i, j, combatpoint, duration = string.find(str, func, j) 
+    end 
+    return PointtoTime 
+end 
+function GetTrapTime(str, func)
+    local PointtoTime = {}
+    local i, j
+    i, j, PointtoTime[1] = string.find(str, func[1])
+    if (i and j) then
+        i, j, PointtoTime[2] = string.find(str, func[2])
+        if (i and j) then	     
+               PointtoTime[2] = tostring(tonumber(PointtoTime[2])*60)	            
+            return PointtoTime 
+        end 
+    end 
+end 
 function zUI.api.select(n, ...)
     if not (type(n) == "number" or (type(n) == "string" and n == "#")) then
         error(format("bad argument #1 to 'select' (number expected, got %s)", n and type(n) or "no value"), 2)
@@ -132,4 +163,91 @@ function zUI.api.SetSize(f, w, h)
     if not f then return end
     f:SetWidth(w)
     f:SetHeight(h)
+end
+function zUI.api.SetPercentColor(min, max)
+	local r = 0
+	local g = 1
+	local b = 0
+	if (min and max) then
+		local v =  tonumber(min) / tonumber(max)
+		if (v >= 0 and v <= 1) then
+			if (v > 0.5) then
+				r = (1.0 - v) * 2
+				g = 1.0
+			else
+				r = 1.0
+				g = v * 2
+			end
+		end
+	end
+	if r < 0 then
+		r = 0
+	elseif r > 1 then
+		r = 1
+	end
+	if g < 0 then
+		g = 0
+	elseif g > 1 then
+		g = 1
+	end
+
+	return r, g, b
+end
+
+--以"万"显示计数
+function zUI.api.Over1E3toK(v)
+	if type(v) ~= "number" then return end
+	if v > 1E4 then
+		text = format("%0.1f万", v/1E4)
+	else
+		text =  v 
+	end
+	return text
+end
+function zUI.api.HexColors(r, g, b)
+	-- 未定义则白色
+	if not r then return "|cffFFFFFF" end
+	
+	if type(r) == "table" then
+		if(r.r) then
+			r, g, b = r.r, r.g, r.b
+		else
+			r, g, b = unpack(r)
+		end
+	end
+	
+	return format("|cff%02x%02x%02x", r*255, g*255, b*255)
+end
+--四色五人
+function zUI.api.Round(input, places)
+    if not places then places = 0 end
+    if type(input) == "number" and type(places) == "number" then
+        local pow = 1
+        for i = 1, places do pow = pow * 10 end
+        return floor(input * pow + 0.5) / pow
+    end
+end
+--渐隐按钮
+function zUI.api.EnableAutohide(frame, timeout)
+	if not frame then return end
+
+	frame.hover = frame.hover or CreateFrame("Frame", frame:GetName() .. "Autohide", frame)
+	frame.hover:SetParent(frame)
+	frame.hover:SetAllPoints(frame)
+	frame.hover.parent = frame
+	frame.hover:Show()
+
+	local timeout = timeout
+	frame.hover:SetScript("OnUpdate", function()
+		if MouseIsOver(this, 50, -50, -50, 50) then
+			this.activeTo = GetTime() + timeout
+			this.parent:SetAlpha(1)
+		elseif this.activeTo then
+			if this.activeTo < GetTime() and this.parent:GetAlpha() > 0 then
+				this.parent:SetAlpha(this.parent:GetAlpha() - 0.1)
+			end
+		else
+			this.activeTo = GetTime() + timeout
+		end
+	end)
 end

@@ -1,5 +1,5 @@
 -- Credits to Shagu, Modernist
-zUI.api = { }
+-- zUI.api = { }
 
 -- load zUI environment
 setfenv(1, zUI:GetEnvironment())

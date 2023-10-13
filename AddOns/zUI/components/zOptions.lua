@@ -1,5 +1,5 @@
 -- Option frame system credits to Shagu, pfUI
-zUI:RegisterComponent("zOptions", function ()
+zUI:RegisterComponent("[内核]全局依赖", function ()
 	local  _, class = UnitClass("player")
 	local color = RAID_CLASS_COLORS[class].colorStr
 ZUI_MINIMAPBUTTON_LINE1 = "Click to toggle Options"
@@ -986,6 +986,7 @@ end
 			CreateConfig(nil, T[zUI.mlocals["Enable Global Dark Mode"]], C.global, "darkmode", "checkbox")
 			CreateConfig(nil, T[zUI.mlocals["Off Hardcore Chat"]], C.global, "hardcore_chat", "checkbox")
 			CreateConfig(nil, T["启用复制聊天内容"], C.global, "copy_chat", "checkbox")
+		
 			
 
 			CreateConfig(nil, T[zUI.mlocals["Quality of Life"]], nil, nil, "header")
@@ -1086,8 +1087,8 @@ end
 			CreateConfig(nil, T[zUI.mlocals["Timer Day Color"]], C.appearance.cd, "daycolor", "color")
 			
 		end)
-		
 		--mrbcat20230814 移除小地图方形
+
 		CreateGUIEntry(zUI.mlocals["Map"], nil, function()
 			CreateConfig(nil, T[zUI.mlocals["Minimap"]], nil, nil, "header")
 			CreateConfig(nil, T[zUI.mlocals["Square Minimap"]], C.minimap, "square", "checkbox")
@@ -1096,27 +1097,13 @@ end
 			CreateConfig(nil, T["启用集采宝箱稀有飞点开关"], C.minimap, "zpfQueset_btn", "checkbox")
 		end)
 
-		-- 自定义函数，用于检查值是否存在于数组中
-		local function containsValue(array, value)
-			for _, v in pairs(array) do
-				if v == value then
-					return true
-				end
-			end
-			return false
-		end
-
 		CreateGUIEntry(T[zUI.mlocals["Components"]], nil, function()
 			table.sort(zUI.components)
 			for i,c in pairs(zUI.components) do
 				if c ~= "zOptions" then
 					-- create disabled entry if not existing and display
-					if containsValue(T[zUI.mlocals], c) then
-						cTrans = T[zUI.mlocals[c]];
-					else
-						cTrans = "";
-					end
-					CreateConfig(nil, T[zUI.mlocals["Disable Component"]] .. " " .. c .. cTrans, C.disabled, c, "checkbox")
+					zUI:UpdateConfig("disabled", nil, c, "0")
+					CreateConfig(nil, T[zUI.mlocals["Disable Component"]] .. " " .. c, C.disabled, c, "checkbox")
 				end
 			end
 		end)

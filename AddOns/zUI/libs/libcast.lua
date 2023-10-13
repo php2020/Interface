@@ -52,7 +52,7 @@ local lastcasttex, lastrank, _
 local scanner = libtipscan:GetScanner("libcast")
 local libcast = CreateFrame("Frame", "zEnemyCast")
 local player = UnitName("player")
-
+local cmatch = zUI.api.cmatch
 UnitChannelInfo = _G.UnitChannelInfo or function(unit)
   local cast, nameSubtext, text, texture, startTime, endTime, isTradeSkill
   local db = libcast.db[unit]
@@ -219,23 +219,25 @@ libcast:SetScript("OnEvent", function()
 
     -- (.+) begins to cast (.+).
     mob, spell = cmatch(arg1, SPELLCASTOTHERSTART)
-    if libcast:AddAction(mob, spell) then return end
+    if libcast:AddAction(mob, spell) then zUI.Spelltinmer =true return end
 
     -- (.+) begins to perform (.+).
     mob, spell = cmatch(arg1, SPELLPERFORMOTHERSTART)
-    if libcast:AddAction(mob, spell) then return end
+    if libcast:AddAction(mob, spell) then zUI.Spelltinmer =true return end
 
     -- (.+) gains (.+).
     mob, spell = cmatch(arg1, AURAADDEDOTHERHELPFUL)
-    if libcast:RemoveAction(mob, spell) then return end
+ 
+    if libcast:RemoveAction(mob, spell) then zUI.Spelltinmer =true return end
 
     -- (.+) is afflicted by (.+).
     mob, spell = cmatch(arg1, AURAADDEDOTHERHARMFUL)
-    if libcast:RemoveAction(mob, spell) then return end
+    
+    if libcast:RemoveAction(mob, spell) then zUI.Spelltinmer =true return end
 
     -- Your (.+) hits (.+) for (%d+).
     spell, mob = cmatch(arg1, SPELLLOGSELFOTHER)
-    if libcast:RemoveAction(mob, spell) then return end
+    if libcast:RemoveAction(mob, spell) then  return end
 
     -- Your (.+) crits (.+) for (%d+).
     spell, mob = cmatch(arg1, SPELLLOGCRITSELFOTHER)
@@ -247,15 +249,15 @@ libcast:SetScript("OnEvent", function()
 
     -- (.+)'s (.+) %a crits (.+) for (%d+).
     _, spell, mob = cmatch(arg1, SPELLLOGCRITOTHEROTHER)
-    if libcast:RemoveAction(mob, spell) then return end
+    if libcast:RemoveAction(mob, spell) then  return end
 
     -- You interrupt (.+)'s (.+).
     mob, spell = cmatch(arg1, SPELLINTERRUPTSELFOTHER)
-    if libcast:RemoveAction(mob, spell) then return end
+    if libcast:RemoveAction(mob, spell) then  return end
 
     -- (.+) interrupts (.+)'s (.+).
     _, mob, spell = cmatch(arg1, SPELLINTERRUPTOTHEROTHER)
-    if libcast:RemoveAction(mob, spell) then return end
+    if libcast:RemoveAction(mob, spell) then  return end
   end
 end)
 
@@ -423,7 +425,7 @@ zUI.api.hooksecurefunc("UseAction", function(slot, target, button)
 
   if GetActionText(slot) or not IsCurrentAction(slot) then return end
   --mrbcat20230731
-  zUI.ICON = lastcasttex
+  zUI.ICON =  lastcasttex
   CastCustom(spellName)
 end, true)
 

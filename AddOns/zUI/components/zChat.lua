@@ -1,5 +1,5 @@
 --Credits to Modernist, modUI
-zUI:RegisterComponent("zChat", function()
+zUI:RegisterComponent("聊天增强", function()
     --_G = getfenv(0)
     local _, class = UnitClass 'Player'
     --local colour = RAID_CLASS_COLORS[class]
@@ -647,18 +647,7 @@ zUI:RegisterComponent("zChat", function()
                         -- print(k, 'is a match.')
 
                         t = gsub(t, k, j)
-                        --zPrint(t)
-                        --mrbcat-20230725替换获取钱币的显示
-                        -- if string.find(t, "Copper") and string.find(t, "+") then
-                        --     t = gsub(t,"Copper","铜")
-                        -- end
-                        -- if string.find(t, "Silver") and string.find(t, "+") then
-                        --     t = gsub(t,"Silver","银")
-                        -- end
-
-                        --  if string.find(t, "Gold") and string.find(t, "+")then
-                        -- t = gsub(t,"Gold","金")
-                        -- end
+   
                     end
                 end
             end

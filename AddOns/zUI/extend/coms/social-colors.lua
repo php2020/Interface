@@ -1,4 +1,4 @@
-zUI:RegisterComponent("social_colors", function()
+zUI:RegisterComponent("聊天职业色", function()
   if C.quality.clean_up=="1" then
   zUI.social_colors = CreateFrame("Frame", "social_colors", UIParent);
   zUI_playerDB = zUI_playerDB or {}

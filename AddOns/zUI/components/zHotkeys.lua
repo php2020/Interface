@@ -1,4 +1,4 @@
-﻿zUI:RegisterComponent("zHotkeys", function ()
+﻿zUI:RegisterComponent("热键支持", function ()
 
 	for i = 1, 12 do
 		for k, v in pairs(

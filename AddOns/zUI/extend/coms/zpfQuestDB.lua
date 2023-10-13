@@ -1,5 +1,5 @@
 --移植凡人插件S_WorldMap
-zUI:RegisterComponent("zpfQuestDB", function()
+zUI:RegisterComponent("大地图矿点草药飞点显示按钮", function()
 	--如果选择框没有打开，择关闭这个功能
 	if C.minimap.zpfQueset_btn == "1" then
 		
@@ -35,8 +35,8 @@ zUI:RegisterComponent("zpfQuestDB", function()
 			pfQuestButtonOnEnter(frame, text)
 			pfQuestButtonOnLeave(frame)
 		end
-
-		if pfQuest then
+	
+		if zUI then
 			CreatepfQuestButton("pfQuestMines", "TOPLEFT", WorldMapFrame, "TOPLEFT", 200, -16, "矿物")
 			CreatepfQuestButton("pfQuestherbs", "LEFT", "pfQuestMines", "RIGHT", 0, 0, "草药")
 			CreatepfQuestButton("pfQuestchests", "LEFT", "pfQuestherbs", "RIGHT", 0, 0, "宝箱")
@@ -44,7 +44,7 @@ zUI:RegisterComponent("zpfQuestDB", function()
 			CreatepfQuestButton("pfQuesttaxi", "LEFT", "pfQuestrares", "RIGHT", 0, 0, "鸟点")
 			CreatepfQuestButton("pfQuestSerach", "LEFT", "pfQuesttaxi", "RIGHT", 0, 0, "搜索")
 			CreatepfQuestButton("pfQuestclean", "LEFT", "pfQuestSerach", "RIGHT", 0, 0, "清除")
-
+			
 			pfQuestButton(pfQuestMines, "mines auto", "显示当前采矿等级范围内的矿石")
 			pfQuestButton(pfQuestherbs, "herbs auto", "显示当前采药等级范围内的草药")
 			pfQuestButton(pfQuestchests, "chests", "显示所有宝箱")

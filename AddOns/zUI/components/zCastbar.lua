@@ -1,12 +1,13 @@
 -- Credits to Shagu, pfUI
-zUI:RegisterComponent("zCastbar", function()
+zUI:RegisterComponent("施法条", function()
 	--local font = C.castbar.use_unitfonts == "1" and zUI.font_unit or zUI.font_default
 	--local font_size = C.castbar.use_unitfonts == "1" and C.global.font_unit_size or C.global.font_size
 	local font = STANDARD_TEXT_FONT
 	local font_size = C.global.font_size
 	local dir = "Interface\\Icons\\"
-	local zSkin=zUI.api.zSkin
-	local zSkinColor=zUI.api.zSkinColor
+	local zSkin = zUI.api.zSkin
+	local zSkinColor = zUI.api.zSkinColor
+	--local BS = AceLibrary("Babble-Spell-2.2")
 	local function CreateCastbar(name, parent, unitstr, unitname)
 		local cb = CreateFrame("Frame", name, parent or UIParent)
 
@@ -97,7 +98,8 @@ zUI:RegisterComponent("zCastbar", function()
 			--	this:SetAlpha(1)
 			--	return
 			--end
-
+			local spellico
+			
 			if not UnitExists(this.unitstr) then
 				this:SetAlpha(0)
 			end
@@ -113,67 +115,87 @@ zUI:RegisterComponent("zCastbar", function()
 			if not name then return end
 
 			local cast, _, _, _, startTime, endTime, _ = UnitCastingInfo(name)
+	
+			if name == UnitName("player") then
+				spellicon = zUI.api.GetSpellIcon(cast)
 
+				if not spellicon then
+					spellicon = zUI.ICON
+				end
+			end
 
 
 			if not cast then
 				-- scan for channel spells if no cast was found
 				cast, _, _, _, startTime, endTime, _ = UnitChannelInfo(name)
+				if name == UnitName("player") then
+				spellicon = zUI.api.GetSpellIcon(cast)
+
+				if not spellicon then
+					spellicon = zUI.ICON
+				end
+				end
 			end
-		
-			
+
+
 			if cast then
 				local duration = endTime - startTime
 				local channel = UnitChannelInfo(name)
 				local max = duration / 1000
 				local cur = GetTime() - startTime / 1000
+
+
 				--zPrint(cast)
 				--mrbcat20230603创建当前施法图标对象
 				if C.castbar.player.above == '0' and C.castbar.player.hide_zUI == "0" then
-					local reseth =0
+					local reseth = 80
 
 					--如果姿态栏显示，那么施法条+45高度
 					if ShapeshiftBarFrame:IsShown() then
-						reseth=45
+						reseth = reseth + 35
 					end
 					if PetActionBarFrame:IsShown() then
-						reseth=reseth+30
+						reseth = reseth + 35
+					end
+
+
+					-- if MultiBarBottomRight:IsShown() then
+					-- 	zUI.castbar.player:SetPoint("BOTTOM", UIParent, "CENTER", 13, 70+reseth)
+					-- elseif MultiBarBottomLeft:IsShown() then
+					-- 	zUI.castbar.player:SetPoint("TOP", MultiBarBottomLeft, "BOTTOM", 13, 70+reseth)
+					-- else
+					-- 	zUI.castbar.player:SetPoint("BOTTOM", UIParent, "BOTTOM", 23, 90+reseth)
+					-- end
+					if MultiBarBottomRight:IsShown() then
+						reseth = reseth + 45
+					end
+					if MultiBarBottomLeft:IsShown() then
+						reseth = reseth + 45
 					end
 					zUI.castbar.player:ClearAllPoints()
-	
-					if MultiBarBottomRight:IsShown() then
-						zUI.castbar.player:SetPoint("TOP", MultiBarBottomRight, "BOTTOM", 13, 70+reseth)
-					elseif MultiBarBottomLeft:IsShown() then
-						zUI.castbar.player:SetPoint("TOP", MultiBarBottomLeft, "BOTTOM", 13, 70+reseth)
-					else
-						zUI.castbar.player:SetPoint("BOTTOM", UIParent, "BOTTOM", 23, 90+reseth)
-					end
+					zUI.castbar.player:SetPoint("CENTER", UIParent, "BOTTOM", 15, reseth)
 
 
-
-
-					local icon = zUI.castbar.player.Icon
+					local castbaricon = zUI.castbar.player.Icon
 
 					if cast == "" then
 						cast = "探索发现"
-						zUI.ICON = "Interface\\addons\\zUI\\texture\\temp"
+						spellicon = "Interface\\addons\\zUI\\texture\\temp"
 					end
 
 					if DefaultIcons[cast] then
-						zUI.ICON = dir .. DefaultIcons[cast]
+						spellicon = dir .. DefaultIcons[cast]
 					end
-					icon.Texture:SetTexture(zUI.ICON)
-					if zUI.ICON then
-						icon:Show()
+					castbaricon.Texture:SetTexture(spellicon)
+					if spellicon and zUI.castbar.player:IsShown() then
+						castbaricon:Show()
 					end
-					
 				else
 					--zUI.castbar.player:SetWidth(160)
 				end
 				this:SetAlpha(1)
-				
+
 				if this.endTime ~= endTime then
-					
 					this.bar:SetStatusBarColor(strsplit(",",
 						C.appearance.castbar[(channel and "channelcolor" or "castbarcolor")]))
 
@@ -185,7 +207,6 @@ zUI:RegisterComponent("zCastbar", function()
 				end
 
 				if channel then
-					
 					cur = max + startTime / 1000 - GetTime()
 				end
 
@@ -209,7 +230,7 @@ zUI:RegisterComponent("zCastbar", function()
 				this.delay = 0
 			end
 		end)
-
+		zUI.ICON = nil
 		-- register for spell delay
 		cb:RegisterEvent("SPELLCAST_DELAYED")  -- CASTBAR_EVENT_CAST_DELAY -- for tbc compat
 		cb:RegisterEvent("SPELLCAST_CHANNEL_UPDATE") -- CASTBAR_EVENT_CHANNEL_DELAY -- for tbc compat
@@ -290,7 +311,7 @@ zUI:RegisterComponent("zCastbar", function()
 
 		if (C.castbar.target.above == "1") then
 			-- Over
-			zUI.castbar.target:SetPoint('TOPRIGHT', TargetFrame, 80, 50)
+			zUI.castbar.target:SetPoint('TOPRIGHT', TargetFrame, -60, 15)
 		else
 			-- Under
 			zUI.castbar.target:SetPoint('BOTTOMRIGHT', TargetFrame, -60, -30);

@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zUnitframes", function()
+zUI:RegisterComponent("单位头像框体", function()
 	zUI.zUnitframes = CreateFrame("Frame", "zUnitframes", UIParent);
 	--local _G = getfenv(0)
 

@@ -19,6 +19,7 @@ if zUI.api.libdebuff then return end
 local libdebuff = CreateFrame("Frame", "zdebuffsScanner", UIParent)
 local scanner = libtipscan:GetScanner("libdebuff")
 local hooksecurefunc =zUI.api.hooksecurefunc
+local cmatch = zUI.api.cmatch
 function libdebuff:GetDuration(effect, rank)
   if L["debuffs"][effect] then
     local rank = rank and tonumber((string.gsub(rank, RANK .. " ", ""))) or 0
@@ -154,6 +155,7 @@ libdebuff:SetScript("OnEvent", function()
   if event == "CHAT_MSG_SPELL_PERIODIC_HOSTILEPLAYER_DAMAGE" or event == "CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE" then
     local unit, effect = cmatch(arg1, AURAADDEDOTHERHARMFUL)
     if unit and effect then
+      
       local unitlevel = UnitName("target") == unit and UnitLevel("target") or 0
       if not libdebuff.objects[unit] or not libdebuff.objects[unit][unitlevel] or not libdebuff.objects[unit][unitlevel][effect] then
         libdebuff:AddEffect(unit, unitlevel, effect)

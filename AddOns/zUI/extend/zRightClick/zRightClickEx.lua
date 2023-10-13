@@ -1,3 +1,5 @@
+
+
 UnitPopupButtons["ADD_FRIEND"] = { text = TEXT(ADD_FRIEND), dist = 0 };
 UnitPopupButtons["ADD_IGNORE"] = { text = TEXT(IGNORE), dist = 0 };
 UnitPopupButtons["WHO"] = { text = TEXT(WHO), dist = 0 };
@@ -8,15 +10,18 @@ UnitPopupMenus["FRIEND"] = { "WHISPER", "INVITE", "TARGET", "GET_NAME", "ADD_FRI
 UnitPopupMenus["PARTY"] = { "WHISPER", "PROMOTE", "LOOT_PROMOTE", "UNINVITE", "INSPECT", "TRADE", "FOLLOW", "DUEL", "ADD_FRIEND", "WHO", "ADD_GUILD", "GET_NAME", "RAID_TARGET_ICON", "CANCEL" };
 UnitPopupMenus["PLAYER"] = { "WHISPER", "INSPECT", "INVITE", "TRADE", "FOLLOW", "DUEL", "ADD_FRIEND", "ADD_IGNORE", "WHO", "ADD_GUILD", "GET_NAME", "RAID_TARGET_ICON", "CANCEL" };
 
-function PlayerLinkEnhance_OnLoad()
-	--hook UnitPopup_OnClick funciton
-	ori_unitpopup = UnitPopup_OnClick;
-	UnitPopup_OnClick = ple_unitpopup;
 
-	--hook SetItemRef funciton
-	ori_SetItemRef = SetItemRef;
-	SetItemRef = ple_SetItemRef;
-end
+function zRightClickEx_OnLoad()
+
+ori_unitpopup = UnitPopup_OnClick;
+UnitPopup_OnClick = ple_unitpopup;
+ori_SetItemRef = SetItemRef;
+SetItemRef = ple_SetItemRef;
+end 
+
+
+
+
 
 function ple_unitpopup() 
 	local dropdownFrame = getglobal(UIDROPDOWNMENU_INIT_MENU);
@@ -40,7 +45,6 @@ function ple_unitpopup()
 	end
 	PlaySound("UChatScrollButton");
 end 
-
 function ple_SetItemRef(link, text, button)
 	if ( strsub(link, 1, 6) == "player" ) then
 		local name = strsub(link, 8);

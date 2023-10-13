@@ -2,7 +2,7 @@
 --
 -- Chat Colors
 --
-zUI:RegisterComponent("zAutoRepair", function()
+zUI:RegisterComponent("自动修理", function()
 
 	--if C.quality.auto_repair =="0" then
 	--	Event Handlers

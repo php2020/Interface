@@ -1,5 +1,5 @@
 -- Credits to pfUI
-zUI:RegisterComponent("zMapFog", function ()
+zUI:RegisterComponent("大地图全亮", function ()
   -- do not load if other map addon is loaded
   if Cartographer then return end
   if METAMAP_TITLE then return end

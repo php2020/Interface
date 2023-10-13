@@ -89,7 +89,7 @@ zUI:UpdateConfig( "global", nil, "font_default", "Fonts\\FRIZQT__.TTF")
 zUI:UpdateConfig( "global", nil, "language", GetLocale())
 zUI:UpdateConfig( "global", nil, "hide_shift","0")
 zUI:UpdateConfig( "global", nil, "hide_paging", "0")
-
+zUI:UpdateConfig( "global", nil, "right_click_off", "0")
 
 zUI:UpdateConfig( "gui", nil, "reloadmarker", "0")
 

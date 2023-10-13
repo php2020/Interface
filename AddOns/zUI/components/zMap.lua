@@ -1,5 +1,5 @@
 -- Credits to Shagu, PfUI
-zUI:RegisterComponent("zMap", function()
+zUI:RegisterComponent("地图增强", function()
 	local fake_ipairs = lua51 and loadstring([[local tmp = {}; return function(...)
 	for k in pairs(tmp) do
 		tmp[k] = nil
@@ -101,18 +101,8 @@ zUI:RegisterComponent("zMap", function()
 
 			if IsControlKeyDown() then
 				local scale = WorldMapFrame:GetScale()
-				zPrint(scale)
-				-- if up then
-				-- 	scale = scale + 0.1
-				-- 	if scale > 1 then
-				-- 		scale = 1
-				-- 	end
-				-- else
-				-- 	scale = scale - 0.1
-				-- 	if scale < 0.2 then
-				-- 		scale = 0.2
-				-- 	end
-				-- end
+				
+				
 				WorldMapFrame:SetScale(scale)
 
 				c_position.scale = zUI.api.clamp(WorldMapFrame:GetScale() + arg1 / 10, 0.1, 2.0)

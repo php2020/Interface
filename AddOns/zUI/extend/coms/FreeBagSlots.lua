@@ -5,7 +5,7 @@
 --                       --
 ---------------------------
 
-zUI:RegisterComponent("FreeBagSlots", function () 
+zUI:RegisterComponent("剩余背包", function () 
 local function isRegularBag(bag)
 	if( bag < 0 ) then return false end
 	if( bag == 0 ) then return true end -- bag 0 = backpack

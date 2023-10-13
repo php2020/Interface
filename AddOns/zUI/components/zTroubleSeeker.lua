@@ -1,5 +1,5 @@
 -- Credits to Shagu
-zUI:RegisterComponent("zTroubleSeeker", function ()
+zUI:RegisterComponent("[内核]故障查询", function ()
 	-- mainly for debugging, checks for illegal function calls
 	-- Credits to Shagu
 	zTroubleSeeker = CreateFrame("Frame")

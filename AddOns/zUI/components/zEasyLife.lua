@@ -1,5 +1,5 @@
 -- Many credits to Shagu, pfUI
-zUI:RegisterComponent("zEasyLife", function ()
+zUI:RegisterComponent("[内核]基础功能", function ()
 	---------==[ auto-switch-stance ]==----------------
 	if (C.quality.auto_stance == "1") then
 		zUI.zEasyLife = CreateFrame("Frame")
@@ -43,7 +43,7 @@ zUI:RegisterComponent("zEasyLife", function ()
 		zUI.zEasyLife.buffs = { "spell_nature_swiftness", "_mount_", "_qirajicrystal_",
 		"ability_racial_bearform", "ability_druid_catform", "ability_druid_travelform",
 		"ability_druid_aquaticform", "spell_shadow_shadowform", "spell_nature_spiritwolf","inv_pet_speedy",
-	"ability_hunter_pet_tallstrider",
+	"ability_hunter_pet_tallstrider","spell_magic_polymorphchicken",
 	"hunter_pet_turtle",
 	"warstomp",
 	"bullrush",

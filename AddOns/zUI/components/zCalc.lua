@@ -23,7 +23,7 @@ BINDING_NAME_XC_DEC = "Decimal"
 BINDING_NAME_XC_BACKSPACE = "Backspace"
 --BINDING_NAME_XC_ESC = "Escape"
 
-zUI:RegisterComponent("zCalculator", function ()
+zUI:RegisterComponent("计算器", function ()
 	--zUI.xcalc = { }
 	zUI.xcalc = CreateFrame("Frame", "zCalculator", UIParent);
 

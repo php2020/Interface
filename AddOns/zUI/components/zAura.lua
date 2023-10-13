@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zAura", function ()
+zUI:RegisterComponent("增益减益", function ()
 
 --for i = 6, 12 do
 --    local f = CreateFrame('Button', 'TargetFrameBuff'..i, TargetFrame, 'TargetBuffButtonTemplate')

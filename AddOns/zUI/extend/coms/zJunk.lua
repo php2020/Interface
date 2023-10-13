@@ -2,7 +2,7 @@
 --MrBCat添加功能
 local _G = zUI.api.GetGlobalEnv()
 local setGoldString=zUI.api.setGoldString
-zUI:RegisterComponent("zJunk", function()
+zUI:RegisterComponent("自动售卖垃圾", function()
   --if C.quality.auto_junk=="1"then  
   
   local processed = {}

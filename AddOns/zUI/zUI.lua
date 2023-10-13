@@ -19,7 +19,6 @@ end
 
 zUI = CreateFrame("Frame", nil, UIParent);
 zUI:RegisterEvent("ADDON_LOADED");
-
 -- Loading indicator
 zUI.loading = true;
 
@@ -36,6 +35,7 @@ zUI_locale = {}
 zUI_translation = {}
 
 -- Init default variables
+zUI.loc = GetLocale()
 zUI.cache = {}
 zUI.component = {}
 zUI.components = {}
@@ -47,8 +47,7 @@ zUI.version = {}
 zUI.hooks = {}
 zUI.env = {}
 zUI.Classicmacro=false
-
-
+zUI.api={}
 local _, _, _, client = GetBuildInfo();
 zUI.client = client or 11200;
 -- General structure credits to Shagu, pfUI

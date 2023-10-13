@@ -1,5 +1,5 @@
 -- Credits to Shagu, pfUI
-zUI:RegisterComponent("zRoll", function ()
+zUI:RegisterComponent("R点框体增强", function ()
 	local font = STANDARD_TEXT_FONT
 	local font_size = C.global.font_size
 	local zSkin=zUI.api.zSkin
@@ -78,7 +78,7 @@ zUI:RegisterComponent("zRoll", function ()
 	end
 
 	function zUI.roll:CreateLootRoll(id)
-		local size = 24
+		local size = 28
 		local border = tonumber(C.appearance.border.default)
 		local esize = size - border*2
 		local f = CreateFrame("Frame", "zLootRollFrame" .. id, UIParent)

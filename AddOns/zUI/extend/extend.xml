@@ -1,12 +1,18 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file="Libs\libs.xml"/>	
+	<Include file="fun\SpellCastInfo-1.0\SpellCastInfo-1.0.lua"/>	
 	<Include file="fun\exapi.lua"/>	
-	<Include file="PlayerLinkEnhance\PlayerLinkEnhance.xml"/>
+
 	<Include file="coms\FreeBagSlots.lua"/>
 	<Include file="coms\social-colors.lua"/>
 	<Include file="coms\zAutoRepair.lua"/>
 	<Include file="coms\zFont.lua"/>
 	<Include file="coms\zJunk.lua"/>
 	<Include file="coms\zpfQuestDB.lua"/>
-	<Include file="ShaguCopy\ShaguCopy.lua"/>
+	<Include file="coms\Lern2Spell.lua"/>
+	<Include file="coms\zUnitPopup.lua"/>
+	
 	<Include file="BetterCharacterStats\BetterCharacterStats.xml"/>
+	<Include file="ShaguCopy\ShaguCopy.lua"/>
+	<Include file="zRightClick\zRightClickEx.xml"/>
 </Ui>

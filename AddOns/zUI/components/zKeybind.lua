@@ -1,5 +1,5 @@
 -- Many credits to Shagu, pfUI
-zUI:RegisterComponent("zKeybind", function ()
+zUI:RegisterComponent("快捷键绑定", function ()
 	
 	-- Reload request after key bindings...
 	-- Only becuase we might not want to keep the hooks we created

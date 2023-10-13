@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zRange", function () 
+zUI:RegisterComponent("动作条距离染色", function () 
 	if C.bars.glowrange == "1" then
 		zUI.api.hooksecurefunc("ActionButton_OnUpdate", function(elapsed)
 		-- Button color based on range

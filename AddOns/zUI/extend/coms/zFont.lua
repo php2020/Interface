@@ -32,13 +32,13 @@ end
 
 
 
-   UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12 * CF_SCALE;
+   UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 14 * CF_SCALE;
 --------------
    if (CanSetFont(SystemFont)) then	SystemFont:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
    if (CanSetFont(MasterFont)) then	MasterFont:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
 -------------------------------------------------------
-   if (CanSetFont(GameFontNormal)) then		GameFontNormal:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
-   if (CanSetFont(GameFontHighlight)) then	GameFontHighlight:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
+   if (CanSetFont(GameFontNormal)) then		GameFontNormal:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
+   if (CanSetFont(GameFontHighlight)) then	GameFontHighlight:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
 
    if (CanSetFont(GameFontDisable)) then	GameFontDisable:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
    if (CanSetFont(GameFontDisable)) then	GameFontDisable:SetTextColor(0.6, 0.6, 0.6); end
@@ -114,17 +114,17 @@ end
    if (CanSetFont(QuestTitleFont)) then 			QuestTitleFont:SetFont(STANDARD_TEXT_FONT, 18 * CF_SCALE); end
    if (CanSetFont(QuestTitleFont)) then 			QuestTitleFont:SetShadowColor(0.54, 0.4, 0.1); end
 
-   if (CanSetFont(QuestFont)) then 		   		QuestFont:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
+   if (CanSetFont(QuestFont)) then 		   		QuestFont:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
    if (CanSetFont(QuestFont)) then 		   		QuestFont:SetTextColor(0.15, 0.09, 0.04); end
 
-   if (CanSetFont(QuestFontNormalSmall)) then 		QuestFontNormalSmall:SetFont(STANDARD_TEXT_FONT, 12 * CF_SCALE); end
+   if (CanSetFont(QuestFontNormalSmall)) then 		QuestFontNormalSmall:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
    if (CanSetFont(QuestFontNormalSmall)) then 		QuestFontNormalSmall:SetShadowColor(0.54, 0.4, 0.1); end
 
-   if (CanSetFont(QuestFontHighlight)) then 		QuestFontHighlight:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
+   if (CanSetFont(QuestFontHighlight)) then 		QuestFontHighlight:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
 ---------------------------------
 
-   if (CanSetFont(DialogButtonNormalText)) then 	DialogButtonNormalText:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
-   if (CanSetFont(DialogButtonHighlightText)) then 	DialogButtonHighlightText:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
+   if (CanSetFont(DialogButtonNormalText)) then 	DialogButtonNormalText:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
+   if (CanSetFont(DialogButtonHighlightText)) then 	DialogButtonHighlightText:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
 -------------------------------------------------------------
 
    if (CanSetFont(ErrorFont)) then 	   			ErrorFont:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
@@ -139,10 +139,10 @@ end
    if (CanSetFont(MailTextFontNormal)) then 	   	MailTextFontNormal:SetShadowColor(0.54, 0.4, 0.1); end
    if (CanSetFont(MailTextFontNormal)) then 	   	MailTextFontNormal:SetShadowOffset(1, -1); end
 
-   if (CanSetFont(InvoiceTextFontNormal)) then 	   	InvoiceTextFontNormal:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
+   if (CanSetFont(InvoiceTextFontNormal)) then 	   	InvoiceTextFontNormal:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
    if (CanSetFont(InvoiceTextFontNormal)) then 	   	InvoiceTextFontNormal:SetTextColor(0.15, 0.09, 0.04); end
 
-   if (CanSetFont(InvoiceTextFontSmall)) then 	   	InvoiceTextFontSmall:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
+   if (CanSetFont(InvoiceTextFontSmall)) then 	   	InvoiceTextFontSmall:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
    if (CanSetFont(InvoiceTextFontSmall)) then 	   	InvoiceTextFontSmall:SetTextColor(0.15, 0.09, 0.04); end
 --------------------------------
 
@@ -153,7 +153,7 @@ end
    if (CanSetFont(TextStatusBarTextSmall)) then 	TextStatusBarTextSmall:SetFont(STANDARD_TEXT_FONT, 13); end
 
    if (CanSetFont(GameTooltipText)) then 	   		GameTooltipText:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
-   if (CanSetFont(GameTooltipTextSmall)) then 	   	GameTooltipTextSmall:SetFont(STANDARD_TEXT_FONT, 14 * CF_SCALE); end
+   if (CanSetFont(GameTooltipTextSmall)) then 	   	GameTooltipTextSmall:SetFont(STANDARD_TEXT_FONT, 16 * CF_SCALE); end
    if (CanSetFont(GameTooltipHeaderText)) then 	   	GameTooltipHeaderText:SetFont(STANDARD_TEXT_FONT, 18 * CF_SCALE); end
 
    if (CanSetFont(WorldMapTextFont)) then 	   	WorldMapTextFont:SetFont(STANDARD_TEXT_FONT, 110 * CF_SCALE, "THICKOUTLINE"); end

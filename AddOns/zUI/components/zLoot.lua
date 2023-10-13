@@ -1,5 +1,5 @@
 -- Many credits to Shagu, pfUI
-zUI:RegisterComponent("zLoot", function ()
+zUI:RegisterComponent("拾取增强", function ()
 	zUI.loot = CreateFrame("Frame", "zLootFrame", UIParent);
 	zUI.loot:Hide();
 	zUI.loot:SetFrameStrata("DIALOG");
@@ -9,6 +9,7 @@ zUI:RegisterComponent("zLoot", function ()
 	--zUI.loot:SetScript("OnClick", function()
 		-- nothing
 	end)
+	local cmatch = zUI.api.cmatch
 	--修改拾取框大小数值修改lootsize
 	local lootsize = 26
 	local lootfontsize=12

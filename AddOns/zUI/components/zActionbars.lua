@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zActionbars", function () 
+zUI:RegisterComponent("z动作条", function () 
 	
 	UIPARENT_MANAGED_FRAME_POSITIONS["CastingBarFrame"] = {baseY = 70, bottomEither = 50, pet = 50, reputation = 19}; -- {baseY = 60, bottomEither = 40, pet = 40, reputation = 9};
 
@@ -12,7 +12,7 @@ zUI:RegisterComponent("zActionbars", function ()
 		zUI.zBars.ActionBarArtSmall:SetFrameStrata("MEDIUM")
 		zUI.zBars.ActionBarArtSmall:SetWidth(512)
 		zUI.zBars.ActionBarArtSmall:SetHeight(128)
-		zUI.zBars.ActionBarArtSmall:SetPoint("Bottom",-237,-11)
+		zUI.zBars.ActionBarArtSmall:SetPoint("BOTTOM",-237,-11)
 		-- Due to the texture being 1024x128 I had to split it in two too support Vanilla (max 512)
 		-- Left split of the art.
 		zUI.zBars.ActionBarArtSmall.left = zUI.zBars.ActionBarArtSmall:CreateTexture("zActionBarArtSmallLeft","BACKGROUND")
@@ -206,7 +206,7 @@ zUI:RegisterComponent("zActionbars", function ()
 			MainMenuExpBar:SetWidth(xpbarwidth); MainMenuExpBar:SetHeight(10); 
 			MainMenuExpBar:SetPoint("BOTTOMLEFT",MainMenuBar,5,-11)
 			--主动作条的位置，直接影响动作条的位置，默认底部居中，271是动作条一半的宽度值，
-			MainMenuBar:SetPoint("BOTTOM",UIParent,271,11)
+			MainMenuBar:SetPoint("BOTTOM",UIParent,256,11)
 			if ExhaustionTick:IsShown() then
 				zExhaustionTick_Update();
 			end
@@ -383,11 +383,13 @@ zUI:RegisterComponent("zActionbars", function ()
 -- actionbar paging
 		MainMenuBarPageNumber, ActionBarUpButton, ActionBarDownButton,
 	}
+
 	if  UnitLevel("player") == MAX_PLAYER_LEVEL  then
 		ReputationWatchBar:ClearAllPoints()
 		ReputationWatchBar:SetPoint("BOTTOMLEFT",MainMenuBar,5,Reputbarh)
 	end
 	local frames = {
+		
 		-- xp and reputation bar
 		MainMenuXPBarTexture2, MainMenuXPBarTexture3,
 		ReputationWatchBarTexture2, ReputationWatchBarTexture3,
@@ -410,6 +412,10 @@ zUI:RegisterComponent("zActionbars", function ()
 	end
 	--隐藏姿态栏背景材质
 	for id, frame in pairs(normtextures) do zUI.api.hide(frame, 2) end
-	LoadActionBarBFA();
+	
+	
 
+	
+	LoadActionBarBFA();
+	
 end)

@@ -1,9 +1,9 @@
 ## Interface: 11200
-## Title: |cffFF4500[C]|cffffd200zUI |cff00ffff汉化增强
+## Title: |cffFF4500[C]|r[整合]|cffffd200zUI|cff00ffff汉化增强|r
 ## Author: Ko0zi, Shagu, Modernist,Kael(repair), Shirsig and Road-block MrBCat汉化
-## Notes: 暴雪风格，但具有现代风格，并添加了一些不错的功能.
+## Notes: 暴雪风格，并添加了一些不错的功能./zui
 ## Version: 0.2.1
-## SavedVariables: zUI_profiles, zUI_addon_profiles, 
+## SavedVariables: zUI_profiles, zUI_addon_profiles, Lern2SpellDB
 ## SavedVariablesPerCharacter: zUI_config, zUI_init, BCSConfig,zUI_playerDB
 
 # main
@@ -30,17 +30,17 @@ libs\libunitscan.lua
 
 # components
 components\zOptions.lua
-components\zActionbars.lua
-components\zKeybind.lua
+#components\zActionbars.lua
+#components\zKeybind.lua
 components\zCooldowns.lua
 components\zCastbar.lua
-components\zCalc.lua
+#components\zCalc.lua
 #关闭zTicTac频道信息，目前无用
 #components\zTicTac.lua
 components\zInstaCast.lua
 components\zMiniMap.lua
 components\zRingMenu.lua
-components\zMap.lua
+#components\zMap.lua
 #zMapPin会导致大地图点选区域时显示错误
 #components\zMapPin.lua
 components\zMapReveal.lua
@@ -48,15 +48,14 @@ components\zNameplates.lua
 components\zTroubleSeeker.lua
 components\zEasyLife.lua
 components\zChat.lua
-components\zLoseControl.lua
+#components\zLoseControl.lua
 components\zRange.lua
-components\zHotkeys.lua
-components\zUnitframes.lua
+#components\zHotkeys.lua
+#components\zUnitframes.lua
 components\zAura.lua
 components\zEqcompare.lua
 components\zLoot.lua
 components\zRoll.lua
-components\zRaid.lua
 components\zEnergy.lua
 
 
@@ -64,7 +63,7 @@ components\zEnergy.lua
 
 
 #添加剩余背包格子显示功能
-components\FreeBagSlots.lua
+#components\FreeBagSlots.lua
 # skins
 skins\actionbuttons.lua
 skins\bag.lua

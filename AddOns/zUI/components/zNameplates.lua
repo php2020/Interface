@@ -1,5 +1,5 @@
 -- Credits to Shagu, pfUI
-zUI:RegisterComponent("zNameplates", function ()
+zUI:RegisterComponent("姓名版", function ()
 	local zSkin=zUI.api.zSkin
 	local zSkinColor=zUI.api.zSkinColor
 	NAMEPLATE_OBJECTORDER = { "border", "glow", "name", "level", "levelicon",

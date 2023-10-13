@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zEnergy", function ()
+zUI:RegisterComponent("盗贼德鲁伊5秒能量监控", function ()
 	-- Thanks to Obble/modui
 
     local _, class = UnitClass('player')

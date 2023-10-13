@@ -1,0 +1,5 @@
+
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+<Include file="panel.lua"/>
+	<Include file="Modules\Modules.xml"/>
+    </Ui>

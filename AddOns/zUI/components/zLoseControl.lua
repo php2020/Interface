@@ -1,5 +1,5 @@
 -- Credits to millanzarreta, LoseControl
-zUI:RegisterComponent("zLoseControl", function ()
+zUI:RegisterComponent("失控监测", function ()
 
 local CC      = "CC"
 local Silence = "Silence"

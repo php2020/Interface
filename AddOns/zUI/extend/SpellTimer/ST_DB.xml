@@ -1,0 +1,95 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	
+	<Script file="ST_DB.lua"/>			
+	<Frame name="PlayerInfoMain">
+		<Scripts>
+			<OnLoad>
+				BigFootSpells_OnLoad();				
+			</OnLoad>
+			<OnEvent>
+				BigFootSpells_OnEvent(event);					   
+			</OnEvent>	
+	       <OnUpdate>
+			     BigFoot_OnUpdate(arg1);
+		   </OnUpdate>				
+		</Scripts>
+	</Frame>
+	<GameTooltip name="SPTalentTooltip" frameStrata="TOOLTIP" hidden="true" inherits="GameTooltipTemplate">
+	   <Scripts><OnLoad> this:SetOwner(UIParent, "ANCHOR_NONE") </OnLoad></Scripts>
+	</GameTooltip>
+	<GameTooltip name="Pet_Tooltip" frameStrata="TOOLTIP" hidden="true" inherits="GameTooltipTemplate">
+	   <Scripts><OnLoad> this:SetOwner(UIParent, "ANCHOR_NONE") </OnLoad></Scripts>
+	</GameTooltip>
+	<GameTooltip name="SPBagTooltip" frameStrata="TOOLTIP" hidden="true" inherits="GameTooltipTemplate">
+	   <Scripts><OnLoad> this:SetOwner(UIParent, "ANCHOR_NONE") </OnLoad></Scripts>
+	</GameTooltip>
+	<GameTooltip name="SPInventoryTooltip" frameStrata="TOOLTIP" hidden="true"
+	inherits="GameTooltipTemplate">
+	   <Scripts><OnLoad> this:SetOwner(UIParent, "ANCHOR_NONE") </OnLoad></Scripts>
+	</GameTooltip>
+	<GameTooltip name="BigFootTooltip" frameStrata="TOOLTIP" hidden="true" inherits="GameTooltipTemplate">
+	   <Scripts><OnLoad> this:SetOwner(UIParent, "ANCHOR_NONE") </OnLoad></Scripts>
+	</GameTooltip>	
+
+    <Frame name="ST_MinimapFrame" parent="Minimap" frameStrata="MEDIUM" enableMouse="true" hidden="false">
+	     <Size><AbsDimension x="29" y="32"/></Size>
+	     <Anchors>
+		    <Anchor point="TOPLEFT" relativeTo="Minimap">
+			    <Offset><AbsDimension x="0" y="0"/></Offset>
+		    </Anchor>
+	     </Anchors>
+	     <Frames>
+		   <Button name="ST_MinimapButton">
+			  <Size><AbsDimension x="32" y="32"/></Size>
+			  <Anchors>
+				 <Anchor point="TOPLEFT"/>					
+			  </Anchors>
+			  <Scripts>
+			     <OnLoad>				    
+					this:SetFrameLevel(5);
+					this:RegisterForClicks("LeftButtonDown");
+				 </OnLoad>  				
+			     <OnClick>                    
+			          ST_Show_Options();		             
+			     </OnClick>			     
+			     <OnEnter>
+			         GameTooltip:SetOwner(this, "ANCHOR_LEFT");
+                     GameTooltip:SetText(SPELL_TIMER);
+			     </OnEnter>
+			     <OnLeave>
+			         GameTooltip:Hide(); 
+			     </OnLeave>			     
+			</Scripts>
+			<Layers>
+				<Layer level="ARTWORK">
+					<Texture name="$parentTexture" file="Interface\Icons\Spell_Frost_FrostBolt02">
+						<Size>
+							<AbsDimension x="21" y="21"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="7" y="-6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<TexCoords left="0.075" right="0.925" top="0.075" bottom="0.925"/>
+					</Texture>
+				</Layer>
+				<Layer level="OVERLAY">
+					<Texture file="Interface\Minimap\MiniMap-TrackingBorder">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT"/>
+						</Anchors>
+					</Texture>
+				</Layer>
+				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+			 </Layers>
+		  </Button>
+	   </Frames>
+    </Frame>
+	<Frame name="BigFootFrame" parent="UIParent" hidden="true"/>		
+</Ui>

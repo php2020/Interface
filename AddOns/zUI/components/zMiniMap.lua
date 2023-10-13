@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zMiniMap", function () 
+zUI:RegisterComponent("小地图增强", function () 
 
 --zUI.zMiniMap = CreateFrame("Frame", nil, UIParent);
 --zUI.zMiniMap:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE") -- register events to listen to
@@ -21,7 +21,7 @@ MinimapBorderTop:ClearAllPoints()
 MinimapBorderTop:SetPoint('TOP', Minimap, 0, 23)
 
 if not C.position["zMinimapSquared"] then
-	C.position["zMinimapSquared"] = { alpha = 1.0, scale = 1.5 }
+	C.position["zMinimapSquared"] = { alpha = 1.0, scale = 1.0 }
 end
 local modZoom = function()
     if not arg1 then return end

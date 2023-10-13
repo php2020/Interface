@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zInstaCast", function () -- ClassicSnowFall inspired. pet support by Road-block
+zUI:RegisterComponent("[内核]关键序", function () -- ClassicSnowFall inspired. pet support by Road-block
 	local zSkin=zUI.api.zSkin
 	local zSkinColor=zUI.api.zSkinColor
 	--[[

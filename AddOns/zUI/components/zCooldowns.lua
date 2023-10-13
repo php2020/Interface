@@ -1,4 +1,4 @@
-zUI:RegisterComponent("zCooldowns", function ()
+zUI:RegisterComponent("冷却计时", function ()
 	--[[
 		basic.lua
 			A featureless version of OmniCC,  
