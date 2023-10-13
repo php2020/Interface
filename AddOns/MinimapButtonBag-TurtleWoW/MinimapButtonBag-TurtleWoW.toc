@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: |cffFF4500[C]|R[地图]MBB 小地图图标整合
+## Version: 0.508
+## Author: Tunhadil, LaYt (+McPewPew),汉化MrBCat
+## X-Website: https://github.com/McPewPew/MinimapButtonBag-TurtleWoW
+## X-Date 2021-02-21
+## Notes: 小地图图标整合/mbb
+## SavedVariablesPerCharacter: MBB_Exclude, MBB_Options
+localization-enGB.lua
+localization-zhCN.lua
+MBB.xml
