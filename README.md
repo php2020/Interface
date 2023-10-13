@@ -187,6 +187,7 @@ Outfitter                   = 一键换装
 Postal                      = 邮箱助手
 PowerAuras                  = 触发和法术效果提示
 QuestAnnouncer              = 任务进度通告
+QuestItem                   = 任务物品提示
 ```
 
 ### 插件默认不加载

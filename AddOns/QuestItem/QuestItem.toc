@@ -1,0 +1,15 @@
+## Title: QuestItem
+## Interface: 11200
+## Author: Shagoth on Stormreaver server, Fiqa on Kor'gall
+## Version: 1.7.3
+## Notes: QuestItem stores an in-game database over quest items and tell you which quest they belong to. Useful to find out if you are still on the quest, and if it safe to destroy it.
+## Title-zhCN:|CFF33AAFF[辅助]|R任务物品提示
+## Notes-zhCN:|CFF33AAFFQuestItem|R|N显示任务物品提示，在包包中显示该任务物品的归属。
+## X-Repple: 辅助
+## OptionalDeps: QuestHistory
+## SavedVariables: QuestItems, QuestItem_Settings
+QuestItem.xml
+
+
+
+## X-Turtle-Shell-Version: 1693800380
