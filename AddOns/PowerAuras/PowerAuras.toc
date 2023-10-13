@@ -1,0 +1,18 @@
+## Interface: 11200
+## Title: Power Auras 
+## Title-zhCN: Power Auras Buff监视
+## Notes: Buff/Debuff effects around the player.
+## Title-zhCN:|CFFFF0000[战斗]|R触发和法术效果提示
+## Notes-zhCN:|CFFFF0000PowerAuras|R|NBuff/DeBuff特效可视化显示。|N命令：/powa
+## X-Repple: 战斗
+## Author: Sinsthar
+## Continue: LaYt 
+## Version: 2.20-vanila
+## SavedVariablesPerCharacter: PowaSet, PowaMisc
+## SavedVariables: PowaGlobal, PowaSavedBuff, PowaSavedDebuff, PowaSavedDebuffType
+localisation.lua
+PowerAuras.lua
+PowerAurasList.lua
+PowerAuras.xml
+PowerAurasList.xml
+## Q-CAT-Version: 100
