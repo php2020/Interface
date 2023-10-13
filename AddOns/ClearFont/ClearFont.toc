@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: ClearFont
+## Notes: Magical UI font-changer by |cff66ff33Kirkburn|r!
+## Title-zhCN:ClearFont 清晰字体
+## Notes-zhCN:修改界面上字体的风格
+## Author: Kirkburn
+## URL: http://www.clearfont.co.uk/
+## DefaultState: Enabled
+## LoadOnDemand: 0
+ClearFont.lua
