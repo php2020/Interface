@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: Cartographer套件之资源|cff7fff7f 矿物|r
+## Notes: Mining mapnotes for Cartographer (based on PinPoint by Ammo)
+## Notes-ruRU: Заметки на карте по горному делу для Cartographer (основан на PinPoint)
+## Notes-koKR: Cartographer용 채광 노트 플러그인 - PinPoint(제작자 Ammo) 기반
+## Author: Chris "kergoth" Larson
+## Version: 1.0
+## X-Category: Map
+## X-eMail: clarson@kergoth.com
+## X-Cartographer-Prof: Mining
+## DefaultState: Enabled
+## LoadOnDemand: 1
+## OptionalDeps: Ace2, Babble-2.2
+## RequiredDeps: Cartographer
+## SavedVariables: Cartographer_MiningDB
+
+addon.lua

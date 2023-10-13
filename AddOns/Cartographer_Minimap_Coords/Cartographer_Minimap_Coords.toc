@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: Cartographer Minimap Coords
+## Title-zhCN: Cartographer套件之小地图坐标
+## Notes: Show coordinates on minimap
+## Notes-ruRU: Показывает координаты на миникарте
+## Author: Jebus905
+## Version: 2.40b
+## Dependencies: Cartographer
+## X-Credits: Jebus905
+## X-Email: jasondpowell@gmail.com
+## X-Category: Map
+## X-AceForum: 11498
+## SavedVariables: Cartographer_MiniMapCoordsDB
+
+Cartographer_Minimap_Coords.lua
