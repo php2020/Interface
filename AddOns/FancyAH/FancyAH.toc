@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: FancyAH
+## Notes: Right click to place items on AH.
+## Title-zhCN: FancyAH拍卖行右键摆放
+## Notes-zhCN:|CFFDD66DDFancyAH|R拍卖行卖东西右键即可，不必拖动。
+## X-Repple: 辅助
+## Author: Anaron
+## Version: 1.0.0
+## Dependencies:
+
+FancyAH.lua
