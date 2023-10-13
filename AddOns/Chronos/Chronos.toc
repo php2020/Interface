@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: Chronos 时间管理插件
+## Notes: A Time Keeping and Scheduling System 一种计时与调度系统
+## Author: Alexander Brazie, Thott, AnduinLothar
+localization.lua
+localization.de.lua
+localization.fr.lua
+Chronos.lua
+Chronos.xml
