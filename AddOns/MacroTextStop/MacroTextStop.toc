@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title: MacroText隐藏动作条宏按钮中的文本 |c00ff0000Stop|r
+## Notes: 隐藏动作条宏按钮中的文本
+## Author: WobLight
+MacroTextStop.lua 
