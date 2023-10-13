@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: FishEase 钓鱼插件
+## Notes: 右键直接甩杆.
+## SavedVariables: FishEase_Cfg
+localization.lua
+localizationDE.lua
+localizationFR.lua
+FishEase.lua
+FishEase.xml
