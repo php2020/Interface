@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: Outfitter 一键换装
+## Notes: Outfitter 一键换装
+## OptionalDeps: TankPoints
+## RequiredDeps: 
+## SavedVariablesPerCharacter: gOutfitter_Settings
+
+OutfitterStrings.lua
+OutfitterStrings_cn.lua
+
+
+Outfitter.lua
+Outfitter.xml

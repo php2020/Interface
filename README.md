@@ -133,5 +133,6 @@ MacroTextStop = 隐藏动作条宏按钮中的文本
 MinimapButtonBag-TurtleWoW = 小地图图标整合
 ModifiedPowerAuras = 简易 WA
 oGlow = 装备材质高亮
+Outfitter = 一键换装
 
 插件默认不加载，在 .toc 文件里加入 ## DefaultState: Disable
