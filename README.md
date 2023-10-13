@@ -49,7 +49,6 @@ ChatMOD = 聊天辅助插件
 S_ChatBar = 聊天窗频道按钮（未在整合的包里，心情就像夜单独整理的）
 
 8、盗贼专题
-
 RogueFocus = 连击点 命令：/rfc 或者 /roguefocus
 EasyUnlock = 右键箱子直接开锁插件
 AutoBar= 消耗品快捷栏

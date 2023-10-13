@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title:[|CFFFFF569盗贼|R] 快捷开锁
+## Notes:|CFFDD66DDEasyUnlock|R 右键自动使用开锁技能
+## X-Repple: 盗贼
+## Author: Athaeus (J. de Gram)
+## eMail: j.de.gram@gmail.com
+## Version: 1.15
+## DefaultState: disabled
+EasyUnlock.xml
