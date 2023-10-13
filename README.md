@@ -83,6 +83,7 @@ Mendeleev = 物品提示信息
 12、鼠标提示&距离&人物观察
 DistanceWarning = 目标距离
 TinyTip = 鼠标提示
+TinyTipOptions = 鼠标提示
 SuperInspect = 查看目标装备
 SuperInspect_UI = 查看目标装备
 

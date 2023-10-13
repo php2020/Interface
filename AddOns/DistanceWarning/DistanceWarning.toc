@@ -1,0 +1,8 @@
+﻿## Interface:11200
+## Title:|cffFF4500[C]|R[距离]DW距离显示插件
+## Notes:全职业通用距离显示插件/dw
+## Author:卡特铁角
+## SavedVariables:DISTANCEWARNING_SAVE
+## OptionalDeps:
+## Dependencies:
+DistanceWarning.xml
