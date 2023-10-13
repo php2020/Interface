@@ -48,13 +48,13 @@ ChatMOD = 聊天辅助插件
 命令：/chatmod
 S_ChatBar = 聊天窗频道按钮下方（未在整合的包里，心情就像夜单独整理的）
 ChatBar = 群主的聊天频道按钮上方
-ChatMats = 聊天框材料链接
+ChatMats = 聊天框材料链接（使用：alt + 左键 点击要制造物品图标）
 
 8、盗贼专题
 RogueFocus = 连击点 命令：/rfc 或者 /roguefocus
 EasyUnlock = 右键箱子直接开锁插件
 AutoBar= 消耗品快捷栏
-BuyEmAll = 批量购买
+BuyEmAll = 批量购买 (使用：shift + 右键购买物品)
 
 9、实用三件套
 AtlasLoot = 掉落查询

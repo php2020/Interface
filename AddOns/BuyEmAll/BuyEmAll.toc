@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: BuyEmAll
+## Notes:BuyEmAll
+## Title-zhCN:BuyEmAll 批量购买
+## Notes-zhCN:打开商人界面时，SHIFT+右键物品，可以批量购买大于20个的此物品，并可依据你的金钱和背包空位自动给出最大的购买数量。
+## Author: Cogwheel
+## Url: http://cogwheel.wowinterface.com
+## eMail: mcogwheel@gmail.com
+## Version: 2.2
+## X-Category: Interface Enhancements
+## Dependencies: !Libs
+localization.lua
+BuyEmAll.lua
+BuyEmAll.xml
