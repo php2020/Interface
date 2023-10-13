@@ -1,0 +1,118 @@
+----GW--------------------------------
+
+int fa 0/0
+description Connection to ISP
+no shutdown
+int fa 1/0
+ip address 10.0.255.1 255.255.255.252
+description Connection to EDGE
+no shutdown
+
+----EDGE------------------------------
+
+int fa 0/0
+ip address 10.0.255.2 255.255.255.252
+description Connection to GW
+no shutdown
+int fa 1/0
+ip address 10.1.255.1 255.255.255.252
+description Connection to CORE-1
+no shutdown
+int S 2/0
+ip address 10.2.255.1 255.255.255.252
+clock rate 64000
+description Connection to CORE-3
+no shutdown
+
+----CORE-1----------------------------
+
+int fa 0/1
+no switchport
+ip address 10.1.255.2 255.255.255.252
+description Connection to EDGE
+no shutdown
+int fa 0/2
+no switchport
+ip address 10.1.255.13 255.255.255.252
+description Connection to DIST-1
+no shutdown
+int fa 0/3
+no switchport
+ip address 10.1.255.17 255.255.255.252
+description Connection to DIST-2
+no shutdown
+int r gig 0/1-2
+description Connection to CORE-2
+channel-group 1 mode desirable
+no switchport
+exit
+int port-channel 1
+no switchport
+ip address 10.1.255.5 255.255.255.252
+no shutdown
+
+----CORE-2----------------------------
+
+int fa 0/1
+no switchport
+ip address 10.1.255.9 255.255.255.252
+description Connection to SRV-1
+no shutdown
+int fa 0/2
+no switchport
+ip address 10.1.255.21 255.255.255.252
+description Connection to DIST-3
+no shutdown
+int r gig 0/1-2
+description Connection to CORE-1
+channel-group 1 mode desirable
+no switchport
+exit
+int port-channel 1
+no switchport
+ip address 10.1.255.6 255.255.255.252
+no shutdown
+
+----SRV-1-----------------------------
+
+int fa 0/0
+ip address 10.1.255.10 255.255.255.252
+description Connection to CORE-2
+no shutdown
+int fa 1/0
+ip address 10.1.1.1 255.255.255.252
+description Connection to ACC-SRV-1
+no shutdown
+
+----DIST-1----------------------------
+
+int fa 0/0
+ip address 10.1.255.14 255.255.255.252
+description Connection to CORE-1
+no shutdown
+int fa 1/0
+ip address 10.1.10.1 255.255.255.0
+description Connection to ACC-1
+no shutdown
+
+----DIST-2----------------------------
+
+int fa 0/0
+ip address 10.1.255.18 255.255.255.252
+description Connection to CORE-1
+no shutdown
+int fa 1/0
+ip address 10.1.20.1 255.255.255.0
+description Connection to ACC-2
+no shutdown
+
+----DIST-3----------------------------
+
+int fa 0/0
+ip address 10.1.255.22 255.255.255.252
+description Connection to CORE-2
+no shutdown
+int fa 1/0
+ip address 10.1.30.1 255.255.255.0
+description Connection to ACC-3
+no shutdown

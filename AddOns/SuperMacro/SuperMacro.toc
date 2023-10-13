@@ -1,0 +1,13 @@
+# Do not delete the following line!
+## Interface: 11200
+## Title: |cffFF4500[C]|R[宏]SM 超级宏
+## Notes: 【瞌睡熊版】支持最多7000字的超级宏命令管理工具 汉化by 瞌睡熊，MrBCat
+## First created: Mar 2005
+## OptionalDeps: 
+## SavedVariables: SM_VARS SM_EXTEND SM_ACTION_SUPER SM_SUPER
+##..\..\FrameXML\Fonts.xml
+##..\..\FrameXML\UIPanelTemplates.xml
+##..\..\FrameXML\ClassTrainerFrameTemplates.xml
+## Version: 3.18
+SuperMacro.xml
+SuperMacroOptions.xml

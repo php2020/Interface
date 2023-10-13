@@ -197,10 +197,12 @@ StatCompareSets             = 装备属性套装集合
 StatCompareSpell            = 显示角色装备提供的属性的法术/技能数据模块
 StatCompareUI               = 装备属性对比的图形配置界面
 SuperInspect                = 缓存目标装备详情依赖库
+SuperInspect_UI             = 缓存目标装备详情UI
 TrinketMenu                 = 饰品管理
 TWThreat                    = 仇恨统计
 Roid-Macros                 = 简单宏插件
-
+SuperMacro                  = 超级宏
+WIM                         = 私聊窗口化
 ```
 
 ### 插件默认不加载
