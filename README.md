@@ -89,6 +89,7 @@ SuperInspect_UI = 查看目标装备
 
 13、娱乐插件 1
 AdvancedTradeSkillWindow = ATSW 商业生产技能增强
+TrainerSkills = 可学技能监视
 
 其他：
 !ImprovedErrorFrame = 错误屏蔽插件 （命令 /ief 允许用户选择出现错误的帧或按钮 /iefd 调试）
