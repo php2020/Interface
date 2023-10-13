@@ -1,0 +1,6 @@
+## Interface: 11200
+## Author: shirsig
+## Title: retarget 不丢目标v2
+## Notes: Retargets Hunters after Feign Death and Rogues after Stealth
+## Q-CAT-Version:000300
+retarget.lua
