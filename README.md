@@ -191,6 +191,14 @@ QuestItem                   = 任务物品提示
 retarget                    = 不丢目标
 ShaguDPS                    = 伤害统计
 StatCompare                 = 角色属性查看
+StatCompareBuff             = 显示角色装备提供的属性的Buff数据模块
+StatCompareChar             = 显示角色装备提供的属性的全属性预估模块
+StatCompareSets             = 装备属性套装集合
+StatCompareSpell            = 显示角色装备提供的属性的法术/技能数据模块
+StatCompareUI               = 装备属性对比的图形配置界面
+SuperInspect                = 缓存目标装备详情依赖库
+TrinketMenu                 = 饰品管理
+TWThreat                    = 仇恨统计
 ```
 
 ### 插件默认不加载

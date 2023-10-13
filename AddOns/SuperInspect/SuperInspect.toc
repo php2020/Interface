@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: SuperInspect
+## Notes: SuperInspect
+## Title-zhCN:SuperInspect 缓存目标装备详情依赖库
+## Notes-zhCN:SuperInspect_UI的依赖库
+## X-Repple: 界面
+## Version: 1.192.sm11b
+## Author: Chester, smurfy
+## Dependencies: SuperInspect_UI
+## SavedVariables: SI_Save
+
+SuperInspect.xml

@@ -1,0 +1,11 @@
+﻿<Bindings>
+	<Binding name="Toggle TrinketMenu" description="开/关 TrinketMenu" header="TRINKETMENU">
+		TrinketMenu.ToggleFrame(TrinketMenuOptions.DisableToggle=="ON" and TrinketMenu_OptFrame or TrinketMenu_MainFrame)
+	</Binding>
+	<Binding name="Use Top Trinket" description="使用上面的饰品">
+		UseInventoryItem(13)
+	</Binding>
+	<Binding name="Use Bottom Trinket" description="使用下面的饰品">
+		UseInventoryItem(14)
+	</Binding>
+</Bindings>
