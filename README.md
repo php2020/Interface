@@ -186,6 +186,7 @@ oGlow                       = 装备材质高亮
 Outfitter                   = 一键换装
 Postal                      = 邮箱助手
 PowerAuras                  = 触发和法术效果提示
+QuestAnnouncer              = 任务进度通告
 ```
 
 ### 插件默认不加载
