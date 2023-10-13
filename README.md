@@ -123,3 +123,4 @@ pfQuest = 任务助手
 pfQuest-icons = 采集图标
 pfQuest-turtle = 乌龟服任务数据库
 Chronos = 时间管理插件 （不知道是干嘛的）
+DoubleExperience = 双倍经验插件

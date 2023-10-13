@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: DoubleExperience[双倍经验]
+## Notes: 显示双倍经验
+## Version: 1.0
+## SavedVariablesPerCharacter: DoubleExperienceOPTIONS
+DoubleExperience.lua
+
