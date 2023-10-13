@@ -1,0 +1,26 @@
+## Interface: 11200
+## Title: AtlasQuest
+## Notes: Shows the Quests for the instance.
+## Title-zhCN:AtlasQuest 副本任务
+## Notes-zhCN:显示副本能接受到的任务及奖励预览
+## Author: Thandrenn
+## Original Author: Asurn
+## Updated by: Cabro
+## Updated by: Loather
+## Updated by: Rabidmax
+## Updated by: Thandrenn (aka Mystery8)
+## CLI by: Dazerdude
+## Version: 4.2
+## X-eMail: mystery8@gmail.com
+## X-Website: www.atlasmod.com/phpBB3/
+## X-Category: MYADDONS_CATEGORY_MAP
+## X-Date: July 25, 2008
+## X-Help: AtlasQuestHelp
+## RequiredDeps: 
+## OptionalDeps: Atlas, AlphaMap, myAddOns
+## LoadOnDemand: 0
+## SavedVariablesPerCharacter:
+## SavedVariables: AtlasQuest_Options,
+## Dependencies:
+AtlasQuest_InsideFrame.xml
+AtlasQuest.xml
