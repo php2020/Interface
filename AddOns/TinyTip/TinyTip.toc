@@ -1,0 +1,14 @@
+## Interface: 11200
+## Author: Thrae
+## Title: |cffFF4500[B]|R[通用]TinyTip 鼠标提示
+## Notes: 鼠标提示增强，跟随鼠标扩展提示内容/ttip
+## $Revision: 7830 $
+## SavedVariables: TinyTipDB
+## SavedVariablesPerCharacter: TinyTipCharDB
+## LoadWith: MobInfo2, MonkeyQuest
+## OptionalDeps: zUI
+## Dependencies: zUI
+#TinyTipLocale_enEN.lua
+TinyTipLocale_zhCN.lua
+TinyTipAnchor.lua
+TinyTip.lua

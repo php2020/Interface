@@ -1,0 +1,11 @@
+﻿## Interface: 11200
+## Author: Thrae
+## Title: |cffFF4500[B]|R[通用]TinyTip 设置依赖
+## Notes: |cFF0000FFTinyTip|r设置菜单模块。(LoadOnDemand)
+## Dependencies: TinyTip
+## LoadOnDemand: 1
+## $Revision: 7986 $
+DewdropLib\Dewdrop-2.0.lua
+
+TinyTipChatLocale.lua
+TinyTipOptions.lua
