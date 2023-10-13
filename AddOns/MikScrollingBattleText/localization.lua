@@ -947,7 +947,7 @@ MikSBT.DEFAULT_CONFIG = {
   },
   MSBT_EVENTTYPE_NOTIFICATION_CP_FULL = {
    Show						= true,
-   Message						= "%a 连击满心!",
+   Message						= "%a ★★★五星★★★!",
    IsSticky						= false,
    FontSettings = {
     Color						= {r=1, g=0.502, b=0},
