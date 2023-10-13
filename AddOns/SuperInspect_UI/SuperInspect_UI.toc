@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: SuperInspect_UI
+## Notes: This is the UI that is loaded when SuperInspect loads.
+## Title-zhCN:SuperInspect_UI 缓存目标装备详情
+## Notes-zhCN:缓存目标装备属性加成、荣誉数据等等，即使你远离目标也可以进行查看。
+## Author: Chester
+## Dependencies: SuperInspect
+## LoadOnDemand: 1
+
+SuperInspect_UI.xml
