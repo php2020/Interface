@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: MobInfo-2 浏览器
+## Version: 1.21
+## Notes: Lets you browse and search a ton of data in your MobInfo database.
+## Notes-ruRU: Позволяет вам просматривать множество данных с вашей базы данных MobInfo.
+## Title-zhCN:MobInfo2怪物数据库-依赖
+## Notes-zhCN:|CFFDD66DDMobInfo2_Browser|R|N显示怪物的血量/法力，以及其掉落物品，出现地点，抵抗，免疫资料的相关信息。|N命令： /MI2
+## X-Repple: 辅助
+## Author: Chester & Skeeve
+## SavedVariables: MI2BSave
+## Dependencies: MobInfo2
+## OptionalDeps: MetaMap
+
+MobInfo2_Browser.xml

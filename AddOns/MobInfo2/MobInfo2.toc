@@ -1,0 +1,21 @@
+## Interface: 11200
+## Title: MobInfo-2 怪物资料库
+## Title-zhTW: MobInfo-2 怪物数据库
+## Version: 3.12
+## Authors: Skeeve & Dizzarian
+## Notes: Adds information about the hovered mob to the tooltip and shows health/mana information in the target frame
+## Notes-ruRU: Выводит дополнительную информацию о существе на экран подсказки и отображает здоровье/ману в рамке цели
+## Notes-deDE: Erweitert den Tooltip eines Gegners um Informationen zu Gesundheit, geplünderte Gegenstände usw. und ergänzt das Zielfenster um Gesundheit/Mana.
+## Notes-zhCN: 显示怪物的血量/法力，以及其掉落物品，出现地点，抵抗，免疫资料的相关信息。
+## Title-zhCN:MobInfo2 怪物数据库
+## Notes-zhCN:|CFFDD66DDMobInfo2|R|N显示怪物的血量/法力，以及其掉落物品，出现地点，抵抗，免疫资料的相关信息。|N命令：/MI2
+## X-Repple: 辅助
+## SavedVariables: MobInfoConfig, MobInfoDB, MobHealthDB, MobHealthPlayerDB, MI2_ItemNameTable, MI2_CharTable, MI2_ZoneTable
+## Dependencies:
+## OptionalDeps: myAddOns, MobHealth, MobHealth2
+MobInfo2.xml
+MI2_Config.xml
+
+
+
+## X-Turtle-Shell-Version: 1693798364
