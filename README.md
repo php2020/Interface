@@ -111,8 +111,9 @@ ChatMats = 聊天框材料链接
 UndressButton = 试衣间增强
 Chronometer = 法术计时条
 Decursive = 一键驱散
-EquipCompare
+EquipCompare = 装备比较（插件包里还行没有了）
 
 其他：
 !ImprovedErrorFrame = 错误屏蔽插件 （命令 /ief 允许用户选择出现错误的帧或按钮 /iefd 调试）
 AttackBar = 全职业攻击计时
+aux-addon = 拍卖行助手
