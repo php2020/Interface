@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: [|CFFFFF569盗贼|R] 盗贼连击点能量监控
+## Version: 1.0.4.11200
+## Author: Logan, Roadblock
+## SavedVariables: RogueFocusConfig
+RogueFocus.xml
+RogueFocusOptions.xml
