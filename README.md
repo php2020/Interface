@@ -91,7 +91,7 @@ SuperInspect_UI = 查看目标装备
 AdvancedTradeSkillWindow = ATSW 商业生产技能增强
 TrainerSkills = 可学技能监视
 Trainer = 训练者辅助，帮助你在你的城市找到训练者
-
+MCP = 插件管理
 其他：
 !ImprovedErrorFrame = 错误屏蔽插件 （命令 /ief 允许用户选择出现错误的帧或按钮 /iefd 调试）
 AttackBar = 全职业攻击计时

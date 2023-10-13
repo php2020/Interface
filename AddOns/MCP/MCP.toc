@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: Master Control Program
+## Author: Marc aka Saien on Hyjal
+## Notes: Addon loading control after login
+## Title-zhCN:MCP 插件管理
+## Notes-zhCN:在系统主菜单增加一项“插件管理”，你在这里可以自由加载或者禁用插件，调整以后只要点“重新加载所有插件”就可以完成设置，不需要退出游戏进行设置。
+## X-Repple: 界面
+## SavedVariablesPerCharacter: MCP_Config
+MCP.xml
