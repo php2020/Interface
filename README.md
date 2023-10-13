@@ -87,6 +87,9 @@ TinyTipOptions = 鼠标提示选项
 SuperInspect = 查看目标装备
 SuperInspect_UI = 查看目标装备
 
+13、娱乐插件 1
+AdvancedTradeSkillWindow = ATSW 商业生产技能增强
+
 其他：
 !ImprovedErrorFrame = 错误屏蔽插件 （命令 /ief 允许用户选择出现错误的帧或按钮 /iefd 调试）
 AttackBar = 全职业攻击计时
