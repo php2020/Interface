@@ -64,6 +64,7 @@ AtlasQuest = 副本任务
 10、信息&背包
 FuBar = 信息条
 Titan = 泰坦信息条
+TitanPlus = 泰坦信息条 plus
 OneBag = 背包插件
 OneBank = 背包银行
 OneRing = 背包钥匙链

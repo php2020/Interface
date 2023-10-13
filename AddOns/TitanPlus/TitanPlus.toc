@@ -1,0 +1,22 @@
+## Interface: 11200
+## Title: Titan面板(增强)
+## Notes: 增强了TitanPanel，提供了表情/战斗力/耐久度/职业计数等显示，及信件提示/插件重载等功能。
+## Author: All Titan Plugin Authors
+## SavedVariables: CombatStats_Config, AnkhCT_Userdata, AnkhCT_Config, ButtonTextType, TitanMailSettings, TitanSpeedSettings, StatusBar, Type,ButtonTextType
+## OptionalDeps: MonkeyQuest, QuestHistory, QuestIon, PartyQuests, QuestBank, Fetch, MapLibrary
+## Dependencies: Titan
+Localization.xml
+
+TitanClassTracker.xml
+TitanCombatInfo.xml
+TitanDurability.xml
+TitanEmoteMenu.xml
+TitanFactions.xml
+TitanFriends.xml
+TitanItemBonuses.xml
+TitanMail.xml
+TitanPVPinfo.xml
+TitanQuests.xml
+TitanReloadUI.xml
+TitanSkills.xml
+AnkhCooldownTimer.xml

@@ -1,0 +1,40 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="localization.lua"/>
+	<Script file="TitanTracker.lua"/>
+	<Frame parent="UIParent">
+		<Frames>
+			<Button name="TitanPanelTrackerButton" inherits="TitanPanelComboTemplate" frameStrata="FULLSCREEN" toplevel="true">
+				<Scripts>
+					<OnLoad>
+						TitanPanelTrackerButton_OnLoad();
+						TitanPanelButton_OnLoad();
+					</OnLoad>
+					<OnEvent>
+						TitanPanelTrackerButton_OnEvent();
+					</OnEvent>
+					<OnEnter>
+						TitanPanelButton_OnEnter();
+					</OnEnter>
+					<OnClick>
+						TitanPanelTrackerButton_OnClick(arg1);
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<Frame name="TitanPanelTracker_Button_Menu" id="1" inherits="UIDropDownMenuTemplate" hidden="true">
+	          <Size><AbsDimension x="10" y="10"/></Size>
+        	  <Anchors>
+                	<Anchor point="TOP">
+                  		<Offset><AbsDimension x="10" y="-60"/></Offset>
+                  	</Anchor>
+          	  </Anchors>
+         	 <Scripts>
+                 	<OnLoad>
+                  		TitanPanelTrackerRightClickMenu_OnLoad();
+                	</OnLoad>
+          	 </Scripts>
+        </Frame>	
+</Ui>

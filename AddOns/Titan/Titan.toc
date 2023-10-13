@@ -1,0 +1,34 @@
+## Interface: 11200
+## Title: Titan Panel
+## Title-zhCN:  Titan面板
+## Notes: Adds a control panel/info bar on the top and bottom of the screen. Allows users to control time/volume/panel scale/transparency, also displays important information such as money/bag/latency/FPS/Location/XP in real time. 
+## Notes-zhCN: 在屏幕顶端或底部增加的信息条. 允许玩家控制:时间/音量/面板缩放/透明度, 同时也实时显示很多重要信息, 例如金钱/包裹/延迟/FPS/区域/经验等. 
+## Author: TitanMod@gmail.com / Adsertor
+## SavedVariables: TitanSettings, TITAN_HONORPLUS, TITAN_HONORPLUS_CHATINFO, ServerTimeOffsets
+## OptionalDeps: myAddOns, ImprovedErrorFrame, TipBuddy, Opium
+## Dependencies:
+## Version: 2.13.1.10900
+Localization.xml
+TitanUtils.xml
+TitanVariables.xml
+TitanMenu.xml
+TitanPanelTemplate.xml
+TitanMovable.xml
+TitanTooltip.xml
+TitanPanel.xml
+TitanAmmo.xml
+TitanAutoHide.xml
+TitanAuxAutoHide.xml
+TitanBag.xml
+TitanClock.xml
+TitanCoords.xml
+TitanHonor.xml
+TitanLootType.xml
+TitanMoney.xml
+TitanPerformance.xml
+TitanTrans.xml
+TitanUIScale.xml
+TitanXP.xml
+TitanRegen.xml
+
+

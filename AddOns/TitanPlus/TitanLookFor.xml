@@ -1,0 +1,201 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="TitanLookFor.lua"/>
+	<Frame parent="UIParent">
+		<Frames>
+			<Button name="TitanPanelLookForButton" inherits="TitanPanelTextTemplate" frameStrata="FULLSCREEN" toplevel="true">
+				<Scripts>
+					<OnLoad>
+						TitanPanelLookForButton_OnLoad();
+						TitanPanelButton_OnLoad();
+					</OnLoad>
+					<OnClick>
+						TitanPanelLookForButton_OnClick();
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>	
+
+	<Frame name="TITAN_LookFor_Options" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" hidden="true" parent="UIParent" enableKeyboard="true">
+		<Size>
+			<AbsDimension x="340" y="595"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" title="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11"/>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32"/>
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="TITAN_LookForOptionsFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+					<Size>
+						<AbsDimension x="430" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString inherits="GameFontNormal" text="LookFor_OPTIONS_TITLE">
+					<Anchors>
+						<Anchor point="TOP" relativeTo="TITAN_2LookForOptionsFrameHeader">
+							<Offset>
+								<AbsDimension x="0" y="-14"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					</FontString>
+			</Layer>
+		</Layers>
+		
+	</Frame>
+
+	<Frame name="LookForFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true" >
+	<TitleRegion setAllPoints="true"/> 	  
+		<Size>
+			<AbsDimension x="354" y="80"/>
+		</Size>
+		<Anchors>
+ 			<Anchor point="CENTER">
+ 				<Offset>
+ 					<AbsDimension x="0" y="0"/>
+ 				</Offset>
+ 			</Anchor>
+ 		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture file="Interface\MoneyFrame\UI-MoneyFrame2">
+				      <Color r="0" g="0" b="0" a="0.75"/>
+					<Size>
+						<AbsDimension x="520" y="108"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="LookForFrame">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="LookForTitleText" inherits="GameFontHighlight" text="LookFor_FRAME_TITLE">
+					<Size>
+						<AbsDimension x="256" y="16"/>
+					</Size>
+					<Color r="0" g="1.0" b="0" a="0.75"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeTo="LookForFrame" telativePoint="CENTER">
+							<Offset>
+								<AbsDimension x="0" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="LookForCloseButton" inherits="LookForCloseButton">
+				<Anchors>
+					<Anchor point="CENTER" relativeTo="LookForFrame" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-32" y="-17" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			<Button name="LookForSubmitButton" inherits="UIPanelButtonTemplate" text="Submit">
+				<Size>
+					<AbsDimension x="75" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="CENTER" relativeTo="LookForFrame">
+						<Offset>
+							<AbsDimension x="0" y="-19"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						LookFor_Submit();
+					</OnClick>
+				</Scripts>
+			</Button>
+			<EditBox name="LookForFrameEdit" letters="256" multiLine="false" historyLines="0" autoFocus="true">
+				<Size>
+					<AbsDimension x="245" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="CENTER" relativeTo="LookForFrame" relativePoint="CENTER">
+						<Offset>
+							<AbsDimension x="0" y="2" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="LookForFrameEditBackground">
+							<Color r="0" g="0" b="0" a="0.75"/>
+						</Texture>
+					</Layer>
+					<Layer level="ARTWORK">
+					<Texture file="Interface\CastingBar\UI-CastingBar-Border">
+						<Size>
+							<AbsDimension x="335" y="80"/>
+						</Size>
+						<Anchors>
+							<Anchor point="CENTER" relativeTo="LookForFrame" relativePoint="CENTER">
+								<Offset>
+									<AbsDimension x="0" y="2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Texture>
+					</Layer>
+				</Layers>
+				<FontString inherits="GameFontNormal">
+					<Color r="1" g="1" b="1" a="1"/>
+				</FontString>
+				<Scripts>
+					<OnEnterPressed>
+						LookFor_Submit();
+					</OnEnterPressed>
+					<OnEscapePressed>
+						HideUIPanel(LookForFrame);
+					</OnEscapePressed>
+				</Scripts>
+			</EditBox>
+			<Scripts>
+				<OnEnterPressed>
+					LookFor_Submit();
+				</OnEnterPressed>
+				<OnEscapePressed>
+					HideUIPanel(LookForFrame);
+				</OnEscapePressed>
+			</Scripts>
+		</Frames>
+		<Scripts>
+			<OnDragStart>
+				this:StartMoving();
+				this.isMoving = true;
+			</OnDragStart>
+			<OnDragStop>
+				this:StopMovingOrSizing();
+				this.isMoving = false;
+			</OnDragStop>
+		</Scripts>
+	</Frame>
+
+</Ui>
