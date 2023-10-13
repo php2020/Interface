@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title:oGlow
+## Notes:oGlow
+## Title-zhCN:|CFFDD66DD[界面]|R装备材质高亮
+## Notes-zhCN:|CFFDD66DDoGlow|R|N玩家角色界面高亮装备材质颜色。
+## X-Repple: 界面
+## Author: Haste, 1.12 modify by 狗血编剧男
+## Version: 1.12
+## X-eMail: troeks@gmail.com
+## X-Website: http://fuxsake.net
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+
+core\oGlow.xml

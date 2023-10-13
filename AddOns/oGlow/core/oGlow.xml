@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file="glow.lua"/>
+	<Include file="char.lua"/>
+	<Include file="inspect.lua"/>
+	<Include file="merchant.lua"/>
+	<Include file="trade.lua"/>
+</Ui>
