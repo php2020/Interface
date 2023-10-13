@@ -72,10 +72,9 @@ OneView = 背包管理
 
 11、冷却&拾取&物品信息
 Zcc = 冷却计时插件
-
-XLoot = 拾取跟随鼠标焦点 （少）
-SpecialTalent = 天赋模拟器 （少）
-SpecialTalentUI = 天赋模拟器（少）
+XLoot = 拾取跟随鼠标焦点
+SpecialTalent = 天赋模拟器
+SpecialTalentUI = 天赋模拟器 UI
 
 MobInfo2 = 怪物数据库
 MobInfo2_Browser = 怪物数据库

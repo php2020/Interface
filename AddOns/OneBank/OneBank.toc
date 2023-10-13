@@ -1,0 +1,20 @@
+﻿## $Id: OneBank.toc 12749 2006-10-03 02:19:17Z kergoth $ 
+## Interface: 11200
+## Title: OneBank
+## Notes: One bag to rule them all, and in the darkness bind them.
+## Title-zhCN:Onebank 银行背包整合
+## Notes-zhCN:|CFFDD66DDOneBank|R|N整合显示银行背包。
+## X-Repple: 界面
+## Version: 2.0.$Revision: 12749 $
+## Author: Kaelten
+## X-Date: $Date: 2006-10-02 22:19:17 -0400 (Mon, 02 Oct 2006) $
+## X-Category: Inventory
+## X-eMail: kaelten@gmail.com
+## X-Website: http://www.wowace.com
+## SavedVariables: OneBankDB
+## Dependencies: OneBag
+## LoadOnDemand: 1
+ 
+locals.lua
+OneBank.xml
+OneBank.lua  

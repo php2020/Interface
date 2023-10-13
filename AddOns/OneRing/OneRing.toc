@@ -1,0 +1,19 @@
+﻿## $Id: OneRing.toc 12749 2006-10-03 02:19:17Z kergoth $ 
+## Interface: 11200
+## Title: OneRing
+## Notes: One bag to rule them all, and in the darkness bind them.
+## Title-zhCN:Onering 钥匙链
+## Notes-zhCN:|CFFDD66DDOneBag|R|N钥匙链框架。
+## X-Repple: 界面
+## Version: 2.0.$Revision: 12749 $
+## Author: Kaelten
+## X-Date: $Date: 2006-10-02 22:19:17 -0400 (Mon, 02 Oct 2006) $
+## X-Category: Inventory
+## X-eMail: kaelten@gmail.com
+## X-Website: http://www.wowace.com
+## SavedVariables: OneRingDB
+## Dependencies: OneBag
+ 
+locals.lua
+OneRing.xml
+OneRing.lua  

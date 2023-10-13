@@ -1,0 +1,25 @@
+﻿## Id: $Id: OneBag.toc 13688 2006-10-12 04:15:03Z tekkub $
+
+## Interface: 11200
+## Title: OneBag
+## Notes: One bag to rule them all, and in the darkness bind them.
+## Title-zhCN:Onebag 背包整合
+## Notes-zhCN:|CFFDD66DDOneBag|R|N整合显示身上所有背包。
+## X-Repple: 界面
+## X-Category: Inventory
+## Version: 2.0.$Revision: 13688 $
+## Author: Kaelten, 1.12 modify by 狗血编剧男, Clean_Up by shirsig
+## X-Date: $Date: 2006-10-12 00:15:03 -0400 (Thu, 12 Oct 2006) $
+
+## SavedVariables: OneBagDB
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+
+localizations\locals.xml
+templates.xml
+OneCore.lua
+OneBag.xml
+OneBag.lua
+
+OneBagButton.lua
+Clean_Up.lua

@@ -1,0 +1,22 @@
+﻿## Interface: 11200
+## Title: OneView |cff7fff7f 整合背包-|r
+## Notes: One bag to rule them all, and in the darkness bind them.
+## Title-zhCN:Oneview 离线银行和背包
+## Notes-zhCN:|CFFDD66DDOneView|R|N显示离线银行、其他角色背包。
+## X-Repple: 界面
+## Author: Kaelten
+## Version: 2.0.$Revision: 13687 $
+## X-Date: $Date: 2006-10-12 00:13:04 -0400 (Thu, 12 Oct 2006) $
+## X-Category: Inventory
+## X-eMail: kaelten@gmail.com
+## X-Website: http://www.wowace.com
+
+## SavedVariables: OneViewDB, OneViewButtonDB
+## Dependencies: OneBag
+## X-Embeds: OneStorage, TabletLib
+
+locals.lua
+OneStorage.lua
+OneView.xml
+OneView.lua
+OneButton.lua
