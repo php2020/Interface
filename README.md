@@ -190,6 +190,7 @@ QuestAnnouncer              = 任务进度通告
 QuestItem                   = 任务物品提示
 retarget                    = 不丢目标
 ShaguDPS                    = 伤害统计
+StatCompare                 = 角色属性查看
 ```
 
 ### 插件默认不加载
