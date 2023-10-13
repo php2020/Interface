@@ -1,0 +1,32 @@
+## Interface: 11200
+## Title: Atlas
+## Notes: Instance Map Browser
+## Title-zhCN: Atlas 副本地图
+## Notes-zhCN: 副本、战场、飞行地图浏览器
+## Version: 1.13.0
+## X-Date: July, 2008
+## Author: Dan Gilbert
+## X-Email: loglow@gmail.com
+## X-Website: http://www.atlasmod.com
+## X-Category: MYADDONS_CATEGORY_MAP
+## X-OptionsFrame: AtlasOptionsFrame
+## SavedVariablesPerCharacter: AtlasOptions
+## OptionalDeps: Titan, myAddOns, EarthFeatureFrame
+
+Locale\Atlas-enUS.lua
+Locale\Atlas-zhCN.lua
+AtlasMaps.lua
+
+AtlasDropDown.lua
+
+Atlas.lua
+Atlas.xml
+
+AtlasButton.lua
+AtlasButton.xml
+
+AtlasOptions.lua
+AtlasOptions.xml
+
+AtlasTitan.lua
+AtlasTitan.xml
