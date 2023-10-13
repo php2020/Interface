@@ -427,16 +427,56 @@ end
 function UnitColor(unit)
 	local r, g, b
 
-	if UnitIsPlayer(unit) then
-		local color = RAID_CLASS_COLORS[select(2, UnitClass(unit))]
-		if color then r, g, b = color.r, color.g, color.b end
-	elseif UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) then
-		r = 0.5
-		g = 0.5
-		b = 0.5
+	if ( not UnitIsPlayer(unit) and ( not UnitIsConnected(unit) or UnitIsDeadOrGhost(unit) ) ) then
+		r, g, b = 0.5, 0.5, 0.5
+	elseif UnitIsPlayer(unit) then
+		local colour = RAID_CLASS_COLORS[select(2, UnitClass(unit))]
+		if not colour then return end
+		
+		r = colour.r
+		g = colour.g
+		b = colour.b
 	else
-		local color = UnitReactionColor[UnitReaction(unit, "player")]
-		if color then r, g, b = color.r, color.g, color.b end
+		if UnitPlayerControlled(unit) then
+			if UnitCanAttack(unit, "player") then
+				if not UnitCanAttack("player", unit) then
+					r = 0.0
+					g = 0.0
+					b = 1.0
+				else
+					r = UnitReactionColor[2].r
+					g = UnitReactionColor[2].g
+					b = UnitReactionColor[2].b
+				end
+			elseif UnitCanAttack("player", unit) then
+				r = UnitReactionColor[4].r
+				g = UnitReactionColor[4].g
+				b = UnitReactionColor[4].b
+			elseif UnitIsPVP(unit) then
+				r = UnitReactionColor[6].r
+				g = UnitReactionColor[6].g
+				b = UnitReactionColor[6].b
+			else
+				r = 0.0
+				g = 1.0
+				b = 0.0
+			end
+		elseif UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) then
+			r = 0.5
+			g = 0.5
+			b = 0.5
+		else
+			local reaction = UnitReaction(unit, "player")
+			if reaction then
+				r = UnitReactionColor[reaction].r
+				g = UnitReactionColor[reaction].g
+				b = UnitReactionColor[reaction].b
+			else
+				r = 0
+				g = 0
+				b = 1.0
+			end
+		end
 	end
 	
 	return r, g, b
@@ -475,13 +515,11 @@ end
 
 --以"万"显示计数
 function Over1E3toK(v)
-	local sign = v < 0 and -1 or 1
-	v = math.abs(v)
-	
+	if type(v) ~= "number" then return end
 	if v > 1E4 then
-		text = Round(v/1E4*sign, 1) .. "万"
+		text = format("%0.1f万", v/1E4)
 	else
-		text = Round(v)
+		text =  v 
 	end
 	return text
 end

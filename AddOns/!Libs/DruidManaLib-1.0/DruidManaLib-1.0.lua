@@ -25,25 +25,7 @@ local DruidManaLibOnUpdateFrame = CreateFrame("Frame")
 local L = {}
 local locale = GetLocale()
 
-if locale == "deDE" then
-	L["Equip: Restores %d+ mana per 5 sec."] = "Anlegen: Stellt alle 5 Sek. %d+ Punkt(e) Mana wieder her.";
-	L["Mana Regen %d+ per 5 sec."] = "Manaregeneration %d+ per 5 Sek.";
-	L["Equip: Restores (%d+) mana per 5 sec."] = "Anlegen: Stellt alle 5 Sek. (%d+) Punkt(e) Mana wieder her."
-	L["Mana Regen (%d+) per 5 sec."] = "Manaregeneration (%d+) per 5 Sek.";
-	L["(%d+) Mana"] = "(%d+) Mana";
-elseif locale == "ruRU" then
-	L["Equip: Restores %d+ mana per 5 sec."] = "Если на персонаже: Восполнение %d+ ед%. маны раз в 5 сек%.";
-	L["Mana Regen %d+ per 5 sec."] = "Восполнение %d+ ед%. маны каждые 5 сек%.";
-	L["Equip: Restores (%d+) mana per 5 sec."] = "Если на персонаже: Восполнение (%d+) ед%. маны раз в 5 сек%."
-	L["Mana Regen (%d+) per 5 sec."] = "Восполнение (%d+) ед%. маны каждые 5 сек%.";
-	L["(%d+) Mana"] = "(%d+) ед%. маны";
-elseif locale == "frFR" then
-	L["Equip: Restores %d+ mana per 5 sec."] = "Equip\195\169 : Rend %d+ points de mana toutes les 5 secondes.";
-	L["Mana Regen %d+ per 5 sec."] = "R\195\169cup. mana %d+/5 sec.";
-	L["Equip: Restores (%d+) mana per 5 sec."] = "Equip\195\169 : Rend (%d+) points de mana toutes les 5 secondes."
-	L["Mana Regen (%d+) per 5 sec."] = "R\195\169cup. mana (%d+)/5 sec.";
-	L[" "] = ":";
-elseif locale == "zhCN" then
+if locale == "zhCN" then
 	L["Equip: Restores %d+ mana per 5 sec."] = "装备：每5秒回复%d+点法力值。";
 	L["Mana Regen %d+ per 5 sec."] = "每5秒恢复%d+点法力值。";
 	L["Equip: Restores (%d+) mana per 5 sec."] = "装备：每5秒回复(%d+)点法力值。"
@@ -97,7 +79,7 @@ end
 ------------------------------------------------
 -- Internal functions
 ------------------------------------------------
-
+local _, playerClass = UnitClass("player")
 function DruidManaLib:AceEvent_FullyInitialized()
 	if playerClass and playerClass == "DRUID" then
 		self:RegisterEvent("UNIT_MANA", "OnEvent")
@@ -126,7 +108,6 @@ local extra = 0
 local lowregentimer = 0
 local fullmanatimer = 0
 local waitonce = nil
-_, playerClass = UnitClass("player")
 local inform = (UnitPowerType("player") ~= 0)
 DruidManaLibTip:SetOwner(WorldFrame, "ANCHOR_NONE")
 
