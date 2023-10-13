@@ -118,3 +118,4 @@ EquipCompare = 装备比较（插件包里还行没有了）
 AttackBar = 全职业攻击计时
 aux-addon = 拍卖行助手
 avbars = 战场计时条（命令 显示：/avbars show 隐藏：/avbars hide 测试：/avbars test）
+BigWigs = 首领警报
