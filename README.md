@@ -109,8 +109,8 @@ CallOfElements = 萨满图腾助手
 AuldLangSyne = 好友和公会成员管理插件（命令：/AuldLangSyne 或 /auld）
 ChatMats = 聊天框材料链接
 UndressButton = 试衣间增强
-Chronometer
-Decursive
+Chronometer = 法术计时条
+Decursive =
 EquipCompare
 
 其他：
