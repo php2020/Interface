@@ -1,0 +1,8 @@
+﻿## Interface: 11200
+## Title:|cffFF4500[B]|R[邮箱]Postal 邮箱助手
+## Notes:使你能够把多个物品一次性发送给同一个人,也能快捷接收所有邮件。
+## X-Repple: 辅助
+## Author: shirsig
+## SavedVariablesPerCharacter: Postal_To
+## SavedVariables: Postal_Characters
+Postal.xml

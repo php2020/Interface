@@ -184,6 +184,7 @@ MinimapButtonBag-TurtleWoW  = 小地图图标整合
 ModifiedPowerAuras          = 简易 WA
 oGlow                       = 装备材质高亮
 Outfitter                   = 一键换装
+Postal                      = 邮箱助手
 ```
 
 ### 插件默认不加载
