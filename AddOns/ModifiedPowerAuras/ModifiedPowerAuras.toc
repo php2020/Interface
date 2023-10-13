@@ -1,0 +1,35 @@
+## Interface: 11200
+## Title: |cffFF4500[B]|R[监控]MPOWA|cFFFF8080简易WA|r
+
+
+## Notes: 命令/mpowa 显示窗口|CFFDD66DD汉化: 瞌睡熊|R|N汉化中根据UI实际展示情况作了一些调整. 诗诺 为 Shino的音译.
+## Author: Shino <Synced> - Kronos,瞌睡熊
+## SavedVariables: MPOWA_PROFILE
+## SavedVariablesPerCharacter: MPOWA_SAVE
+## Version: 1.5
+## DefaultState: Disable
+
+libs\LibStub\LibStub.lua
+libs\Classy-1.0\Classy-1.0.lua
+libs\Sol\Sol.lua
+libs\AnimationGroup\AnimationGroup.lua
+libs\AnimationGroup\curves.lua
+libs\AnimationGroup\group.lua
+libs\AnimationGroup\animation.lua
+libs\AnimationGroup\alpha.lua
+libs\AnimationGroup\path.lua
+libs\AnimationGroup\rotation.lua
+libs\AnimationGroup\scale.lua
+libs\AnimationGroup\translation.lua
+
+localization\zhCN.lua
+
+Init.lua
+Util.lua
+Conditions.lua
+Animation.lua
+Auras.lua
+GUI.lua
+Start.lua
+ModifiedPowerAuras.xml
+
