@@ -71,7 +71,7 @@ OneRing = 背包钥匙链
 OneView = 背包管理
 
 11、冷却&拾取&物品信息
-Zcc = 冷却计时插件
+Zcc = 冷却计时插件 （命令：/zcc）
 XLoot = 拾取跟随鼠标焦点
 SpecialTalent = 天赋模拟器
 SpecialTalentUI = 天赋模拟器 UI
