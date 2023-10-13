@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title:|cffFF4500[B]|R[团队] |CFFFFD700一键驱散
+## Notes:一键驱散疾病、魔法、诅咒、中毒等状态设置命令：/dcrshow
+## SavedVariablesPerCharacter: Dcr_Saved, DCR_REMOTE_DEBUG
+## Version 1.9.8.4
+## Author:Archarodim (Originally coded by Quu)
+## eMail: Archarodim _(AT)_ Teaser _(DOT)_ FR
+## URL: http://www.2072productions.com/?to=decursive.php
+## DefaultState: enabled
+## OptionalDeps: zUI
+## Dependencies: zUI
+localization.lua
+localization.cn.lua
+Decursive.lua
+Decursive.xml

@@ -110,7 +110,7 @@ AuldLangSyne = 好友和公会成员管理插件（命令：/AuldLangSyne 或 /a
 ChatMats = 聊天框材料链接
 UndressButton = 试衣间增强
 Chronometer = 法术计时条
-Decursive =
+Decursive = 一键驱散
 EquipCompare
 
 其他：
