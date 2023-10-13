@@ -199,6 +199,8 @@ StatCompareUI               = 装备属性对比的图形配置界面
 SuperInspect                = 缓存目标装备详情依赖库
 TrinketMenu                 = 饰品管理
 TWThreat                    = 仇恨统计
+Roid-Macros                 = 简单宏插件
+
 ```
 
 ### 插件默认不加载
