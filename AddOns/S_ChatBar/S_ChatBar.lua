@@ -2,7 +2,7 @@
 local chatFrame = SELECTED_DOCK_FRAME
 local buttonWidth = 36
 local buttonHeith = 26
-local buttonTemplate  = "UIPanelButtonTemplate"
+local buttonTemplate  = "UIPanelButtonTemplate" -- 按钮UI,不想要直接改为 nil 
 local fontWidthHeight = 25
 local fontSize = 14
 COLORSCHEME_BORDER   = { 0.3,0.3,0.3,1 }
@@ -221,7 +221,7 @@ end
 
 -- "世界频道" --
 local ChannelWorld7 = CreateFrame("Button", "ChannelWorld7", UIParent, buttonTemplate)
-ChannelWorld7:SetWidth(buttonWidth + 10) 
+ChannelWorld7:SetWidth(buttonWidth) 
 ChannelWorld7:SetHeight(buttonHeith) 
 ChannelWorld7:SetPoint("LEFT",ChannelWorld,"RIGHT", -1, 0) 
 ChannelWorld7:RegisterForClicks("LeftButtonUp")
