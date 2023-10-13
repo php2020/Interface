@@ -1,0 +1,13 @@
+== v1.01 - 25th April 2018
+* Farseer Umbrua added. TBC Stormwind Shaman Trainer. Not a Broken or Lost One in sight! Sigh
+* Farseer Javad added. TBC Ironforge Shaman Trainer
+* Champion Cyssa Dawnrose added. Proudly bringing Paladin light to the city of the undead. Sigh
+* Master Pyreanor added. Rounds out the dubious trainers. This one for Paladins in... Orgrimmar. Shudder.
+* Reposition the Orgrimmar Shaman trainer icon location to synchronise with that of the Paladin
+* Royal Quarter and Grommash Hold added as "shops" (i.e. specially named locations/signs) and translated
+* Comment spell correction
+
+------------------------------------------------------------------------------------------------------------------------------------
+== v1.00 - 15th April 2018
+* Initial release for Vanilla WoW, Patch 1.12.1, LUA 5.0
+* Initial release for TBC WoW, Patch 2.4.3, LUA 5.1

@@ -1,0 +1,12 @@
+## Interface: 11200
+## Version: 1.01
+## Title: Trainer
+## Author: Taraezor
+## Title-deDE: Lehrer
+## Title-zhCN:|CFF33AAFF[辅助]|R训练者
+## Notes-zhCN:|CFF33AAFFTrainer|R|N帮助你在你的城市找到训练者。
+## SavedVariables: TrainerDB
+
+## Q-CAT-Version: 000100
+
+Trainer.lua
