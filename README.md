@@ -124,4 +124,5 @@ pfQuest-icons = 采集图标
 pfQuest-turtle = 乌龟服任务数据库
 Chronos = 时间管理插件 （不知道是干嘛的）
 DoubleExperience = 双倍经验插件
-FancyAH = 拍卖行右键摆放不必拖动
+FancyAH = 拍卖行右键摆放不必拖动插件
+FancyTrade = 交易栏右键摆放插件
