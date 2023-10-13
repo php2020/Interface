@@ -119,3 +119,6 @@ AttackBar = 全职业攻击计时
 aux-addon = 拍卖行助手
 avbars = 战场计时条（命令 显示：/avbars show 隐藏：/avbars hide 测试：/avbars test）
 BigWigs = 首领警报
+pfQuest = 任务助手
+pfQuest-icons = 采集图标
+pfQuest-turtle = 乌龟服任务数据库

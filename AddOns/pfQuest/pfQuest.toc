@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |cffFF4500[C]|r[任务]|cff33ffccpf|cffffffffQuest|R 修复版
+## Author: Shagu MrBCat
+## Notes: 任务助手，任务指引，任务数据库查询
+## Version: GIT
+## OptionalDeps: pfUI
+## SavedVariables: pfQuest_questcache
+## SavedVariablesPerCharacter: pfQuest_config, pfBrowser_fav, pfQuest_history, pfQuest_colors, pfQuest_server
+
+init\data.xml
+init\enUS.xml
+init\zhCN.xml
+db\trdata.lua
+init\addon.xml
