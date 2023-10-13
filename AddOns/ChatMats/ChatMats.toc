@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: ChatMats 1.43.11000
+## Title-zhCN: 聊天框材料链接 
+## Notes: Chat link a recipe's materials
+## Title-zhCN:|CFF00CD00[商业]|R聊天框材料链接 
+## Notes-zhCN:|CFF00CD00ChatMats|R|N聊天框材料链接。
+## X-Repple: 商业
+## OptionalDeps:
+## Dependencies:
+## LoadOnDemand: 1
+## LoadWith: Blizzard_TradeSkillUI, Blizzard_CraftUI
+ChatMats.xml

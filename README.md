@@ -26,7 +26,7 @@ LunaUnitFrames = 露娜框架
 
 3、动作条
 ShaguTweaks = Shagu 德国作者暗黑风格 UI
-zUI = ZUI 和 Shagu 选其一 其中一些插件需要禁用，在 ZUI 组件里禁用
+zUI = ZUI 和 Shagu 其中一些插件需要禁用，在 ZUI 组件里禁用
 
 4、战斗伤害
 命令：/msbt
@@ -46,7 +46,9 @@ Cartographer_Mining = 地图插件-矿物的过滤器
 7、聊天频道
 ChatMOD = 聊天辅助插件
 命令：/chatmod
-S_ChatBar = 聊天窗频道按钮（未在整合的包里，心情就像夜单独整理的）
+S_ChatBar = 聊天窗频道按钮下方（未在整合的包里，心情就像夜单独整理的）
+ChatBar = 群主的聊天频道按钮上方
+ChatMats = 聊天框材料链接
 
 8、盗贼专题
 RogueFocus = 连击点 命令：/rfc 或者 /roguefocus
