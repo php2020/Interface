@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\..\FrameXML\UI.xsd" xmlns="http://www.blizzard.com/wow/ui/">
+  <Script file="UndressButton.lua" />
+  <Button name="DressUpFrameUndressButton" parent="DressUpFrame" inherits="UIPanelButtonTemplate" text="脱光">
+    <Size>
+      <AbsDimension x="80" y="22" />
+    </Size>
+    <Anchors>
+      <Anchor point="RIGHT" relativeTo="DressUpFrameResetButton" relativePoint="LEFT">
+        <Offset>
+          <AbsDimension x="0" y="0" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Scripts>
+      <OnLoad>
+				UBLoad();
+			</OnLoad>
+      <OnEvent>
+				UBEvent();
+			</OnEvent>
+      <OnClick>
+				DressUpModel:Undress();
+				PlaySound("gsTitleOptionOK");
+			</OnClick>
+    </Scripts>
+  </Button>
+  <Button name="DressUpFrameDressTargetButton" parent="DressUpFrame" inherits="UIPanelButtonTemplate" text="目标">
+    <Size>
+      <AbsDimension x="80" y="22" />
+    </Size>
+    <Anchors>
+      <Anchor point="RIGHT" relativeTo="DressUpFrameUndressButton" relativePoint="LEFT">
+        <Offset>
+          <AbsDimension x="0" y="0" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Scripts>
+      <OnLoad>
+				this:RegisterForClicks("LeftButtonDown", "RightButtonDown")
+			</OnLoad>
+      <OnShow>
+				UBReset();
+			</OnShow>
+      <OnHide>
+				UndressButtonHistory = {};
+				UndressButtonHistory["int"] = 0;
+				UBHcur = nil;
+			</OnHide>
+      <OnClick>
+				if (arg1 == "LeftButton") then
+					UBDressUpTarget("inspect");
+					PlaySound("gsTitleOptionOK");
+				else
+					UBDressUpTarget("dress");
+					PlaySound("gsTitleOptionOK");
+				end
+				
+			</OnClick>
+    </Scripts>
+  </Button>
+  <Button name="AuctionDressUpFrameUndressButton" parent="AuctionDressUpModel" inherits="UIPanelButtonTemplate" text="Undress">
+    <Size>
+      <AbsDimension x="70" y="22" />
+    </Size>
+    <Anchors>
+      <Anchor point="BOTTOM" relativeTo="AuctionDressUpFrameResetButton" relativePoint="TOP">
+        <Offset>
+          <AbsDimension x="0" y="2" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Scripts>
+      <OnClick>
+				AuctionDressUpModel:Undress();
+				PlaySound("gsTitleOptionOK");
+			</OnClick>
+    </Scripts>
+  </Button>
+  <Button name="AuctionDressUpFrameUndressResetButton" parent="AuctionDressUpModel" inherits="UIPanelButtonTemplate" text="Undress">
+    <Size>
+      <AbsDimension x="80" y="22" />
+    </Size>
+    <Scripts>
+      <OnClick>
+				AuctionDressUpModel:Undress();
+				PlaySound("gsTitleOptionOK");
+			</OnClick>
+    </Scripts>
+  </Button>
+  <Button name="DressUpFrameUndressHistoryButton" parent="DressUpFrame" inherits="UIPanelButtonTemplate" text="试">
+    <Size>
+      <AbsDimension x="22" y="22" />
+    </Size>
+    <Anchors>
+      <Anchor point="TOPRIGHT" relativeTo="DressUpFrameCloseButton" relativePoint="TOPLEFT">
+        <Offset>
+          <AbsDimension x="2" y="-4" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <Scripts>
+      <OnLoad>
+				this:RegisterForClicks("LeftButtonDown", "RightButtonDown")
+			</OnLoad>
+      <OnClick>
+			if (arg1 == "LeftButton") then
+				UBHistory("-");
+				PlaySound("gsTitleOptionOK");
+			else
+				UBHistory("+");
+				PlaySound("gsTitleOptionOK");
+			end
+			</OnClick>
+    </Scripts>
+  </Button>
+</Ui>

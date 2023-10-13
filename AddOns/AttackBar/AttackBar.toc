@@ -2,7 +2,7 @@
 ## Title: |cffFF4500[C]|r[通用]全职业攻击计时
 ## Author: Udokus ，MrBCat修复版
 ## X-Credits: Roablock for cleanup
-## DefaultState: disbled
+## DefaultState: Disable
 ## Notes: 全职业攻击计时/abar unlock 移动位置
 ## SavedVariables: CatAttackBarDB
 Attackbar.xml

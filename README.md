@@ -96,6 +96,22 @@ MCP = 插件管理
 14、娱乐插件 2
 GryllsComboSounds = 盗贼连击点音效
 FishEase = 钓鱼插件 （命令：/fishease 或 /fe）
+FelwoodGather = 费伍德水果助手最新版
+
+15、职业插件：猎人&萨满&骑士篇
+PetFeeder = 宠物插件
+GFW_HuntersHelper = 猎人野兽技能显示
+YaHT = 猎人射击条助手
+PallyPower = 骑士一键祝福
+CallOfElements = 萨满图腾助手
+
+16、小黑本&试衣间&法术计时条&一键驱散&装备比较
+AuldLangSyne = 好友和公会成员管理插件（命令：/AuldLangSyne 或 /auld）
+ChatMats = 聊天框材料链接
+UndressButton = 试衣间增强
+Chronometer
+Decursive
+EquipCompare
 
 其他：
 !ImprovedErrorFrame = 错误屏蔽插件 （命令 /ief 允许用户选择出现错误的帧或按钮 /iefd 调试）

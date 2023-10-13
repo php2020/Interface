@@ -1,0 +1,16 @@
+﻿## Interface: 11200
+## Title: FelwoodGather
+## Title-zhCN: 费伍德水果助手
+## Notes: Timer manager for felwood fruit gathering.
+## Notes-zhCN: 只能作用于费伍德.最新版本.显示全面 
+## Author: nor3
+## Dependencies:
+## OptionalDeps: 
+## SavedVariables: FelwoodGather_Config, FelwoodGatherMap_Config
+## LoadOnDemand:
+## DefaultState: Disable
+FelwoodGather.xml
+FelwoodGatherMap.xml
+
+
+## X-Turtle-Shell-Version: 1692243413

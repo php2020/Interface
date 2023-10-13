@@ -1,0 +1,5 @@
+## Interface: 11200
+## Author: haxninja
+## Title: UndressButton 试衣间增强
+## Notes: Adds a button to undress the model in the Dressing room.在试衣间页面添加一个脱光按钮。
+UndressButton.xml
