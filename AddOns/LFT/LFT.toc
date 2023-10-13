@@ -1,0 +1,13 @@
+## Interface: 11200
+## Author: Xerron/Er ,汉化 MrBCat
+## Title: |cffFF4500[C]|R[组队]队伍查找器 - |cffabd473LFT
+## Version: 0.0.3.3
+## Notes: 一个方便快捷的组队查找器，汉化MrBCat
+## SavedVariables: LFT_FORMED_GROUPS
+## SavedVariablesPerCharacter: LFT_ROLE, LFT_TYPE, LFT_CONFIG
+## DefaultState: Disable
+
+ChatThrottleLib\ChatThrottleLib.lua
+LFT.xml
+evn.lua
+

@@ -128,3 +128,6 @@ FancyAH = 拍卖行右键摆放不必拖动插件
 FancyTrade = 交易栏右键摆放插件
 Fizzle = 装备栏显示耐久 （命令：/fizzle 或 /fizz）
 iLoot = 拾取报告插件 通知你谁摸了 BOSS 尸体
+LTF = 队伍查找器
+
+插件默认不加载，在 .toc 文件里加入 ## DefaultState: Disable
