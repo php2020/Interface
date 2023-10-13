@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: [|CFF0055FF萨满|R] 图腾助手
+## Notes: 配置命令 /coe
+## OptionalDeps:
+## Dependencies: Chronos
+## SavedVariables: COE_Saved
+## SavedVariablesPerCharacter: COE_SavedTotemSets, COE_CustomTotemSets, COE_DisplayedTotems, COE_TotemBars
+CallOfElements.xml
+COE_ConfigTemplates.xml
+COE_Config.xml
+COE_Totem.xml
+COE_Heal.xml

@@ -117,3 +117,4 @@ EquipCompare = 装备比较（插件包里还行没有了）
 !ImprovedErrorFrame = 错误屏蔽插件 （命令 /ief 允许用户选择出现错误的帧或按钮 /iefd 调试）
 AttackBar = 全职业攻击计时
 aux-addon = 拍卖行助手
+avbars = 战场计时条（命令 显示：/avbars show 隐藏：/avbars hide 测试：/avbars test）

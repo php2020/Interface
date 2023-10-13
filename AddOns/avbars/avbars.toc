@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: AVBars
+## Notes: Graphical Timers for Events in AV and AB
+## Title-zhCN:|CFFFFA500[战场]|R战场计时条
+## Notes-zhCN:|CFFFFA500avbars|R|N记录战场事件的计时器。|N显示：/avbars show|N隐藏：/avbars hide|N测试：/avbars test|N如果进入战场没显示记时条的先使用一次命令：/avbars test
+## X-Repple: 战场
+## SavedVariables:
+## OptionalDeps:
+## Dependencies: 
+avbars.lua
+avbars.xml
+
+
+
+## X-Turtle-Shell-Version: 1693780734
