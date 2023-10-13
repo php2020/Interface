@@ -1,0 +1,32 @@
+﻿## Interface: 11200
+## Title: 耐久性和质量Fizzle |cff7fff7f -Ace2-|r
+## Notes: 装备栏显示耐久.装备质量
+## Title-zhCN: |cFFFF8000辅助 |r装备耐久和品质
+## Notes-zhCN: |cFFFF8000 |r|cFF7FFF7F-Ace2-|r Fizzle装备栏显示耐久.装备质量
+## Author: phyber
+## Version: 4.0
+## SavedVariablesPerCharacter: FizzleDB
+## X-Category: Inventory
+## X-Website: http://phyber.wowinterface.com/
+## X-Embeds: Ace2, CrayonLib, GratuityLib, Deformat, CompostLib
+## OptionalDeps: !!!Libs,Ace2, CompostLib, Deformat, GratuityLib, CrayonLib
+
+Libs\AceLibrary\AceLibrary.lua
+Libs\AceOO-2.0\AceOO-2.0.lua
+
+Libs\AceHook-2.1\AceHook-2.1.lua
+Libs\AceEvent-2.0\AceEvent-2.0.lua
+Libs\AceDB-2.0\AceDB-2.0.lua
+Libs\AceLocale-2.2\AceLocale-2.2.lua
+Libs\AceConsole-2.0\AceConsole-2.0.lua
+Libs\AceAddon-2.0\AceAddon-2.0.lua
+
+Libs\Compost-2.0\Compost-2.0.lua
+Libs\Crayon-2.0\Crayon-2.0.lua
+Libs\Deformat-2.0\Deformat-2.0.lua
+Libs\Gratuity-2.0\Gratuity-2.0.lua
+
+
+FizzleLocale-enUS.lua
+FizzleLocale-zhCN.lua
+Core.lua
