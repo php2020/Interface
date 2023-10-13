@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: Improved Error Frame
+## Title-zhCN: Improved Error Frame 错误屏蔽
+## Title-deDE: Erweitertes Fehler-Fenster
+## Notes: Display errors in scrollable/selecting frame
+## Notes-deDE: Fehler werden nicht sofort angezeigt, sondern werden in einem extra Fenster gesammelt und die Anzahl auf einem Button an der Minimap angezeigt.
+## SavedVariables: IEFMinimapButton_OffsetX, IEFMinimapButton_OffsetY, ImprovedErrorSettings
+..\..\FrameXML\ClassTrainerFrameTemplates.xml
+ImprovedErrorFrame.xml
+
+## X-Turtle-Shell-Version: 1692243374
