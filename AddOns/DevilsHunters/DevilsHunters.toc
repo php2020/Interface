@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: DevilsHunters 魔暴龙杀死计时器
+## Notes: DevilsHunters 当魔暴龙死亡时创建一个计时器并尝试选择正确的位置
+## Author: rexas - rexas.tv
+## Version: 1.0
+## SavedVariablesPerCharacter: DevilsHunters_Settings
+DevilsHunters.lua
