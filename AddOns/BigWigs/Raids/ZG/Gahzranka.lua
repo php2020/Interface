@@ -37,9 +37,9 @@ L:RegisterTranslations("zhCN", function() return {
 L:RegisterTranslations("deDE", function() return {
 	--cmd = "Gahzranka",
 
-	frostbreath_trigger = "Gahz\'ranka beginnt Frostatem auszuf\195\188hren\.",
+	frostbreath_trigger = "Gahz\'ranka beginnt Frostatem auszuf\195\188hren.",
 	frostbreath_bar = "Frostatem",
-	massivegeyser_trigger = "Gahz\'ranka beginnt Massiver Geysir zu wirken\.",
+	massivegeyser_trigger = "Gahz\'ranka beginnt Massiver Geysir zu wirken.",
 	massivegeyser_bar = "Massiver Geysir",
 
 	--frostbreath_cmd = "frostbreath",

@@ -28,24 +28,6 @@ L:RegisterTranslations("zhCN", function() return {
 	lightningcloud_desc = "落雷之云警报.",
 } end )
 
-L:RegisterTranslations("deDE", function() return {
-	cmd = "Wushoolay",
-
-	chainlightning_trigger = "Wushoolay beginnt Kettenblitzschlag zu wirken\.",
-	chainlightning_bar = "Kettenblitzschlag",
-	chainlightning_message = "Kettenblitzschlag! Unterbreche sie!",
-	lightningcloud_trigger = "Ihr seid von Blitzschlagwolke betroffen\.",
-	lightningcloud_message = "Beweg dich aus der Blitzschlagwolke!",
-
-	chainlightning_cmd = "chainlightning",
-	chainlightning_name = "Alarm f\195\188r Kettenblitzschlag",
-	chainlightning_desc = "Warnen wenn Wushoolay beginnt Kettenblitzschlag zu wirken.",
-
-	lightningcloud_cmd = "lightningcloud",
-	lightningcloud_name = "Alarm f\195\188r Blitzschlagwolke",
-	lightningcloud_desc = "Warnt dich wenn du in Blitzschlagwolke stehst.",
-} end )
-
 
 ---------------------------------
 --      	Variables 		   --

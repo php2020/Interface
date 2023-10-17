@@ -119,7 +119,7 @@ local icon = {
 	softEnrage = "Spell_Shadow_UnholyFrenzy",
 	doom = "Spell_Shadow_NightOfTheDead",
 	spore = "Ability_TheBlackArrow",
-	sieni = "Interface\\AddOns\\\BigWigs\\Textures\\sieni",
+	sieni = "Interface\\AddOns\\BigWigs\\Textures\\sieni",
 	curse = "Spell_Holy_RemoveCurse",
 }
 local syncName = {

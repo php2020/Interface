@@ -23,7 +23,7 @@ L:RegisterTranslations("zhCN", function() return {
 L:RegisterTranslations("deDE", function() return {
 	cmd = "Hazzarah",
 
-	nightmaresummon_trigger = "Hazza\'rah wirkt Alptraumillusionen beschw\195\182ren\.",
+	nightmaresummon_trigger = "Hazza\'rah wirkt Alptraumillusionen beschw\195\182ren.",
 	nightmaresummon_message = "T\195\182tet die Adds!",
 
 	nightmaresummon_cmd = "spawns",

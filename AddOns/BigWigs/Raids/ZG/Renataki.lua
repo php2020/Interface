@@ -31,25 +31,6 @@ L:RegisterTranslations("zhCN", function() return {
 	enraged_desc = "通报boss狂怒.",
 } end )
 
-L:RegisterTranslations("deDE", function() return {
-	cmd = "Renataki",
-
-	enrage_trigger = "Renataki bekommt \'Wutanfall\'\.",
-	enragesoon_message = "Raserei bald! Mach dich bereit!",
-	enrage_message = "Boss ist in Raserei!",
-	vanishsoon_message = "Verschwinden bald!",
-	vanish_message = "Boss ist verschwunden!",
-	unvanish_message = "Boss wird aufgedeckt!",
-	vanish_bar = "Verschwinden",
-
-	vanish_cmd = "vanish",
-	vanish_name = "Verschwinden anzeigen",
-	vanish_desc = "Verk\195\188ndet Boss' Verschwinden.",
-
-	enraged_cmd = "enraged",
-	enraged_name = "Verk\195\188ndet Boss' Raserei",
-	enraged_desc = "L\195\164sst dich wissen, wenn Boss h\195\164rter zuschl\195\164gt.",
-} end )
 
 
 ---------------------------------

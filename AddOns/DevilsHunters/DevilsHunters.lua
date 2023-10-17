@@ -13,6 +13,7 @@ DevilsHunters_Locations["East"] = {x = 71, y = 52}
 DevilsHunters_Locations["South"] = {x = 50, y = 60}
 DevilsHunters_Locations["NW"] = {x = 35, y = 24}
 
+-- 获取最接近方向
 function DevilsHunters_GetClosest()
 	local closestSpot = "";
 	local closestDistance = 999999999;
@@ -31,6 +32,7 @@ function DevilsHunters_GetClosest()
 	return closestSpot;
 end
 
+-- 打印距离
 function DevilsHunters_PrintDistance() -- /script DevilsHunters_PrintDistance();
 	local px,py=GetPlayerMapPosition("player")
 	
@@ -51,7 +53,7 @@ function math.dist(x1,y1, x2,y2) return ((x2-x1)^2+(y2-y1)^2)^0.5 end
 
 SLASH_DevilsHunters1 = "/DevilsHunters";
 
-
+-- 添加斜杠命令
 SlashCmdList["DevilsHunters"] = function(args)
 	--DevilsHunters_(args);
 	if args == ""
@@ -98,9 +100,9 @@ function DevilsHunters_OnEvent()
 		if not DevilsHunters_Settings
 		then
 			DevilsHunters_Settings = {}
-			DevilsHunters_Settings["frameLocked"] = false;
-			DevilsHunters_Settings["frameShown"] = false;
- 			DevilsHunters_Settings["frameRelativePos"] = "TOPLEFT";
+			DevilsHunters_Settings["frameLocked"] = false; -- 是否锁定
+			DevilsHunters_Settings["frameShown"] = true; -- 是否展示
+			DevilsHunters_Settings["frameRelativePos"] = "TOPLEFT"; -- 位置
 			DevilsHunters_Settings["frameXPos"] = 0;
 			DevilsHunters_Settings["frameYPos"] = 0;
 		end
@@ -122,7 +124,7 @@ end
 
 
 
-
+-- 输出消息
 function DevilsHunters_(str)
 	local c = ChatFrame1;
 	
@@ -146,6 +148,7 @@ function DevilsHunters_(str)
 	end;
 end;
 
+-- 打印数组
 function DevilsHunters_printArray(arr, n)
 	if n == nil
 	then
@@ -179,6 +182,7 @@ function DevilsHunters_printArray(arr, n)
 	end
 end;
 
+--字符串分割
 function __strsplit(sep,str)
 	if str == nil
 	then
@@ -205,8 +209,7 @@ function __strsplit(sep,str)
 	return arr
 end
 
--- UI stuff, should be it's own file
-
+-- 设置可移动
 function DevilsHunters_UI_MoveFrameStart(arg1, frame)
 	if not frame.isMoving
 	then
@@ -218,6 +221,7 @@ function DevilsHunters_UI_MoveFrameStart(arg1, frame)
 	end;
 end;
 
+-- 设置不可移动
 function DevilsHunters_UI_MoveFrameStop(arg1, frame)
 	if frame.isMoving
 	then
@@ -230,10 +234,12 @@ function DevilsHunters_UI_MoveFrameStop(arg1, frame)
 	end
 end;
 
-DevilsHunters_Frame = "";
+DevilsHunters_Frame = {};
 DevilsHunters_Frame_Font = "";
 
+-- 创建框体
 function DevilsHunters_MakeFrame()
+	
 	local f = DevilsHunters_Frame;
 	f.texture = f:CreateTexture(nil,"OVERLAY");
 	f.texture:SetTexture("Interface\\Tooltips\\UI-Tooltip-Background");

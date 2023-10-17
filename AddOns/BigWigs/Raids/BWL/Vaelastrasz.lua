@@ -61,9 +61,9 @@ L:RegisterTranslations("zhCN", function() return {
 L:RegisterTranslations("deDE", function() return {
 	cmd = "Vaelastrasz",
 
-	adrenaline_trigger = "^(.+) (.+) von Brennendes Adrenalin betroffen\.",
+	adrenaline_trigger = "^(.+) (.+) von Brennendes Adrenalin betroffen.",
 	start_trigger = "von Essenz der Roten betroffen",
-	flamebreath_trigger = "Vaelastrasz the Corrupt beginnt Flammenatem zu wirken\.",
+	flamebreath_trigger = "Vaelastrasz the Corrupt beginnt Flammenatem zu wirken.",
 	yell1 = "^Too late, friends",
 	yell2 = "^I beg you, mortals",
 	yell3 = "^FLAME! DEATH! DESTRUCTION!",
@@ -75,8 +75,8 @@ L:RegisterTranslations("deDE", function() return {
 	tankburnsoon = "Brennendes Adrenalin am Tank in 5 Sekunden!",
 	adrenaline_message = "%s hat Brennendes Adrenalin!",
 	adrenaline_message_you = "Sie haben Brennendes Adrenalin! Geh weg!",
-	deathyou_trigger = "Du stirbst\.",
-	deathother_trigger = "(.+) stirbt\.",
+	deathyou_trigger = "Du stirbst.",
+	deathother_trigger = "(.+) stirbt.",
 
 	are = "seid",
 

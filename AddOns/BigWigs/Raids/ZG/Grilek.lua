@@ -42,11 +42,11 @@ L:RegisterTranslations("zhCN", function() return {
 L:RegisterTranslations("deDE", function() return {
 	cmd = "Grilek",
 
-	avatar_trigger = "Gri\'lek bekommt \'Avatar\'\.",
+	avatar_trigger = "Gri\'lek bekommt \'Avatar\'.",
 	preavatar_warn = "Avatar bald! Nahk\195\164mpfer raus!",
 	avatar_bar = "Avatar",
 	avatar_message = "Avatar! Geh weg vom Boss!",
-	avatar_end = "Avatar schwindet von Gri\'lek\.",
+	avatar_end = "Avatar schwindet von Gri\'lek.",
 	avatar_whisper_you = "Gri'lek kommt auf dich zu! Lauf weg!",
 	avatar_whisper = "Gri'lek kommt auf dich zu! Lauf weg!",
 	avatar_watch = "Gri'lek verfolgt %s!",

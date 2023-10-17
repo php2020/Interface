@@ -62,48 +62,6 @@ L:RegisterTranslations("zhCN", function() return {
  	charge_desc = "冲锋警报",
 } end )
 
-L:RegisterTranslations("deDE", function() return {
-	spawn_name = "Spawn of Mar'li",
-
-	--cmd = "Marli",
-
-	spiders_trigger = "Aid me my brood!",
-	drainlifeyoustart_trigger = "Ihr seid von Blutsauger betroffen\.",
-	drainlifeotherstart_trigger = "(.+) ist von Blutsauger betroffen\.",
-	drainlifeyouend_trigger = "\'Blutsauger\' schwindet von Euch\.",
-	drainlifeotherend_trigger = "Blutsauger schwindet von (.+)\.",
-	pbv = "Giftblitzsalve",
-	pbvafflicts_trigger = "von Giftblitzsalve betroffen",
-	pbvhits_trigger = "Giftblitzsalve(.+) Naturschaden\.",
-	pbvresist_trigger = "Giftblitzsalve(.+) widerstanden",
-	pbvimmune_trigger = "Giftblitzsalve(.+) immun",
-	you = "Euch",
-	drainlife = "Blutsauger",
-	spiders_message = "Spinnen erscheinen!",
-	drainlife_message = "Blutsauger! Unterbreche sie/entferne magie!",
-	trollphase = "Troll-Phase",
-	trollphase_trigger = "The brood shall not fall",
-	spiderphase = "Spinnen-Phase",
-	spiderphase_trigger1 = "Draw me to your web mistress Shadra",
-	spiderphase_trigger2 = "Shadra, make of me your avatar",
-
-	--spider_cmd = "spider",
-	spider_name = "Alarm f\195\188r Spinnen",
-	spider_desc = "Warnung wenn Spinnen erscheinen",
-
-	--volley_cmd = "volley",
-	volley_name = "Alarm f\195\188r Giftblitzsalve",
-	volley_desc = "Warnen vor Giftblitzsalve\n\n(Dementi: Dieser Balken hat eine \194\1772 Sekunden Fehler)",
-
-	--drain_cmd = "drain",
-	drain_name = "Alarm f\195\188r Blutsauger",
-	drain_desc = "Warnen vor Blutsauger",
-
-	--phase_cmd = "phase",
-	phase_name = "Phasen-Benachrichtigung",
-	phase_desc = "Verk\195\188ndet den Phasenwechsel des Bosses",
-} end )
-
 
 ---------------------------------
 --      	Variables 		   --

@@ -63,56 +63,6 @@ L:RegisterTranslations("zhCN", function() return {
 	["Next Whirlwind"] = "下个旋风斩",
 } end )
 
-L:RegisterTranslations("deDE", function() return {
-	ohgan = "Ohgan",
-	cmd = "Mandokir",
-
-	engage_trigger = "feed your souls to Hakkar himself",
-	watch_trigger = "(.+)! I'm watching you!",
-	gaze_trigger = "Bloodlord Mandokir beginnt Bedrohlicher Blick zu wirken.",
-	gazeafflictyou = "Ihr seid von Bedrohlicher Blick betroffen.",
-	gazeafflictother = "(.+) ist von Bedrohlicher Blick betroffen.",
-	gazeendyou = "'Bedrohlicher Blick' schwindet von Euch.",
-	gazeendother = "Bedrohlicher Blick schwindet von (.+).",
-	gazecast = "Bedrohlicher Blick kommt!",
-	gazewatchedbar = "Bedrohlicher Blick: %s",
-	enragegain = "Bloodlord Mandokir bekommt 'Wutanfall'.",
-	enragefade = "Wutanfall schwindet von Bloodlord Mandokir.",
-	enragebar = "Wutanfall",
-	wwgain = "Bloodlord Mandokir bekommt 'Wirbelwind'.",
-	wwloss = "Wirbelwind schwindet von Bloodlord Mandokir\.",
-	ww = "Wirbelwind",
-	deathyou = "Du stirbst.",
-	deathother = "(.+) stirbt.",
-	you = "Euch",
-
-	watched_warning = "Du wirst beobachtet! Stoppen Sie alles!",
-	watched_warning_tell = "You are being watched! Stop everything!",
-	watched_warning_other = "%s wird beobachtet!",
-	enraged_message = "Ohgan ist tot! Mandokir wütend!",
-
-	announce_cmd = "whispers",
-	announce_name = "Warnung, wenn Spieler beobachtet werden",
-	announce_desc = "Warnen, wenn Bloodlord Mandokir wirft Bedrohlicher Blick\n\n(Benötigt Schlachtzugleiter oder Assistent)",
-
-	puticon_cmd = "puticon",
-	puticon_name = "Schlachtzugsymbol auf die beobachtet Spieler",
-	puticon_desc = "Versetzt eine Schlachtzugsymbol auf der beobachteten Spieler.\n\n(Benötigt Schlachtzugleiter oder Assistent)",
-
-	gaze_cmd = "gaze",
-	gaze_name = "Alarm für Bedrohlicher Blick",
-	gaze_desc = "Zeigt Balken für Bedrohlicher Blick",
-
-	whirlwind_cmd = "whirlwind",
-	whirlwind_name = "Alarm für Wirbelwind",
-	whirlwind_desc = "Zeigt Balken für Wirbelwind",
-
-	enraged_cmd = "enraged",
-	enraged_name = "Verkündet Boss' Raserei",
-	enraged_desc = "Lässt dich wissen, wenn Boss härter zuschlägt",
-
-	["Possible Gaze"] = "Mögliches Starren"
-} end )
 
 
 ---------------------------------

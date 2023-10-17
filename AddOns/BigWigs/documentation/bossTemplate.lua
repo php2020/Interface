@@ -12,30 +12,25 @@ local module, L = BigWigs:ModuleDeclaration("Bossname", "Naxxramas")
 
 L:RegisterTranslations("enUS", function() return {
 	cmd = "Testboss",
-
 	start_trigger = "Let the games begin.",
-
 	berserk_cmd = "berserk",
 	berserk_name = "Berserk",
 	berserk_desc = "Warn for when Testboss goes berserk",
-
 	berserktrigger = "%s goes into a berserker rage!",
 	berserkannounce = "Berserk - Berserk!",
 	berserksoonwarn = "Berserk Soon - Get Ready!",
-
 	add_name = "Dragon",
 } end )
 
 L:RegisterTranslations("zhCN", function() return {
-	start_trigger = "让游戏开始吧."
-
+	cmd = "Testboss",
+	start_trigger = "让游戏开始吧.",
+	berserk_cmd = "狂暴",
 	berserk_name = "狂暴",
 	berserk_desc = "当测试Boss获得狂暴时警报",
-
 	berserktrigger = "%s goes into a berserker rage!",
 	berserkannounce = "狂暴 - 狂暴!",
 	berserksoonwarn = "马上狂暴 - 准备!",
-	
 	add_name = "龙",
 } end )
 

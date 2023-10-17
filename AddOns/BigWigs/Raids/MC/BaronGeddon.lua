@@ -109,7 +109,7 @@ L:RegisterTranslations("zhCN", function() return {
 } end)
 
 L:RegisterTranslations("esES", function() return {
-	inferno_trigger = "Barón Geddon gana Inferno\.",
+	inferno_trigger = "Barón Geddon gana Inferno.",
 	service_trigger = "lleva a cabo un último servicio para Ragnaros",
 	ignitemana_trigger = "sufre de Ignición de maná",
 	bombyou_trigger = "Sufres de Bomba viviente.",

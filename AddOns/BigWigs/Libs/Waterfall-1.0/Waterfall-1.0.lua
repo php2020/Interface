@@ -561,7 +561,7 @@ end
 local function checkAceOptionsPath(path, options, frame)
 	local t = options
 	local validpath
-	for k in string.gfind(path,"[^\.]+") do
+	for k in string.gfind(path,"[^.]+") do
 		if tonumber(k) and t.args[tonumber(k)] then
 			k = tonumber(k)
 		end
@@ -604,7 +604,7 @@ local function feedFromOptionsTree(paneid, options)
 		end
 		local t = options
 		Waterfall:FeedAceOptionsTable(options,paneid,levels)
-		for k in string.gfind(paneid,"[^\.]+") do
+		for k in string.gfind(paneid,"[^.]+") do
 			if tonumber(k) and t.args[tonumber(k)] then
 				k = tonumber(k)
 			end
@@ -1014,7 +1014,7 @@ function Waterfall:FeedAceOptionsTable(root,path,maxLevels)
 	end
 	if path then
 		t = root
-		for k in string.gfind(path,"[^\.]+") do
+		for k in string.gfind(path,"[^.]+") do
 			if tonumber(k) and t.args[tonumber(k)] then
 				k = tonumber(k)
 			end
