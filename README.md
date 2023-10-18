@@ -203,6 +203,8 @@ TWThreat                    = 仇恨统计
 Roid-Macros                 = 简单宏插件
 SuperMacro                  = 超级宏
 WIM                         = 私聊窗口化
+DevilsHunters               = 魔暴龙击杀计时器
+FlightMap                   = 飞行点插件
 ```
 
 ### 插件默认不加载

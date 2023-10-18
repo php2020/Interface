@@ -180,7 +180,8 @@ BabbleZone:RegisterTranslations("enUS", function()
 		["Shattrath City"] = true,
 		["Karazhan"] = true,
 		["Caverns of Time"] = true,
-        ["Zul'Aman"] = true,		
+        ["Zul'Aman"] = true,
+		["Black Morass"] = true,
 	}
 end)
 
@@ -341,9 +342,7 @@ BabbleZone:RegisterTranslations("zhCN", function()
 		["Shattrath City"] = "沙尔特拉城",
 		["Karazhan"] = "卡拉赞",
 		["Caverns of Time"] = "时光之穴",
---		["Zul'Aman"] = true,
-       
-
+		["Black Morass"] = "黑暗沼泽",
 	}
 end)
 

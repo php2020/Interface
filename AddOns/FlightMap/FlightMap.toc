@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: FlightMap飞行点增强插件 v1.12-1
+## Notes: 在世界地图中添加工具提示，显示进出区域的飞行路线以及区域级别的范围。
+## SavedVariables: FlightMap
+## OptionalDeps: myAddOns, Sea
+FlightMapUtil.lua
+FlightMap.xml
+FlightMapTimes.xml
+FlightMapTaxi.xml
