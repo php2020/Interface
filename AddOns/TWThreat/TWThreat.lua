@@ -98,11 +98,7 @@ TWT.classCoords = {
 }
 
 TWT.fonts = {
-    'BalooBhaina', 'BigNoodleTitling',
-    'Expressway', 'Homespun', 'Hooge', 'LondrinaSolid',
-    'Myriad-Pro', 'PT-Sans-Narrow-Bold', 'PT-Sans-Narrow-Regular',
-    'Roboto', 'Share', 'ShareBold',
-    'Sniglet', 'SquadaOne',
+    'Roboto'
 }
 
 TWT.updateSpeeds = {
