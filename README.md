@@ -205,6 +205,7 @@ SuperMacro                  = 超级宏
 WIM                         = 私聊窗口化
 DevilsHunters               = 魔暴龙击杀计时器
 FlightMap                   = 飞行点插件
+ShaguValue                  = 物品价格
 ```
 
 ### 插件默认不加载

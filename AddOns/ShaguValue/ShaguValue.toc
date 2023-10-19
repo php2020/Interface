@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: |cff33ffccShaguValue|cffffffff物品价格
+## Author: Shagu, 2017
+## Notes: 显示商品的出售价格和购买价格
+## Version: 0.1
+
+ShaguValue.lua
