@@ -256,7 +256,7 @@ function LunaUF:Mouseover(action)
 				if not UnitCanAssist("player", "target") and not func then
 					self:CastSpellByName_IgnoreSelfCast(action)
 					SpellTargetUnit(unit)
-				elseif unit == "target" then
+				elseif UnitIsUnit(unit, "target") then
 					self:CastSpellByName_IgnoreSelfCast(func or action)
 				elseif string.find(unit, "target.+") or func then
 					self.Units.pauseUpdates = true
@@ -430,12 +430,12 @@ LunaUF.constants = {
 		["raid"] = {
 			horizontal = {
 				[1] = "portrait",
-				[2] = "emptyBar",
-				[3] = "healthBar",
-				[4] = "powerBar",
-				[5] = "castBar",
+				[2] = "castBar",
+				[3] = "emptyBar",
 			},
 			vertical = {
+				[1] = "healthBar",
+				[2] = "powerBar",
 			},
 		},
 	},
