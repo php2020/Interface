@@ -211,6 +211,7 @@ SilverDragon                = 稀有怪物追踪
 SmallerRollFrames           = 小窗口ROLL美化
 StopWatch                   = 倒计时小插件
 SimpleRaidTargetIcons       = 团队标记插件
+AutoMessage                 = 自动发送消息
 ```
 
 ### 插件默认不加载

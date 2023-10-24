@@ -1,0 +1,6 @@
+## Interface: 11200
+## Title: automessenger自动发送聊天消息插件
+## Notes: 允许按照用户指定的时间间隔自动向通道发送消息。
+## Author: The BOFH (Stewarta of Nordrassil)
+## SavedVariables:ticktime, channame, am, charname
+AutoMessage.xml
