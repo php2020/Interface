@@ -1,5 +1,5 @@
 ## Interface:  11200
-## Title: Mendeleev |cff7fff7f 物品提示信息-Ace2-|r
+## Title: Mendeleev |cff7fff7f 物品提示信息|r
 ## Version: 1.1
 ## Notes: Mendeleev 在物品提示中添加了大量信息.
 ## Author: MoonWolf

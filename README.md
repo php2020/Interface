@@ -158,7 +158,7 @@ ChatMats        = 聊天框材料链接
 UndressButton   = 试衣间增强
 Chronometer     = 法术计时条
 Decursive       = 一键驱散
-EquipCompare    = 装备比较（插件包里还行没有了）
+EquipCompare    = 装备比较（插件包里已经没有了）
 ```
 
 ### 其他视频里没讲过的：
@@ -206,6 +206,11 @@ WIM                         = 私聊窗口化
 DevilsHunters               = 魔暴龙击杀计时器
 FlightMap                   = 飞行点插件
 ShaguValue                  = 物品价格
+Masque                      = 动作条美化
+SilverDragon                = 稀有怪物追踪
+SmallerRollFrames           = 小窗口ROLL美化
+StopWatch                   = 倒计时小插件
+SimpleRaidTargetIcons       = 团队标记插件
 ```
 
 ### 插件默认不加载

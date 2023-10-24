@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: SimpleRaidTargetIcons团队标记助手
+## Author: RoadBlock
+## Version: 2.11
+## Notes: 在 ctrl + 左键单击或双击单位上显示一个小部件，让玩家分配 Raid 目标图标。键绑定设置标记和目标标记，并显示标记顺序栏。
+## X-Credits: Brodrick (aka Kirov) original author
+## SavedVariables: SRTISaved
+SimpleRaidTargetIcons.lua
