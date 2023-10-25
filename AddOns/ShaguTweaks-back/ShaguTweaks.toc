@@ -1,0 +1,72 @@
+## Interface: 11200
+## Title: |cff33ffccShagu|cffffffffTweaks
+## Title-zhCN:|CFFDD66DD[界面]|RShagu界面增强
+## Author: Shagu
+## Notes: A collection of tweaks and enhancements to the Default UI 
+## Notes-zhCN:|CFFDD66DD对默认UI的调整和增强的插件
+## Version: GIT
+## SavedVariablesPerCharacter: ShaguTweaks_config, ShaguTweaks_cache
+
+# locales
+locales\locales_deDE.lua
+locales\locales_enUS.lua
+locales\locales_esES.lua
+locales\locales_frFR.lua
+locales\locales_koKR.lua
+locales\locales_ruRU.lua
+locales\locales_zhCN.lua
+
+# basic
+main.lua
+helpers.lua
+config.lua
+
+# libraries
+libs\libtipscan.lua
+libs\libspell.lua
+libs\libcast.lua
+libs\libdebuff.lua
+libs\libunitscan.lua
+libs\libhealth.lua
+libs\libnameplate.lua
+
+# custom
+mods\custom.lua
+
+# modules
+mods\auto-dismount.lua
+mods\auto-stance.lua
+mods\blue-shaman.lua
+mods\chat-links.lua
+mods\chat-tweaks.lua
+mods\dark-ui-elements.lua
+mods\health-color.lua
+mods\health-numbers.lua
+mods\hide-gryphons.lua
+mods\item-colors.lua
+mods\minimap-clock.lua
+mods\minimap-square.lua
+mods\minimap-tweaks.lua
+mods\nameplate-classcolor.lua
+mods\nameplate-scale.lua
+mods\reduced-actionbar.lua
+mods\social-colors.lua
+mods\target-castbar.lua
+mods\target-debufftimer.lua
+mods\turtle-health.lua
+mods\unitframes-bighealth.lua
+mods\unitframes-classcolor.lua
+mods\unitframes-classportrait.lua
+mods\worldmap-colors.lua
+mods\worldmap-coordinates.lua
+mods\worldmap-window.lua
+
+# 不加载
+# mods\sell-junk.lua
+# mods\vendor-values.lua
+# mods\tooltip-details.lua
+# mods\hide-errors.lua
+# mods\cooldown-numbers.lua
+# mods\move-unitframes.lua
+# mods\equip-compare.lua
+

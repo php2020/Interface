@@ -8,7 +8,7 @@ local module = ShaguTweaks:register({
   description = "[health-numbers]\n估计实际生命值显示在玩家、宠物和目标的生命条，显示魔法值/能量值/怒气值。",
   expansions = { ["vanilla"] = true, ["tbc"] = true },
   category = "单元框体",
-  enabled = nil,
+  enabled = true,
 })
 
 module.enable = function(self)

@@ -5,13 +5,13 @@ local module = ShaguTweaks:register({
   description = "[minimap-clock]\n在迷你地图中添加一个24小时小时钟。",
   expansions = { ["vanilla"] = true, ["tbc"] = nil },
   category = "世界地图&小地图",
-  enabled = true,
+  enabled = nil,
 })
 
 MinimapClock = CreateFrame("Frame", "Clock", Minimap)
 MinimapClock:Hide()
 MinimapClock:SetFrameLevel(64)
-MinimapClock:SetPoint("BOTTOM", MinimapCluster, "BOTTOM", 8, 12)
+MinimapClock:SetPoint("BOTTOM", MinimapCluster, "BOTTOM", 8, 18)
 MinimapClock:SetWidth(50)
 MinimapClock:SetHeight(23)
 MinimapClock:SetBackdrop({

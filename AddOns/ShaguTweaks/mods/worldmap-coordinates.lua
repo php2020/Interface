@@ -5,7 +5,7 @@ local module = ShaguTweaks:register({
   description = "[worldmap-coordinates]\n将坐标添加到世界地图的底部。",
   expansions = { ["vanilla"] = true, ["tbc"] = true },
   category = "世界地图&小地图",
-  enabled = true,
+  enabled = false,
 })
 
 module.enable = function(self)

@@ -8,7 +8,7 @@ local module = ShaguTweaks:register({
   description = "[health-color]\n根据血量更改血条颜色。",
   expansions = { ["vanilla"] = true, ["tbc"] = true },
   category = "单元框体",
-  enabled = true,
+  enabled = nil,
 })
 
 module.enable = function(self)

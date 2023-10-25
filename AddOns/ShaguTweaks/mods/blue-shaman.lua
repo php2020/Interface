@@ -5,6 +5,7 @@ local module = ShaguTweaks:register({
   title = "萨满颜色增强",
   description = "[blue-shaman]\n将萨满职业颜色更改为蓝色，这在TBC+中是已知的。",
   expansions = { ["vanilla"] = true, ["tbc"] = nil },
+  category = "Social & Chat",
   enabled = true,
 })
 

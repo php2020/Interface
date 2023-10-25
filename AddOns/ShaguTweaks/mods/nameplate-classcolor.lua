@@ -5,7 +5,6 @@ local module = ShaguTweaks:register({
   title = "姓名版职业着色",
   description = "[nameplate-classcolor]\n姓名版颜色更改为职业颜色。",
   expansions = { ["vanilla"] = true, ["tbc"] = true },
-  category = "姓名版",
   enabled = true,
 })
 

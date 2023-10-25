@@ -5,7 +5,7 @@ local module = ShaguTweaks:register({
   description = "[minimap-square]\n把小地图画成方形而不是圆形。",
   expansions = { ["vanilla"] = true, ["tbc"] = true },
   category = "世界地图&小地图",
-  enabled = true,
+  enabled = nil,
 })
 
 module.enable = function(self)

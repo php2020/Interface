@@ -4,7 +4,7 @@ local module = ShaguTweaks:register({
   title = "自动下马",
   description = "[auto-dismount]\n提示“你正在骑乘状态”时，自动取消坐骑",
   expansions = { ["vanilla"] = true, ["tbc"] = nil },
-  enabled = true,
+  enabled = nil,
 })
 
 module.enable = function(self)
@@ -30,14 +30,15 @@ module.enable = function(self)
     -- turtle-wow
     "speed based on",
     "Slow and steady...",
-    "Riding"
+    "Riding",
+    "根据骑术技能提高速度。",
+    "又慢又稳......",
   }
 
   -- shapeshift buff icons
   dismount.shapeshifts = {
-    '_mount_', '_qirajicrystal_', 'ability_bullrush', 'ability_druid_aquaticform', 'ability_druid_catform', 'ability_druid_travelform',
-    'ability_hunter_pet_turtle', 'ability_racial_bearform', 'inv_misc_head_dragon_black', 'inv_pet_speedy', 'spell_nature_forceofnature',
-    'spell_nature_spiritwolf', 'spell_nature_swiftness'
+    "ability_racial_bearform", "ability_druid_catform", "ability_druid_travelform",
+    "spell_nature_forceofnature", "ability_druid_aquaticform", "spell_nature_spiritwolf"
   }
 
   -- errors that indicate mount/shapeshift

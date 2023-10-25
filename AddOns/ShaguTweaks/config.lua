@@ -3,8 +3,8 @@ local GetExpansion = ShaguTweaks.GetExpansion
 local mod = math.mod or mod
 
 local current_config = {}
-local max_width = 480
-local max_height = 600
+local max_width = 500
+local max_height = 680
 
 local settings = CreateFrame("Frame", "AdvancedSettingsGUI", UIParent)
 settings:Hide()
@@ -15,7 +15,7 @@ settings:SetScript("OnHide", function()
   UpdateMicroButtons()
 end)
 
-settings:SetPoint("TOP", UIParent, "TOP", 0, -100)
+settings:SetPoint("CENTER", UIParent, "CENTER", 0, 0) --settings:SetPoint("TOP", UIParent, "TOP", 0, -100)
 settings:SetWidth(max_width)
 settings:SetHeight(max_height)
 
@@ -47,7 +47,7 @@ settings.title.tex:SetTexture("Interface\\DialogFrame\\UI-DialogBox-Header")
 settings.title.tex:SetAllPoints()
 
 settings.title.text = settings.title:CreateFontString(nil, "HIGH", "GameFontNormal")
-settings.title.text:SetText("|cff33ffcc增强选项|cffffffff*")
+settings.title.text:SetText("增强选项")
 settings.title.text:SetPoint("TOP", 0, -14)
 
 settings.cancel = CreateFrame("Button", "AdvancedSettingsGUICancel", settings, "GameMenuButtonTemplate")
@@ -102,14 +102,14 @@ settings.load = function(self)
   local gui = {}
   for title, module in pairs(ShaguTweaks.mods) do
     if module.expansions[expansion] then
-      local category = module.category or "-通用-"
+      local category = module.category or "通用"
       gui[category] = gui[category] or {}
       gui[category][title] = module
     end
   end
 
-  local yoff = 20
-  local entrysize = 20
+  local yoff = 25
+  local entrysize = 25
   for category, entries in ShaguTweaks.spairs(gui) do
     local entry, spacing = 1, 20
     yoff = yoff + 12
@@ -228,9 +228,7 @@ end
 
 local advanced = CreateFrame("Button", "GameMenuButtonAdvancedOptions", GameMenuFrame, "GameMenuButtonTemplate")
 advanced:SetPoint("TOP", GameMenuButtonUIOptions, "BOTTOM", 0, -1)
---advanced:SetText("|cff33ffcc增强选项|cffffffff|cffffff00*")
-advanced:SetText("|cffff0000增强选项")
-
+advanced:SetText("增强选项")
 advanced:SetScript("OnClick", function()
   HideUIPanel(GameMenuFrame)
   settings:Show()

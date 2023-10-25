@@ -5,7 +5,7 @@ local module = ShaguTweaks:register({
   description = "[unitframes-classcolor]\n为玩家、目标和小队头像框体添加职业颜色。",
   expansions = { ["vanilla"] = true, ["tbc"] = true },
   category = "单元框体",
-  enabled = true,
+  enabled = nil,
 })
 
 local partycolors = function()

@@ -78,12 +78,17 @@ local function UpdateWorldMapColors()
         end
       end
 
-      -- update texture according to raid/group state
+      -- 根据raid/group状态更新纹理 加入图标大小 16
+      local size = 16;
       if ingroup and frame.texture.ingroup ~= "PARTY" then
         frame.texture:SetTexture(addonpath .. "\\img\\circleparty")
+        frame.texture:SetWidth(size)
+	      frame.texture:SetHeight(size)
         frame.texture.ingroup = "PARTY"
       elseif not ingroup and frame.texture.ingroup ~= "RAID" then
         frame.texture:SetTexture(addonpath .. "\\img\\circleraid")
+        frame.texture:SetWidth(size)
+	      frame.texture:SetHeight(size)
         frame.texture.ingroup = "RAID"
       end
 

@@ -133,7 +133,6 @@ ShaguTweaks_locale["zhCN"]["judgements"] = {
   ["圣光审判"] = true,
   ["智慧审判"] = true,
   ["十字军审判"] = true,
-  ['十字军打击']= true,
 }
 
 ShaguTweaks_locale["zhCN"]["interrupts"] = {

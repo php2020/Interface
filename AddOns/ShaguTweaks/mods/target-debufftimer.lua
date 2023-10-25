@@ -20,8 +20,8 @@ local function CreateTextCooldown(cooldown)
   cooldown.readable:SetFrameLevel(cooldown:GetParent():GetFrameLevel() + 1)
   cooldown.readable.text = cooldown.readable:CreateFontString("pfCooldownFrameText", "OVERLAY")
 
-  cooldown.readable.text:SetFont(STANDARD_TEXT_FONT, 12, "OUTLINE")
-  cooldown.readable.text:SetPoint("CENTER", cooldown.readable, "TOP", 0, 0)
+  cooldown.readable.text:SetFont(STANDARD_TEXT_FONT, 10, "OUTLINE")
+  cooldown.readable.text:SetPoint("CENTER", cooldown.readable, "CENTER", 0, 0)
   cooldown.readable:SetScript("OnUpdate", function()
     parent = this:GetParent()
     if not parent then this:Hide() end
@@ -55,13 +55,13 @@ module.enable = function(self)
         button.cd = CreateFrame("Model", "TargetFrameDebuff"..i.."Cooldown", button, "CooldownFrameTemplate")
         button.cd.noCooldownCount = true
         button.cd:SetAllPoints()
-        button.cd:SetScale(.8)
+        button.cd:SetScale(.6)
         button.cd:SetAlpha(.8)
       end
 
       if button and effect and duration and timeleft then
         local start = GetTime() + timeleft - duration
-        -- CooldownFrame_SetTimer(button.cd, start, duration, 1)
+        CooldownFrame_SetTimer(button.cd, start, duration, 1)
         CreateTextCooldown(button.cd)
         button.cd.readable.start = start
         button.cd.readable.duration = duration

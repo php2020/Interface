@@ -4,7 +4,6 @@ local module = ShaguTweaks:register({
   title = "姓名版缩放",
   description = "[nameplate-scale]\n使所有姓名版都符合UI比例设置。",
   expansions = { ["vanilla"] = true, ["tbc"] = nil },
-  category = "姓名版",
   enabled = true,
 })
 

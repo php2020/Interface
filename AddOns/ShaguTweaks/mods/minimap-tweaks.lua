@@ -5,7 +5,7 @@ local module = ShaguTweaks:register({
   description = "[minimap-tweaks]\n隐藏不必要的迷你地图按钮，并允许使用鼠标滚轮进行缩放。",
   expansions = { ["vanilla"] = true, ["tbc"] = true },
   category = "世界地图&小地图",
-  enabled = true,
+  enabled = nil,
 })
 
 module.enable = function(self)
