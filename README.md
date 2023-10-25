@@ -210,7 +210,8 @@ Masque                      = 动作条美化
 SilverDragon                = 稀有怪物追踪
 SmallerRollFrames           = 小窗口ROLL美化
 StopWatch                   = 倒计时小插件
-SimpleRaidTargetIcons       = 团队标记插件
+SimpleRaidTargetIcons       = 团队标记助手 选其一
+Banana                      = 团队标记助手 选其一
 AutoMessage                 = 自动发送消息
 ```
 
