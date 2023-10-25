@@ -219,3 +219,45 @@ AutoMessage                 = 自动发送消息
 ```
 在 .toc 文件里加入 ## DefaultState: Disable
 ```
+
+### 其他
+
+```
+-- 颜色解释
+
+16进制颜色转换在线网站：https://www.rgbtohex.net/hex-to-rgb/
+
+例如 cffffcc00 是一个十六进制颜色代码，表示ARGB（Alpha、红、绿、蓝）颜色
+
+具体来说，cffffcc00 中的各个部分可以解释为：
+c 表示这是一个ARGB颜色。
+ff 是Alpha通道，表示完全不透明。
+ff 是红色通道，表示红色分量最大。
+cc 是绿色通道，表示绿色分量中等。
+00 是蓝色通道，表示蓝色分量最小。
+所以这个颜色是一个深橙色，相当于RGB表示法中的(255, 204, 0)。
+```
+
+```
+-- 打印消息
+local function p(msg)
+    DEFAULT_CHAT_FRAME:AddMessage(msg)
+end
+
+```
+
+```
+local chatcolors = {
+  ["SAY"] = "|cffFFFFFF",
+  ["EMOTE"] = "|cffFF7E40",
+  ["YELL"] = "|cffFF3F40",
+  ["PARTY"] = "|cffAAABFE",
+  ["GUILD"] = "|cff3CE13F",
+  ["OFFICER"] = "|cff40BC40",
+  ["RAID"] = "|cffFF7D01",
+  ["RAID_WARNING"] = "|cffFF4700",
+  ["BATTLEGROUND"] = "|cffFF7D01",
+  ["WHISPER"] = "|cffFF7EFF",
+  ["CHANNEL"] = "|cffFEC1C0"
+}
+```

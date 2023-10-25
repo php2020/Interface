@@ -93,14 +93,14 @@ local view_templates = {
 -- panel button templates
 local menubuttons = {
   -- segments
-  ["Current"]  = { 0, 1, -25.5, "当前", "|cffffffff显示当前战斗",      "segment" },
-  ["Overall"]  = { 1, 0, -25.5, "总体", "|cffffffff显示所有战斗",         "segment" },
+  ["Current"]  = { 0, 1, -25.5, "当前", "|cffffffff显示当前战斗", "segment" },
+  ["Overall"]  = { 1, 0, -25.5, "总体", "|cffffffff显示所有战斗", "segment" },
 
   -- modes
-  ["Damage"]   = { 0, 1, 25.5,  "显示平均伤害",     "|cffffffff显示总体平均伤害量",        "view" },
-  ["DPS"]      = { 1, 2, 25.5,  "显示当前伤害",        "|cffffffff显示当前每分钟平均伤害量",  "view" },
-  ["Heal"]     = { 2, 3, 25.5,  "显示平均治疗",       "|cffffffff显示总体平均治疗量",       "view" },
-  ["HPS"]      = { 3, 4, 25.5,  "显示当前治疗",        "|cffffffff显示当前平均没分钟治疗量",    "view" },
+  ["Damage"]   = { 0, 1, 25.5,  "显示平均伤害", "|cffffffff显示总体平均伤害量", "view" },
+  ["DPS"]      = { 1, 2, 25.5,  "显示当前伤害", "|cffffffff显示当前每分钟平均伤害量", "view" },
+  ["Heal"]     = { 2, 3, 25.5,  "显示平均治疗", "|cffffffff显示总体平均治疗量", "view" },
+  ["HPS"]      = { 3, 4, 25.5,  "显示当前治疗", "|cffffffff显示当前平均没分钟治疗量", "view" },
 }
 
 -- default colors of chat types
@@ -435,7 +435,7 @@ local mrbcat_tab={
   ["Damage"]   =  "平均伤害", 
   ["DPS"]      = "当前伤害",   
   ["Heal"]     =  "平均治疗",   
-  ["HPS"]  ="当前治疗", 
+  ["HPS"]      ="当前治疗", 
 }
 for name, template in pairs(menubuttons) do
   window["btn"..name] = CreateFrame("Button", "ShaguDPS" .. name, window)
@@ -480,9 +480,9 @@ window.btnReset:SetBackdrop(backdrop)
 window.btnReset:SetBackdropColor(.2,.2,.2,1)
 window.btnReset:SetBackdropBorderColor(.4,.4,.4,1)
 window.btnReset.tooltip = {
-  "Reset Data",
-  { "|cffffffffClick", "|cffaaaaaaAsk to reset all data."},
-  { "|cffffffffShift-Click", "|cffaaaaaaReset all data."},
+  "重置数据",
+  { "|cffffffff单击", "|cffaaaaaa询问是否重置所有数据"},
+  { "|cffffffffShift+单击", "|cffaaaaaa重置所有数据."},
 }
 
 window.btnReset.tex = window.btnReset:CreateTexture()
@@ -497,7 +497,7 @@ window.btnReset:SetScript("OnClick", function()
     ResetData()
   else
     local dialog = StaticPopupDialogs["SHAGUMETER_QUESTION"]
-    dialog.text = "Do you wish to reset the data?"
+    dialog.text = "是否要重置数据?"
     dialog.OnAccept = ResetData
     StaticPopup_Show("SHAGUMETER_QUESTION")
   end
@@ -527,9 +527,9 @@ window.btnAnnounce:SetBackdrop(backdrop)
 window.btnAnnounce:SetBackdropColor(.2,.2,.2,1)
 window.btnAnnounce:SetBackdropBorderColor(.4,.4,.4,1)
 window.btnAnnounce.tooltip = {
-  "Send to Chat",
-  { "|cffffffffClick", "|cffaaaaaaAsk to anounce all data."},
-  { "|cffffffffShift-Click", "|cffaaaaaaAnnounce all data."},
+  "发送到聊天窗",
+  { "|cffffffff单击", "|cffaaaaaa询问是否发送到聊天窗."},
+  { "|cffffffffShift+单击", "|cffaaaaaaAnnounce all data."},
 }
 
 window.btnAnnounce.tex = window.btnAnnounce:CreateTexture()
@@ -549,7 +549,7 @@ window.btnAnnounce:SetScript("OnClick", function()
     if not color then color = "|cff00FAF6" end
 
     local name = view_templates[config.view].name
-    local text = "Post |cffffdd00" .. name .. "|r data into /" .. color..string.lower(ctype) .. "|r?"
+    local text = "发送 |cffffdd00" .. name .. "|r 数据到 /" .. color..string.lower(ctype) .. "|r?"
 
     local dialog = StaticPopupDialogs["SHAGUMETER_QUESTION"]
     dialog.text = text

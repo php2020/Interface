@@ -1,6 +1,7 @@
 local parser = ShaguDPS.parser
 
 -- sanitize, cache and convert patterns into gfind compatible ones
+--清理、缓存模式并将其转换为与gfind兼容的模式
 local sanitize_cache = {}
 function sanitize(pattern)
   if not sanitize_cache[pattern] then
@@ -23,6 +24,7 @@ function sanitize(pattern)
 end
 
 -- find, cache and return the indexes of a regex pattern
+-- 查找、缓存并返回regex模式的索引
 local capture_cache = {}
 function captures(pat)
   local r = capture_cache
@@ -43,14 +45,14 @@ function captures(pat)
   return r[pat][1], r[pat][2], r[pat][3], r[pat][4], r[pat][5]
 end
 
--- same as string.find but aware of up to 5 capture indexes
+-- same as string.find but aware of up to 5 capture indexes 与string.find相同，但最多可识别5个捕获索引
 local ra, rb, rc, rd, re
 function cfind(str, pat)
   -- read capture indexes
   local a, b, c, d, e = captures(pat)
   local match, num, va, vb, vc, vd, ve = string.find(str, sanitize(pat))
 
-  -- put entries into the proper return values
+  -- put entries into the proper return values 将条目放入正确的返回值
   ra = e == 1 and ve or d == 1 and vd or c == 1 and vc or b == 1 and vb or va
   rb = e == 2 and ve or d == 2 and vd or c == 2 and vc or a == 2 and va or vb
   rc = e == 3 and ve or d == 3 and vd or a == 3 and va or b == 3 and vb or vc

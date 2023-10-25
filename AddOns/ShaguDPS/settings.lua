@@ -53,7 +53,7 @@ SlashCmdList["SHAGUMETER"] = function(msg, editbox)
       window.Refresh(true)
       p("|cffffcc00Shagu|cffffffffDPS:|cffffddcc 透明度： " .. config.visible)
     else
-      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）  ")
+      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）")
     end
   elseif strlower(cmd) == "toggle" then
     config.visible = config.visible == 1 and 0 or 1
@@ -68,7 +68,7 @@ SlashCmdList["SHAGUMETER"] = function(msg, editbox)
 
       p("|cffffcc00Shagu|cffffffffDPS:|cffffddcc 宽度: " .. config.width)
     else
-      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（1 -999） ")
+      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（1-999）")
     end
   elseif strlower(cmd) == "height" then
     if tonumber(args) then
@@ -78,7 +78,7 @@ SlashCmdList["SHAGUMETER"] = function(msg, editbox)
 
       p("|cffffcc00Shagu|cffffffffDPS:|cffffddcc 高度: " .. config.height)
     else
-      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（1 -999） ")
+      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（1-999）")
     end
   elseif strlower(cmd) == "spacing" then
     if tonumber(args) then
@@ -98,7 +98,7 @@ SlashCmdList["SHAGUMETER"] = function(msg, editbox)
 
       p("|cffffcc00Shagu|cffffffffDPS:|cffffddcc 数据条透明度: " .. config.bars)
     else
-      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（1 -999） ")
+      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（1-999）")
     end
   elseif strlower(cmd) == "trackall" then
     if tonumber(args) and (tonumber(args) == 1 or tonumber(args) == 0) then
@@ -108,7 +108,7 @@ SlashCmdList["SHAGUMETER"] = function(msg, editbox)
 
       p("|cffffcc00Shagu|cffffffffDPS:|cffffddcc 追踪全部单位: " .. config.track_all_units)
     else
-      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）  ")
+      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）")
     end
   elseif strlower(cmd) == "mergepet" then
     if tonumber(args) and (tonumber(args) == 1 or tonumber(args) == 0) then
@@ -118,7 +118,7 @@ SlashCmdList["SHAGUMETER"] = function(msg, editbox)
 
       p("|cffffcc00Shagu|cffffffffDPS:|cffffddcc 计算宠物: " .. config.merge_pets)
     else
-      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）  ")
+      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）")
     end
   elseif strlower(cmd) == "texture" then
     if tonumber(args) and textures[tonumber(args)] then
@@ -135,10 +135,9 @@ SlashCmdList["SHAGUMETER"] = function(msg, editbox)
       config.pastel = tonumber(args)
       ShaguDPS_Config = config
       window.Refresh(true)
-
       p("|cffffcc00Shagu|cffffffffDPS:|cffffddcc 使用柔和颜色: " .. config.pastel)
     else
-      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）  ")
+      p("|cffffcc00Shagu|cffffffffDPS:|cffff5511 可以输入（0-1）")
     end
   elseif strlower(cmd) == "backdrop" then
     if tonumber(args) and (tonumber(args) == 1 or tonumber(args) == 0) then

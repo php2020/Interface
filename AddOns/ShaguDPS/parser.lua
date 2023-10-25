@@ -1,6 +1,5 @@
 -- load public variables into local
 local parser = ShaguDPS.parser
-
 local data = ShaguDPS.data
 local config = ShaguDPS.config
 local round = ShaguDPS.round
