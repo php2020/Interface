@@ -1,10 +1,10 @@
 -- Chinese translations
 -- By Tobar at CN Realm
 if (GetLocale() == "zhCN") then
-    BINDING_HEADER_FLIGHTMAP = "FlightMap";       -- TODO translate
-    BINDING_NAME_FLIGHTMAP   = "Show flight map"; -- TODO translate
+    BINDING_HEADER_FLIGHTMAP = "飞行地图";
+    BINDING_NAME_FLIGHTMAP   = "显示飞行地图";
 
-    FLIGHTMAP_NAME          = "FlightMap";
+    FLIGHTMAP_NAME          = "飞行地图";
     FLIGHTMAP_DESCRIPTION   = "在世界地图上显示飞行路线";
     FLIGHTMAP_ALLIANCE      = "联盟";
     FLIGHTMAP_HORDE         = "部落";
@@ -67,37 +67,36 @@ if (GetLocale() == "zhCN") then
     FLIGHTMAP_MONEY_GOLD    = "金";
     FLIGHTMAP_MONEY_SILVER  = "银";
     FLIGHTMAP_MONEY_COPPER  = "铜";
-    FLIGHTMAP_FLIGHTTIME    = "Flight time: ";     -- TODO translate
-    FLIGHTMAP_QUICKEST      = "Fastest route: ";   -- TODO translate
-    FLIGHTMAP_TOTAL_TIME    = "Total time: ";      -- TODO translate
-    FLIGHTMAP_VIA           = "Via ";              -- TODO translate
-    FLIGHTMAP_CONFIRM       = "Are you sure you wish to fly to %s?%s";
-    FLIGHTMAP_CONFIRM_TIME  = " This flight will take ";
+    FLIGHTMAP_FLIGHTTIME    = "飞行时间: ";
+    FLIGHTMAP_QUICKEST      = "最快路线: ";
+    FLIGHTMAP_TOTAL_TIME    = "总时间: ";
+    FLIGHTMAP_VIA           = "经过 ";
+    FLIGHTMAP_CONFIRM       = "确定飞往 %s?%s";
+    FLIGHTMAP_CONFIRM_TIME  = " 飞行需要 ";
 
     -- Command strings
-    FLIGHTMAP_RESET         = "reset";             -- TODO translate
-    FLIGHTMAP_SHOWMAP       = "open";              -- TODO translate
-    FLIGHTMAP_LOCKTIMES     = "lock";              -- TODO translate
-    FLIGHTMAP_GETHELP       = "help";              -- TODO translate
+    FLIGHTMAP_RESET         = "重置";
+    FLIGHTMAP_SHOWMAP       = "打开";
+    FLIGHTMAP_LOCKTIMES     = "锁定";
+    FLIGHTMAP_GETHELP       = "帮助";
 
-    -- Help text                   TODO translate
-    FLIGHTMAP_TIMER_HELP    =
-        "Hold down SHIFT and drag the timer bar to reposition.";
+    -- Help text
+    FLIGHTMAP_TIMER_HELP    = "按住SHIFT键并拖动计时器栏以重新定位。";
     FLIGHTMAP_SUBCOMMANDS   = {
-        [FLIGHTMAP_RESET]       = "Reset timer bar position",
-        [FLIGHTMAP_SHOWMAP]     = "Open flight map window",
-        [FLIGHTMAP_GETHELP]     = "Show this text",
+        [FLIGHTMAP_RESET]       = "重置计时器条位置",
+        [FLIGHTMAP_SHOWMAP]     = "打开飞行地图窗口",
+        [FLIGHTMAP_GETHELP]     = "显示此文本",
     };
 
-    -- Locked/unlocked status           TODO translate
+    -- Locked/unlocked status
     FLIGHTMAP_TIMESLOCKED   = {
-        [true] = "Flight times will no longer be recorded.",
-        [false] = "Flight times will now be recorded.",
+        [true] = "不记录飞行时间",
+        [false] = "记录飞行时间",
     };
 
     -- Option strings
-    FLIGHTMAP_OPTIONS_CLOSE = "Close";             -- TODO translate
-    FLIGHTMAP_OPTIONS_TITLE = "FlightMap Options"; -- TODO translate
+    FLIGHTMAP_OPTIONS_CLOSE = "关闭";
+    FLIGHTMAP_OPTIONS_TITLE = "选项";
     FLIGHTMAP_OPTIONS = {};
     FLIGHTMAP_OPTIONS[1] = {   -- Option 1: flight path lines
         label = "飞行路线",
@@ -115,9 +114,9 @@ if (GetLocale() == "zhCN") then
         tooltip = "显示所有数据, 包括还未访问的飞行点.",
     };
     FLIGHTMAP_OPTIONS[4] = {   -- Option 4: Auto-Dismount
-        label = "Auto dismount",
+        label = "自动下马",
         option = "autoDismount",
-        tooltip = "Automatically dismount when speaking to a flight master",
+        tooltip = "于飞行管理员对话时自动下马",
     };
     FLIGHTMAP_OPTIONS[5] = {   -- Option 5: flight timers
         label = "飞行计时器",
@@ -136,35 +135,35 @@ if (GetLocale() == "zhCN") then
     };
 
     FLIGHTMAP_OPTIONS[6] = {   -- Option 6: Show flight destinations
-        label = "Show destinations",
+        label = "显示描述",
         option = "showDestinations",
-        tooltip = "Show flight destinations on tooltips",
+        tooltip = "在工具提示上显示飞行目的地",
         children = {7, 8, 9},
     };
     FLIGHTMAP_OPTIONS[7] = {   -- Option 7: Show multi-hop destinations
-        label = "Including multi-hop",
+        label = "显示路线",
         option = "showMultiHop",
-        tooltip = "Show multi-hop destinations on tooltips",
+        tooltip = "在工具提示上显示各路线目的地",
     };
     FLIGHTMAP_OPTIONS[8] = {   -- Option 8: Show flight times
-        label = "With flight times",
+        label = "显示飞行时间",
         option = "showTimes",
-        tooltip = "Show flight times on tooltips",
+        tooltip = "在工具提示上显示飞行时间",
     };
     FLIGHTMAP_OPTIONS[9] = {   -- Option 9: Show flight costs
-        label = "With flight costs",
+        label = "显示飞行费用",
         option = "showCosts",
-        tooltip = "Show flight costs on tooltips",
+        tooltip = "在工具提示上显示飞行费用",
     };
     FLIGHTMAP_OPTIONS[10] = {   -- Option 10: Taxi window extras
-        label = "Full flight map",
+        label = "显示所有飞行点",
         option = "fullTaxiMap",
-        tooltip = "Show unreachable nodes on the taxi window map",
+        tooltip = "在地图上显示所有飞行点",
     };
     FLIGHTMAP_OPTIONS[11] = {   -- Option 11: Confirm flight destinations
-        label = "Confirm flights",
+        label = "确认飞行提示",
         option = "confirmFlights",
-        tooltip = "Prompt for confirmation before taking a flight",
+        tooltip = "飞行前提示确认",
     };
 
     -- These constants determine how "Town, Zone" strings look.

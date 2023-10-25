@@ -2,13 +2,14 @@ FLIGHTMAP_MAX_TAXIPATHS = 48;
 FLIGHTMAP_MAX_TAXINODES = 32;
 
 function FlightMapTaxi_SetContinent(cont)
-    local cname = FlightMapUtil.getContinentName(cont);
-    TaxiMerchant:SetText(cname);
+    local cname = FlightMapUtil.getContinentName(cont); -- 获取大陆名称
+    TaxiMerchant:SetText(cname); -- 设置名称
     local tname = "Interface\\TaxiFrame\\TAXIMAP" .. 2-cont;
     TaxiMap:SetTexture(tname);
     FlightMapTaxiFrame_OnEvent(cont);
 end
 
+-- 显示飞行点
 function FlightMapTaxi_ShowContinent()
     if TaxiFrame:IsVisible() then
         HideUIPanel(TaxiFrame);
@@ -21,11 +22,11 @@ function FlightMapTaxi_ShowContinent()
         if btn then btn:Hide(); end
     end
 
-    -- Get a (non-instanced) continent number
+    -- Get a (non-instanced) continent number 获取（未实例化的）大陆编号
     local cont = FlightMapUtil.getContinent();
     if cont == 0 then cont = 1; end
 
-    -- Must kill "OnShow" handler briefly
+    -- Must kill "OnShow" handler briefly 必须短暂终止“OnShow”处理程序
     local onshow = TaxiFrame:GetScript("OnShow");
     TaxiFrame:SetScript("OnShow", function()
         PlaySound("igMainMenuOpen");
@@ -33,11 +34,11 @@ function FlightMapTaxi_ShowContinent()
     ShowUIPanel(TaxiFrame, 1);
     TaxiFrame:SetScript("OnShow", onshow);
 
-    -- Toggle FlightMap/Blizzard stuff
-    TaxiRouteMap:Hide();
-    FlightMapTaxiContinents:Show();
+    -- 切换飞行地图/暴雪的东西
+    TaxiRouteMap:Hide(); -- 暴雪的隐藏
+    FlightMapTaxiContinents:Show(); -- 插件的显示
 
-    -- Then set the continent display
+    -- 然后设置大陆编号
     FlightMapTaxi_SetContinent(cont);
 
     UIDropDownMenu_SetSelectedID(FlightMapTaxiContinents, cont);
@@ -45,8 +46,7 @@ end
 
 function FlightMapTaxiButton_OnEnter(button)
     GameTooltip:SetOwner(button, "ANCHOR_RIGHT");
-    FlightMapUtil.addFlightsForNode(GameTooltip, button.nodeKey, '',
-        FlightMapTaxiFrame.sourceKey);
+    FlightMapUtil.addFlightsForNode(GameTooltip, button.nodeKey, '', FlightMapTaxiFrame.sourceKey);
     if FlightMapTaxiFrame.sourceNode then
         local costs = FlightMapTaxiFrame.sourceNode.Costs;
         if costs[button.nodeKey] and costs[button.nodeKey] > 0 then
@@ -60,50 +60,53 @@ function FlightMapTaxiButton_OnLeave(button)
     GameTooltip:Hide();
 end
 
+-- 加载时
 function FlightMapTaxiFrame_OnLoad()
     this:RegisterEvent("TAXIMAP_OPENED");
     TaxiButtonTypes["UNKNOWN"] = {
-	file = "Interface\\TaxiFrame\\UI-Taxi-Icon-Gray"
+        file = "Interface\\TaxiFrame\\UI-Taxi-Icon-Gray"
     };
 end
 
 function FlightMapTaxiFrame_OnEvent(event)
     -- Hide any unused lines left over from a previous flight master visit
+    -- 隐藏上次飞行管理员访问留下的任何未使用的线路
     for i = 1, FLIGHTMAP_MAX_TAXIPATHS, 1 do
         getglobal("FlightMapTaxiPath" .. i):Hide();
     end
 
-    -- Hide any unused icons too
+    -- Hide any unused icons too 也隐藏所有未使用的图标
     for i = 1, FLIGHTMAP_MAX_TAXINODES, 1 do
         getglobal("FlightMapTaxiButton" .. i):Hide();
     end
 
-    -- If the event isn't "TAXIMAP_OPENED" then this is an
-    -- anywhere-display map.
+    -- 如果事件不是 "TAXIMAP_OPENED" 那么这就是一张anywhere-display的地图。
     local thiscont = event;
     if event == "TAXIMAP_OPENED" then
-        -- Turn the route map back on
+        -- 重新打开路线图
         TaxiRouteMap:Show();
-        -- Turn the continent select off
+        -- 关闭大陆选择
         FlightMapTaxiContinents:Hide();
-        -- Check option is on
-        if not FlightMap.Opts.fullTaxiMap then return; end
+        -- 检查选项已打开
+        if not FlightMap.Opts.fullTaxiMap then
+            return;
+        end
         thiscont = FlightMapUtil.getContinent();
     end
 
     local map = FlightMapUtil.getFlightMap();
-    
-    -- Reset these...
+
+    -- 重置
     FlightMapTaxiFrame.sourceKey = nil;
     FlightMapTaxiFrame.sourceNode = nil;
 
-    -- So, NumTaxiNodes() returns a value all the time...
+    -- 因此，NumTaxiNodes() 始终返回一个值
     local numNodes = NumTaxiNodes();
     if event ~= "TAXIMAP_OPENED" then
         numNodes = 0;
     end
 
-    -- Build a list of nodes the Blizzard client has dealt with
+    -- 构建暴雪客户端处理过的节点列表
     local shownNodes = {};
     local dontShow = {};
     FlightMapTaxiFrame.Destinations = {};

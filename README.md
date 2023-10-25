@@ -245,6 +245,11 @@ local function p(msg)
     DEFAULT_CHAT_FRAME:AddMessage(msg)
 end
 
+-- 循环遍历数组
+for i = 1, #myArray do
+    print(myArray[i])
+end
+
 ```
 
 ```
