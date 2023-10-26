@@ -214,6 +214,7 @@ SimpleRaidTargetIcons       = 团队标记助手 选其一
 Banana                      = 团队标记助手 选其一
 AutoMessage                 = 自动发送消息
 TWSunders                   = BOSS五层破甲检测助手
+EquipColor                  = 背包不可用物品红色插件
 ```
 
 ### 插件默认不加载
