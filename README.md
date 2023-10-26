@@ -282,3 +282,17 @@ RAID_CLASS_COLORS = {
     ["PALADIN"] = { r = 0.96, g = 0.55, b = 0.73, colorStr = "fff58cba" },
 }
 ```
+
+### URL 链接
+
+```
+    API函数： https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=255618
+    API事件： https://github.com/shagu/wow-vanilla-api/blob/master/events.md
+    界面纹理： https://github.com/doorknob6/vanilla-wow-interface-textures
+    界面浏览器： https://github.com/doorknob6/vanilla-wow-interface-textures
+    工具： https://github.com/mitjafelicijan/wow-tools
+    用户界面宏： https://github.com/Meridaw/Vanilla-Macros/tree/master/User%20Interface
+    Lua定义：https://github.com/refaim/Vanilla-WoW-Lua-Definitions
+    乌龟UI源： https://github.com/refaim/Turtle-WoW-UI-Source
+    颜色转换： https://rgbacolorpicker.com/rgba-to-hex
+```
