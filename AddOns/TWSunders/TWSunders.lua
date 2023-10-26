@@ -29,7 +29,7 @@ TWSunders:SetScript("OnEvent", function()
         -- 目标改变 且 目标存在
         if event == 'PLAYER_TARGET_CHANGED' and UnitExists('target') then
             -- 是敌对 且 是世界boss 且 玩家和目标 都处于战斗状态
-            if (UnitIsEnemy('player', 'target')  and UnitClassification('target') == 'worldboss' or sDev) and UnitAffectingCombat('player') and UnitAffectingCombat('target') then
+            if (UnitIsEnemy('player', 'target') and UnitClassification('target') == 'worldboss' or sDev) and UnitAffectingCombat('player') and UnitAffectingCombat('target') then
                 TWSunderChecker:Hide()
                 if not TWSunders:checkFive() then
                     TWSunderChecker:Show()
@@ -46,7 +46,7 @@ TWSunderChecker:SetScript("OnShow", function()
 end)
 -- OnUpdate 触发
 TWSunderChecker:SetScript("OnUpdate", function()
-    local plus = 0.1 --seconds
+    local plus = 0.1 -- seconds
     local gt = GetTime() * 1000
     local st = (this.startTime + plus) * 1000
     if gt >= st then
