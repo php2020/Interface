@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title:|CFF33AAFF[辅助]|R战斗提示计时器CombatTimer
+## Notes-zhCN:|CFF33AAFFCombatTimer|R|N进入战斗｜N离开战斗｜N战斗时长｜N提示工具
+## X-Repple: 辅助
+## Author: 心情
+## Version: 1.1
+## DefaultState: Enabled
+
+CombatTimer.xml
+CombatTimer.lua
