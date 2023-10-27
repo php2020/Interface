@@ -1,8 +1,9 @@
 ﻿-- Chatbar主框体 --
 local chatFrame = SELECTED_DOCK_FRAME
+local editBox = chatFrame.editBox
 local buttonWidth = 36
 local buttonHeith = 26
-local buttonTemplate  = "UIPanelButtonTemplate" -- 按钮UI,不想要直接改为 nil 
+local buttonTemplate  = "UIPanelButtonTemplate"
 local fontWidthHeight = 25
 local fontSize = 14
 COLORSCHEME_BORDER   = { 0.3,0.3,0.3,1 }
@@ -181,9 +182,20 @@ function ChannelRaid_OnClick()
     ChatFrame_OpenChat("/raid ", chatFrame)
 end
 
--- "World频道 世界5" --
+function Getchannel_name()
+	local localtime, servertime = tonumber(date("%H", time())), tonumber(format("%02d", GetGameTime()))
+	channel_name = "World"
+	-- if abs(localtime - servertime) > 2 then
+	-- 	channel_name = "World"
+	-- else
+	-- 	channel_name = "世界频道"
+	-- end
+	return channel_name
+end
+
+-- "世界5" --
 local ChannelWorld = CreateFrame("Button", "ChannelWorld", UIParent, buttonTemplate)
-ChannelWorld:SetWidth(buttonWidth + 10) 
+ChannelWorld:SetWidth(buttonWidth) 
 ChannelWorld:SetHeight(buttonHeith) 
 ChannelWorld:SetPoint("LEFT",ChannelRaid,"RIGHT", -1, 0) 
 ChannelWorld:RegisterForClicks("LeftButtonUp")
@@ -197,21 +209,21 @@ ChannelWorld:SetScript("OnLeave", function() GameTooltip:Hide() end)
 ChannelWorldText = ChannelWorld:CreateFontString("ChannelWorldText", "OVERLAY")
 ChannelWorldText:SetFont(STANDARD_TEXT_FONT, fontSize, "OUTLINE")
 ChannelWorldText:SetJustifyH("CENTER")
-ChannelWorldText:SetWidth(fontWidthHeight + 15)
+ChannelWorldText:SetWidth(fontWidthHeight)
 ChannelWorldText:SetHeight(fontWidthHeight)
-ChannelWorldText:SetText("World")
+ChannelWorldText:SetText("W")
 ChannelWorldText:SetPoint("CENTER", 0, 0)
 -- ChannelWorldText:SetTextColor(231/255, 178/255, 179/255) 
 ChannelWorldText:SetTextColor(255/255, 209/255, 0)
 
 function ChannelWorld_OnClick()
 	for k, v in pairs({GetChannelList()}) do
-		if not string.find(v, 'World') then
-			JoinChannelByName('World', nil, 1)
+		if not string.find(v, Getchannel_name()) then
+			JoinChannelByName(Getchannel_name(), nil, 1)
 		else
 			for i=0, 10 do
 				local id, name = GetChannelName(i);
-				if name == "World" then
+				if name == Getchannel_name() then
 					ChatFrame_OpenChat("/"..id.." ", chatFrame)
 				end
 			end	
