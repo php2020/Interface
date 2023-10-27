@@ -215,6 +215,8 @@ Banana                      = 团队标记助手 选其一
 AutoMessage                 = 自动发送消息
 TWSunders                   = BOSS五层破甲检测助手
 EquipColor                  = 背包不可用物品红色插件
+PickPocketAvailable         = 盗贼最远距离可偷窃提示插件
+
 ```
 
 ### 插件默认不加载
@@ -291,10 +293,11 @@ RAID_CLASS_COLORS = {
     API函数： https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=255618
     API事件： https://github.com/shagu/wow-vanilla-api/blob/master/events.md
     界面纹理： https://github.com/doorknob6/vanilla-wow-interface-textures
-    界面浏览器： https://github.com/doorknob6/vanilla-wow-interface-textures
+    界面浏览器： https://wow-tools.vercel.app/
     工具： https://github.com/mitjafelicijan/wow-tools
     用户界面宏： https://github.com/Meridaw/Vanilla-Macros/tree/master/User%20Interface
     Lua定义：https://github.com/refaim/Vanilla-WoW-Lua-Definitions
     乌龟UI源： https://github.com/refaim/Turtle-WoW-UI-Source
     颜色转换： https://rgbacolorpicker.com/rgba-to-hex
+    魔兽里声音列表 PlaySound("")：https://wow.tools/files/sounds.php#search=&page=1
 ```

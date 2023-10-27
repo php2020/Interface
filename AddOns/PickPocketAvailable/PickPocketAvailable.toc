@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: [|CFFFFF569盗贼|R] 盗贼最远距离可偷窃提示
+## Notes: 选中目标后，接近目标时，达到最远可偷窃距离时，显示出偷窃技能框，可拖拽
+## Version: 1.0。0
+## Author: xinqing
+
+PickPocketAvailable.lua
