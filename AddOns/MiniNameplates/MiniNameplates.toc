@@ -1,0 +1,11 @@
+## Title: MiniNameplates 姓名板带标记
+## Interface: 11200
+## Version: 1.52-alpha
+## Author: Roadblock
+## X-Credits: Bonho, Snelf, Lulleh
+## Notes: Smaller stylized mouse-disabled nameplates with player class icons, target debuffs, target indicator. Lua-only settings at _settings.lua.
+## SavedVariablesPerCharacter: MiniNameplatesDBPC
+
+MiniNameplates.xml
+
+## X-Turtle-Shell-Version: 1692243426
