@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Frame name="SCCN_Highlight_Form" hidden="true" movable="true" enableMouse="true" enableKeyboard="true">
     <Size>
-      <AbsDimension x="457" y="301" />
+      <AbsDimension x="457" y="334" />
     </Size>
     <Anchors>
       <Anchor point="CENTER" relativeTo="UIParent">
@@ -144,7 +144,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="380" y="-250" />
+              <AbsDimension x="380" y="-284" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -153,6 +153,8 @@
 				SCCN_Highlight_Text[1] = getglobal("SCCN_highlightBOX1"):GetText();
 				SCCN_Highlight_Text[2] = getglobal("SCCN_highlightBOX2"):GetText();
 				SCCN_Highlight_Text[3] = getglobal("SCCN_highlightBOX3"):GetText();
+        SCCN_Highlight_Text[4] = getglobal("SCCN_highlightBOX4"):GetText();
+        SCCN_Highlight_Text[5] = getglobal("SCCN_highlightBOX5"):GetText();
 				SCCN_Highlight_Form:Hide();
 				SCCNConfigForm:Show();
 			</OnClick>
@@ -166,6 +168,118 @@
           <Anchor point="TOPLEFT">
             <Offset>
               <AbsDimension x="45" y="-103" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="BACKGROUND">
+            <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+              <Size>
+                <AbsDimension x="8" y="20" />
+              </Size>
+              <Anchors>
+                <Anchor point="LEFT" />
+              </Anchors>
+              <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+            </Texture>
+            <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+              <Size>
+                <AbsDimension x="8" y="20" />
+              </Size>
+              <Anchors>
+                <Anchor point="RIGHT" />
+              </Anchors>
+              <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+            </Texture>
+            <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+              <Size>
+                <AbsDimension x="10" y="20" />
+              </Size>
+              <Anchors>
+                <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+              </Anchors>
+              <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+            </Texture>
+          </Layer>
+        </Layers>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+      </EditBox>
+      <EditBox name="SCCN_highlightBOX4" enableMouse="true">
+        <Size>
+          <AbsDimension x="392" y="19" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="45" y="-126" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="BACKGROUND">
+            <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+              <Size>
+                <AbsDimension x="8" y="20" />
+              </Size>
+              <Anchors>
+                <Anchor point="LEFT" />
+              </Anchors>
+              <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+            </Texture>
+            <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+              <Size>
+                <AbsDimension x="8" y="20" />
+              </Size>
+              <Anchors>
+                <Anchor point="RIGHT" />
+              </Anchors>
+              <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+            </Texture>
+            <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+              <Size>
+                <AbsDimension x="10" y="20" />
+              </Size>
+              <Anchors>
+                <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+              </Anchors>
+              <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+            </Texture>
+          </Layer>
+        </Layers>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+      </EditBox>
+      <EditBox name="SCCN_highlightBOX5" enableMouse="true">
+        <Size>
+          <AbsDimension x="392" y="19" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="45" y="-147" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -314,11 +428,55 @@
           </Layer>
         </Layers>
       </Frame>
+      <Frame name="$parentComponent3">
+        <Size>
+          <AbsDimension x="21" y="18" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="18" y="-126" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" inherits="GameFontNormal" text="4.">
+              <Anchors>
+                <Anchor point="TOPLEFT" />
+                <Anchor point="BOTTOMRIGHT" />
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+      <Frame name="$parentComponent4">
+        <Size>
+          <AbsDimension x="21" y="18" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="18" y="-147" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" inherits="GameFontNormal" text="5.">
+              <Anchors>
+                <Anchor point="TOPLEFT" />
+                <Anchor point="BOTTOMRIGHT" />
+              </Anchors>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
       <CheckButton name="SCCN_CONF_CHK100" inherits="OptionsCheckButtonTemplate">
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-147" />
+              <AbsDimension x="19" y="-183" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -354,7 +512,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-181" />
+              <AbsDimension x="19" y="-215" />  
             </Offset>
           </Anchor>
         </Anchors>
@@ -390,7 +548,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-215" />
+              <AbsDimension x="19" y="-249" />
             </Offset>
           </Anchor>
         </Anchors>
@@ -426,7 +584,7 @@
         <Anchors>
           <Anchor point="TOPLEFT">
             <Offset>
-              <AbsDimension x="19" y="-249" />
+              <AbsDimension x="19" y="-283" />
             </Offset>
           </Anchor>
         </Anchors>

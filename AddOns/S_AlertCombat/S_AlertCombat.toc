@@ -1,0 +1,10 @@
+## Interface:11200
+## Title: S_AlertCombat
+## Notes: alert combat state tips
+## Title-zhCN:|CFF33AAFF[辅助]|R战斗状态提示
+## Notes-zhCN:|CFF33AAFFS_AlertCombat|R更显眼的战斗状态提示。
+## X-Repple: 辅助
+## Author: 1.12 modify by 狗血编剧男
+S_AlertCombat.lua
+
+## X-Turtle-Shell-Version: 1693510853

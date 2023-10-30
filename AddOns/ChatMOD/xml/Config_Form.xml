@@ -86,6 +86,8 @@
 				if SCCN_Highlight_Text[1] ~= nil then getglobal( "SCCN_highlightBOX1" ):SetText(SCCN_Highlight_Text[1]); end
 				if SCCN_Highlight_Text[2] ~= nil then getglobal( "SCCN_highlightBOX2" ):SetText(SCCN_Highlight_Text[2]); end
 				if SCCN_Highlight_Text[3] ~= nil then getglobal( "SCCN_highlightBOX3" ):SetText(SCCN_Highlight_Text[3]); end
+        if SCCN_Highlight_Text[4] ~= nil then getglobal( "SCCN_highlightBOX4" ):SetText(SCCN_Highlight_Text[4]); end
+        if SCCN_Highlight_Text[5] ~= nil then getglobal( "SCCN_highlightBOX5" ):SetText(SCCN_Highlight_Text[5]); end
 				SCCN_Highlight_Form:Show();
 			</OnClick>
         </Scripts>

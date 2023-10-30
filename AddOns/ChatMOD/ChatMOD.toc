@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: ChatMOD |cff00ffff1.1
 ## Notes: General Purpose full featured Chat Enhancement Collection
-## Title:|CFF33AAFF[辅助]|R聊天辅助Chatmod
+## Title-zhCN:|CFF33AAFF[辅助]|R聊天辅助
 ## Notes-zhCN:|CFF33AAFFChatMOD|R|N聊天窗口以及某些功能的增强。|N命令：/chatmod
 ## X-Repple: 辅助
 ## Author: Marco 'solariz' Goetze, 1.12 modify by 狗血编剧男
