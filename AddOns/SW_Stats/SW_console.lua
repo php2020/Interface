@@ -42,8 +42,8 @@ function SW_SlashCommand(msg)
 end
 function SW_ResetAllWindows()
 	SW_BarFrame1:SetPoint("TOPLEFT",UIParent, "CENTER", -50, 50); 
-	SW_BarFrame1:SetWidth(200);
-	SW_BarFrame1:SetHeight(300);
+	SW_BarFrame1:SetWidth(250);
+	SW_BarFrame1:SetHeight(350);
 	SW_BarFrame1:Show();
 	SW_BarsLayout("SW_BarFrame1");
 	

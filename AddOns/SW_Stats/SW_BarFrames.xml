@@ -2134,6 +2134,13 @@
 								</Offset>
 							</Anchor>
 						</Anchors>
+						<Texture name="$parent_Texture" file="Interface\AddOns\SW_Stats\images\titleBar">
+							<Color r="1" g="0" b="0" a="1" />
+							<Anchors>
+								<Anchor point="TOPLEFT" />
+								<Anchor point="BOTTOMRIGHT" />
+							</Anchors>
+						</Texture>
 						<Scripts>
 							<OnShow>
 								this.TargetColor = this:GetParent().caller;
@@ -2185,7 +2192,7 @@
 							</Anchor>
 						</Anchors>
 						<Scripts>
-							<OnLoad>SW_InitSlider(this, 14, 17, "BFS");</OnLoad>
+							<OnLoad>SW_InitSlider(this, 8, 17, "BFS");</OnLoad>
 						</Scripts>
 					</Slider>
 					<Frame name="SW_SetFrameTxtFrame" inherits="SW_Frame_EditTxt">

@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
 	<StatusBar name="SW_BarTemplate" virtual="true" hidden="true">
-		<BarTexture name="$parent_Texture" file="Interface\AddOns\SW_Stats\images\b3" />
+		<BarTexture name="$parent_Texture" file="Interface\AddOns\SW_Stats\images\titleBar" />
 		<Size>
 			<AbsDimension x="128" y="10" />
 		</Size>
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="$parent_Text" inherits="GameFontNormalSmall" justifyH="LEFT" />
+				<FontString name="$parent_Text"  inherits="GameFontNormalSmall"  justifyH="LEFT" />
 				<FontString name="$parent_TextVal" inherits="GameFontNormalSmall" justifyH="RIGHT" />
 			</Layer>
 		</Layers>
