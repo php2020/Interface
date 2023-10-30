@@ -215,7 +215,6 @@ Banana                      = 团队标记助手 选其一
 AutoMessage                 = 自动发送消息
 TWSunders                   = BOSS五层破甲检测助手
 EquipColor                  = 背包不可用物品红色插件
-PickPocketAvailable         = 盗贼最远距离可偷窃提示插件
 
 ```
 
@@ -299,5 +298,50 @@ RAID_CLASS_COLORS = {
     Lua定义：https://github.com/refaim/Vanilla-WoW-Lua-Definitions
     乌龟UI源： https://github.com/refaim/Turtle-WoW-UI-Source
     颜色转换： https://rgbacolorpicker.com/rgba-to-hex
+    色轮选择器：https://rgbacolorpicker.com/color-wheel-picker
     魔兽里声音列表 PlaySound("")：https://wow.tools/files/sounds.php#search=&page=1
+```
+
+### 内置函数的说明
+
+```
+## 是否可攻击目标
+UnitCanAttack("player","target")
+
+## 测试某个操作是否在使用范围内。 参数 动作槽
+inRange = IsActionInRange(actionSlot);
+
+在范围内 inRange
+标志Flag - 如果动作槽没有动作或者没有当前目标，则为零。如果操作超出范围，则为 0；如果操作在范围内，则为 1。请注意，如果范围不适用于此操作或者您无法对目标使用该法术，则它始终返回 1。
+
+
+
+
+
+```
+
+### 事件
+
+PLAYER_TARGET_CHANGED 目标发送改变时
+ACTIONBAR_SLOT_CHANGED 当任何操作栏插槽的内容发生更改时触发；通常是按钮的拾取和放下。
+PLAYER_ENTERING_WORLD 玩家登录、/重新加载 UI 或地图实例之间的区域时触发。基本上每当加载屏幕出现时。
+CHARACTER_POINTS_CHANGED 当玩家的可用天赋点发生变化时触发。
+
+## xml UI
+
+```
+## 窗体可拖拽，可以加锁定判断
+<Scripts>
+    <OnMouseDown>
+        if( arg1 == "LeftButton" and LOCK==0 ) then
+            this:StartMoving(); ## 开始移动
+            ## Frame:StartSizing() ## 调整大小
+        end
+    </OnMouseDown>
+    <OnMouseUp>
+        if( arg1 == "LeftButton" ) then
+            this:StopMovingOrSizing(); ## 停止移动或调整大小
+        end
+    </OnMouseUp>
+</Scripts>
 ```

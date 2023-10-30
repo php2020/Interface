@@ -2,12 +2,8 @@
 
 	<!-- Default Localization -->
 	<Script file="localization.lua"/>
-
 	<!-- Secondary Localizations -->
 	<Script file="localization.cn.lua"/>
-	<Script file="localization.de.lua"/>
-	<Script file="localization.fr.lua"/>
-
 	<!-- Scripts -->
 	<Script file="ImprovedErrorFrame.lua"/>
 

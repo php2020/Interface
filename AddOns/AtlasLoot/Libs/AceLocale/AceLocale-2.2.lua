@@ -7,7 +7,7 @@ Website: http://www.wowace.com/
 Documentation: http://www.wowace.com/index.php/AceLocale-2.2
 SVN: http://svn.wowace.com/root/trunk/Ace2/AceLocale-2.2
 Description: Localization library for addons to use to handle proper
-             localization and internationalization.
+			 localization and internationalization.
 Dependencies: AceLibrary
 ]]
 
@@ -401,7 +401,7 @@ function AceLocale.prototype:Debug()
 		else
 			DEFAULT_CHAT_FRAME:AddMessage(string.format("Locale %q missing:", locale))
 			for word in pairs(t) do
-				DEFAULT_CHAT_FRAME:AddMessage(string.format("    %q", word))
+				DEFAULT_CHAT_FRAME:AddMessage(string.format("	%q", word))
 			end
 		end
 	end

@@ -95,17 +95,17 @@ function AtlasLoot:Search(Text)
 end
 
 function AtlasLoot:ShowSearchOptions(button)
-	local dewdrop = AceLibrary("Dewdrop-2.0");
-	if dewdrop:IsOpen(button) then
-		dewdrop:Close(1);
+	local Hewdrop = AceLibrary("Hewdrop-2.0");
+	if Hewdrop:IsOpen(button) then
+		Hewdrop:Close(1);
 	else
 		local setOptions = function()
-			dewdrop:AddLine(
+			Hewdrop:AddLine(
 				"text", AL["Search options"],
 				"isTitle", true,
 				"notCheckable", true
 			);
-			dewdrop:AddLine(
+			Hewdrop:AddLine(
 				"text", AL["Partial matching"],
 				"checked", AtlasLootCharDB.PartialMatching,
 				"tooltipTitle", AL["Partial matching"],
@@ -113,7 +113,7 @@ function AtlasLoot:ShowSearchOptions(button)
 				"func", function() AtlasLootCharDB.PartialMatching = not AtlasLootCharDB.PartialMatching end
 			);
 		end;
-		dewdrop:Open(button,
+		Hewdrop:Open(button,
 			'point', function(parent)
 				return "BOTTOMLEFT", "BOTTOMRIGHT";
 			end,

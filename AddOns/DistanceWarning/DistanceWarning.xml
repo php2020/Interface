@@ -50,16 +50,16 @@
 			</Layer>
 		</Layers>
 		<Scripts>
- 			<OnMouseDown>
- 				if( arg1 == "LeftButton" and DW_LOCK==0 ) then
- 					this:StartMoving();
- 				end
- 			</OnMouseDown>
- 			<OnMouseUp>
- 				if( arg1 == "LeftButton" ) then
- 					this:StopMovingOrSizing();
- 				end
- 			</OnMouseUp>
+			<OnMouseDown>
+				if( arg1 == "LeftButton" and DW_LOCK==0 ) then
+					this:StartMoving();
+				end
+			</OnMouseDown>
+			<OnMouseUp>
+				if( arg1 == "LeftButton" ) then
+					this:StopMovingOrSizing();
+				end
+			</OnMouseUp>
 		</Scripts>
 	</Frame>
 	<GameTooltip name="DWSpelltip" inherits="GameTooltipTemplate"/>
