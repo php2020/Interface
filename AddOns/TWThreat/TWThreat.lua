@@ -27,7 +27,7 @@ TWT.tankModeApi = 'TMTv1=';
 TWT.UDTS = 'TWT_UDTSv4';
 
 TWT.showedUpdateNotification = false
-TWT.addonName = '|cffabd473TW|cff11cc11 |cffcdfe00Threatmeter'
+TWT.addonName = '仇恨统计'
 
 TWT.prefix = 'TWT'
 TWT.channel = 'RAID'
@@ -85,13 +85,13 @@ TWT.classColors = {
 
 TWT.classCoords = {["priest"] = {0.52, 0.73, 0.27, 0.48}, ["mage"] = {0.23, 0.48, 0.02, 0.23}, ["warlock"] = {0.77, 0.98, 0.27, 0.48}, ["rogue"] = {0.48, 0.73, 0.02, 0.23}, ["druid"] = {0.77, 0.98, 0.02, 0.23}, ["hunter"] = {0.02, 0.23, 0.27, 0.48}, ["shaman"] = {0.27, 0.48, 0.27, 0.48}, ["warrior"] = {0.02, 0.23, 0.02, 0.23}, ["paladin"] = {0.02, 0.23, 0.52, 0.73}}
 
-TWT.fonts = {'Roboto'}
+TWT.fonts = {'BalooBhaina', 'BigNoodleTitling', 'Expressway', 'Homespun', 'Hooge', 'LondrinaSolid', 'Myriad-Pro', 'PT-Sans-Narrow-Bold', 'PT-Sans-Narrow-Regular', 'Roboto', 'Share', 'ShareBold', 'Sniglet', 'SquadaOne'}
 
 TWT.updateSpeeds = {['warrior'] = {0.7, 0.5, 0.5}, ['paladin'] = {1, 0.5, 0.7}, ['hunter'] = {0.7, 0.7, 0.7}, ['rogue'] = {0.5, 0.5, 0.5}, ['priest'] = {1, 1, 0.6}, ['shaman'] = {0.7, 0.5, 1}, ['mage'] = {1, 0.5, 0.7}, ['warlock'] = {0.8, 1, 0.6}, ['druid'] = {0.8, 0.5, 1}}
 
 function twtprint(a)
     if a == nil then
-        DEFAULT_CHAT_FRAME:AddMessage('[TWT]|cff0070de:' .. GetTime() .. '|cffffffff attempt to print a nil value.')
+        DEFAULT_CHAT_FRAME:AddMessage('[TWT]|cff0070de:' .. GetTime() .. '|cffffffff 该值是 nil 值')
         return false
     end
     DEFAULT_CHAT_FRAME:AddMessage(TWT.classColors[TWT.class].c .. "[TWT] |cffffffff" .. a)
@@ -103,7 +103,7 @@ function twtdebug(a)
         return false
     end
     if a == nil then
-        twtprint('|cff0070de[TWTDEBUG:' .. time .. ']|cffffffff attempt to print a nil value.')
+        twtprint('|cff0070de[TWTDEBUG:' .. time .. ']|cffffffff 该值是 nil 值')
         return
     end
     if type(a) == 'boolean' then
@@ -114,7 +114,7 @@ function twtdebug(a)
         end
         return true
     end
-    twtprint('|cff0070de[D:' .. time .. ']|cffffffff[' .. a .. ']')
+    twtprint('|cff0070de[TWTDEBUG:' .. time .. ']|cffffffff[' .. a .. ']')
 end
 
 SLASH_TWT1 = "/twt"
@@ -127,34 +127,34 @@ SlashCmdList["TWT"] = function(cmd)
         end
         if __substr(cmd, 1, 8) == 'tankmode' then
             if TWT_CONFIG.tankMode then
-                twtprint('Tank Mode is already enabled.')
+                twtprint('Tank 模式已经开启了')
                 return false
             else
                 TWT_CONFIG.tankMode = true
-                twtprint('Tank Mode enabled.')
+                twtprint('Tank 模式开启')
             end
             return true
         end
         if __substr(cmd, 1, 6) == 'skeram' then
             if TWT_CONFIG.skeram then
                 TWT_CONFIG.skeram = false
-                twtprint('Skeram module disabled.')
+                twtprint('Skeram 模式已经开启了')
                 return true
             end
             TWT_CONFIG.skeram = true
-            twtprint('Skeram module enabled.')
+            twtprint('Skeram 模式开启')
             return true
         end
         if __substr(cmd, 1, 5) == 'debug' then
             if TWT_CONFIG.debug then
                 TWT_CONFIG.debug = false
                 _G['pps']:Hide()
-                twtprint('Debugging disabled')
+                twtprint('Debug 模式开启')
                 return true
             end
             TWT_CONFIG.debug = true
             _G['pps']:Show()
-            twtdebug('Debugging enabled')
+            twtdebug('Debug 模式开启')
             return true
         end
 
@@ -181,11 +181,11 @@ SlashCmdList["TWTDEBUG"] = function(cmd)
     if cmd then
         if TWT_CONFIG.debug then
             TWT_CONFIG.debug = false
-            twtprint('Debugging disabled')
+            twtprint('Debug 关闭')
             return true
         end
         TWT_CONFIG.debug = true
-        twtdebug('Debugging enabled')
+        twtdebug('Debug 开启')
         return true
     end
 end
@@ -244,8 +244,8 @@ TWT:SetScript("OnEvent", function()
                 if not TWT.showedUpdateNotification then
                     local verEx = __explode(arg2, ':')
                     if TWT.version(verEx[2]) > TWT.version(TWT.addonVer) then
-                        twtprint('New version available ' .. TWT.classColors[TWT.class].c .. 'v' .. verEx[2] .. ' |cffffffff(current version ' .. TWT.classColors['paladin'].c .. 'v' .. TWT.addonVer .. '|cffffffff)')
-                        twtprint('Update at ' .. TWT.classColors[TWT.class].c .. 'https://github.com/CosminPOP/TWThreat')
+                        twtprint('新版本可用 ' .. TWT.classColors[TWT.class].c .. 'v' .. verEx[2] .. ' |cffffffff(当前版本 ' .. TWT.classColors['paladin'].c .. 'v' .. TWT.addonVer .. '|cffffffff)')
+                        twtprint('GitHub: ' .. TWT.classColors[TWT.class].c .. 'https://github.com/CosminPOP/TWThreat')
                         TWT.showedUpdateNotification = true
                     end
                 end
@@ -329,7 +329,7 @@ function TWT.queryWho()
             end
         end
     end
-    twtprint('Sending who query...')
+    twtprint('加载中...')
     _G['TWTWithAddonList']:Show()
     TWT.send('TWT_WHO')
 end
@@ -563,7 +563,7 @@ function TWT.init()
 
     TWT.checkTargetFrames()
 
-    twtprint(TWT.addonName .. ' |cffabd473v' .. TWT.addonVer .. '|cffffffff loaded.')
+    twtprint(TWT.addonName .. ' |cffabd473v' .. TWT.addonVer .. '|cffffffff 已加载.')
     return true
 end
 
@@ -597,7 +597,7 @@ function TWTHealerMasterTarget_OnClick()
     if not UnitExists('target') or not UnitIsPlayer('target') or UnitName('target') == TWT.name then
 
         if TWT.healerMasterTarget == '' then
-            twtprint('Please target a tank.')
+            twtprint('请选中一个 tank ')
         else
             TWT.removeHealerMasterTarget()
         end
@@ -613,7 +613,7 @@ function TWTHealerMasterTarget_OnClick()
 
     local color = TWT.classColors[TWT.getClass(UnitName('target'))]
 
-    twtprint('Trying to set Healer Master Target to ' .. color.c .. UnitName('target'))
+    twtprint('尝试将主治疗目标设置为 ' .. color.c .. UnitName('target'))
 
 end
 
@@ -2119,7 +2119,7 @@ end
 
 function TWT.updateTitleBarText(text)
     if not text then
-        _G['TWTMainTitle']:SetText(TWT.addonName .. ' |cffabd473v' .. TWT.addonVer)
+        _G['TWTMainTitle']:SetText(TWT.addonName)
         return true
     end
     _G['TWTMainTitle']:SetText(text)

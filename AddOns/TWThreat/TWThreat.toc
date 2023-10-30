@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Title: [团队]|cffabd473TWT仇恨统计|cff58ff00v1.2.3
+## Title: |cffabd473TW Threatmeter 仇恨统计|cff58ff00v1.2.3
 ## Author: Xerron/Er
 ## Version: 1.2.3
 ## Notes: Turtle WoW's own Threatmeter !

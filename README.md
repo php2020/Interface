@@ -299,6 +299,7 @@ RAID_CLASS_COLORS = {
     Lua定义：https://github.com/refaim/Vanilla-WoW-Lua-Definitions
     乌龟UI源： https://github.com/refaim/Turtle-WoW-UI-Source
     颜色转换： https://rgbacolorpicker.com/rgba-to-hex
+    色轮选择器：https://rgbacolorpicker.com/color-wheel-picker
     魔兽里声音列表 PlaySound("")：https://wow.tools/files/sounds.php#search=&page=1
 ```
 
