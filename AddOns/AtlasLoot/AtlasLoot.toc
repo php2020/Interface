@@ -2,12 +2,12 @@
 ## Title: AtlasLoot TW Edition
 ## Title-zhCN: AtlasLootp[装备掉落查询]
 ## Notes: Shows the possible loot from the bosses
-## Notes-zhCN: 副本、野外、PVP、制造等装备来源查询 MrBCat汉化版
+## Notes-zhCN: 副本、野外、PVP、制造等装备来源查询
 ## Author: Daviesh, Pompa (Turtle WoW World Bosses), Xerron (Turtle WoW World Bosses), Gurky (Turtle WoW 1.16/1.16.1 Dungeons), |cffbe5effLexie|r
-## Version: 1.0.9
+## Version: 1.1.0
 ## SavedVariables: AtlasLoot_updateavailable
 ## SavedVariablesPerCharacter: AtlasLootCharDB
-## OptionalDeps: Alphamap, AtlasLoader, LootLink, ItemSync, DewdropLib, Ace2, EquipCompare, EQCompare
+## OptionalDeps: Alphamap, AtlasLoader, LootLink, ItemSync, HewdropLib, Ace2, EquipCompare, EQCompare
 
 Libs\AceLibrary\AceLibrary.lua
 Libs\AceOO\AceOO-2.0.lua
@@ -15,7 +15,7 @@ Libs\AceEvent\AceEvent-2.0.lua
 Libs\AceDB\AceDB-2.0.lua
 Libs\AceLocale\AceLocale-2.2.lua
 Libs\AceAddon\AceAddon-2.0.lua
-Libs\Dewdrop\Dewdrop-2.0.lua
+Libs\Hewdrop\Hewdrop-2.0.lua
 
 Locale\Locale.xml
 # Bossnames\BossNames.xml

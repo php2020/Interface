@@ -3,6 +3,7 @@
 	<Script file="loottables.de.lua"/>
 	<Script file="loottables.fr.lua"/>
 	<Script file="loottables.tw.lua"/>
+	<Script file="loottables.cn.lua"/>
 	<Script file="loottables.kr.lua"/>
 	<Script file="loottables.es.lua"/>
 </Ui>

@@ -129,43 +129,43 @@ function AtlasLootRepMenu()
 	AtlasLootMenuItem_14_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");
 	AtlasLootMenuItem_14.lootpage="Ironforge";
 	AtlasLootMenuItem_14:Show();
-    	--Darnassus
+		--Darnassus
 	AtlasLootMenuItem_15_Name:SetText(AL["Darnassus"]);
 	AtlasLootMenuItem_15_Extra:SetText("|cff2773ff"..AL["Alliance"]);
 	AtlasLootMenuItem_15_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");
 	AtlasLootMenuItem_15.lootpage="Darnassus";
 	AtlasLootMenuItem_15:Show();
-    	--Stormwind
+		--Stormwind
 	-- AtlasLootMenuItem_16_Name:SetText(AL["Stormwind"]);
 	-- AtlasLootMenuItem_16_Extra:SetText("|cff2773ff"..AL["Alliance"]);
 	-- AtlasLootMenuItem_16_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");
 	-- AtlasLootMenuItem_16.lootpage="Stormwind";
 	-- AtlasLootMenuItem_16:Show();
-    	--Gnomeregan Exiles
+		--Gnomeregan Exiles
 	-- AtlasLootMenuItem_17_Name:SetText(AL["Gnomeregan Exiles"]);
 	-- AtlasLootMenuItem_17_Extra:SetText("|cff2773ff"..AL["Alliance"]);
 	-- AtlasLootMenuItem_17_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");
 	-- AtlasLootMenuItem_17.lootpage="GnomereganExiles";
 	-- AtlasLootMenuItem_17:Show();
-    	--Durotar Labor Union
+		--Durotar Labor Union
 	-- AtlasLootMenuItem_18_Name:SetText(AL["Durotar Labor Union"]);
 	-- AtlasLootMenuItem_18_Extra:SetText("|cff2773ff"..AL["Horde"]);
 	-- AtlasLootMenuItem_18_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");
 	-- AtlasLootMenuItem_18.lootpage="DurotarLaborUnion";
 	-- AtlasLootMenuItem_18:Show();
-    	--Undercity
+		--Undercity
 	-- AtlasLootMenuItem_19_Name:SetText(AL["Undercity"]);
 	-- AtlasLootMenuItem_19_Extra:SetText("|cff2773ff"..AL["Horde"]);
 	-- AtlasLootMenuItem_19_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");
 	-- AtlasLootMenuItem_19.lootpage="Undercity";
 	-- AtlasLootMenuItem_19:Show();
-    	--Orgrimmar
+		--Orgrimmar
 	-- AtlasLootMenuItem_20_Name:SetText(AL["Orgrimmar"]);
 	-- AtlasLootMenuItem_20_Extra:SetText("|cff2773ff"..AL["Horde"]);
 	-- AtlasLootMenuItem_20_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");
 	-- AtlasLootMenuItem_20.lootpage="Orgrimmar";
 	-- AtlasLootMenuItem_20:Show();
-    	--Thunder Bluff
+		--Thunder Bluff
 	-- AtlasLootMenuItem_21_Name:SetText(AL["Thunder Bluff"]);
 	-- AtlasLootMenuItem_21_Extra:SetText("|cff2773ff"..AL["Horde"]);
 	-- AtlasLootMenuItem_21_Icon:SetTexture("Interface\\Icons\\INV_Staff_13");

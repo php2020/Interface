@@ -114,10 +114,10 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if AtlasLoot_Dewdrop:IsOpen() then
-							AtlasLoot_Dewdrop:Close();
+						if AtlasLoot_Hewdrop:IsOpen() then
+							AtlasLoot_Hewdrop:Close();
 						else
-							AtlasLoot_Dewdrop:Open(this);
+							AtlasLoot_Hewdrop:Open(this);
 						end
 					</OnClick>
 					<OnShow>
@@ -140,10 +140,10 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if AtlasLoot_DewdropSubMenu:IsOpen() then
-							AtlasLoot_DewdropSubMenu:Close();
+						if AtlasLoot_HewdropSubMenu:IsOpen() then
+							AtlasLoot_HewdropSubMenu:Close();
 						else
-							AtlasLoot_DewdropSubMenu:Open(this);
+							AtlasLoot_HewdropSubMenu:Open(this);
 						end
 					</OnClick>
 					<OnShow>
@@ -554,7 +554,7 @@
 				this:SetMovable(1);
 				this:SetBackdropColor(0.75, 0, 0.75);
 				local AL = AceLibrary("AceLocale-2.2"):new("AtlasLoot");
-				getglobal("AtlasLootDefaultFrame_Notice"):SetText(AL["If you find anything missing, please /w Lexie or message me on Discord Lexie#4024"]);
+				getglobal("AtlasLootDefaultFrame_Notice"):SetText(AL["NoticeFrame"]);
 			</OnLoad>
 			<OnShow>
 				AtlasLootDefaultFrame_OnShow();

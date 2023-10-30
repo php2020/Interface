@@ -155,7 +155,7 @@ end
 
 --[[
 local RecursiveSearchZoneName(dataTable, zoneID):
-A recursive function iterate AtlasLoot_DewDropDown table for the zone name
+A recursive function iterate AtlasLoot_HewdropDown table for the zone name
 ]]
 local function RecursiveSearchZoneName(dataTable, zoneID)
 	if(dataTable[2] == zoneID) then
@@ -174,9 +174,9 @@ AtlasLoot_GetWishListSubheading(dataID):
 Iterating through dropdown data tables to search backward for zone name with specified dataID
 ]]
 function AtlasLoot_GetWishListSubheading(dataID)
-	if not AtlasLoot_DewDropDown or not AtlasLoot_DewDropDown_SubTables then return end
+	if not AtlasLoot_HewdropDown or not AtlasLoot_HewdropDown_SubTables then return end
 	local zoneID;
-	for subKey, subTable in pairs(AtlasLoot_DewDropDown_SubTables) do
+	for subKey, subTable in pairs(AtlasLoot_HewdropDown_SubTables) do
 		for _, t in ipairs(subTable) do
 			if t[2] == dataID then
 				zoneID = subKey;
@@ -185,7 +185,7 @@ function AtlasLoot_GetWishListSubheading(dataID)
 		end
 		if zoneID then break end
 	end
-	return RecursiveSearchZoneName(AtlasLoot_DewDropDown, zoneID or dataID);
+	return RecursiveSearchZoneName(AtlasLoot_HewdropDown, zoneID or dataID);
 end
 
 function AtlasLoot_GetWishListSubheadingBoss(dataID)
@@ -248,7 +248,7 @@ function AtlasLoot_CategorizeWishList(wlTable)
 			table.insert(categories[subheadings[dataID]], v);
 		end
 	end
-
+	
 	-- Sort and flatten categories
 	for k, v in pairs(categories) do
 		-- Add a empty line between categories when in a same column
@@ -256,6 +256,13 @@ function AtlasLoot_CategorizeWishList(wlTable)
 		-- If a subheading is on the last row of a column, push it to next column
 		if ((table.getn(result) + 1) - math.floor((table.getn(result) + 1)/15)*15) == 0 then table.insert(result, { 0, "", "", "" }) end
 		-- Subheading
+		
+		--[[ some debug code that I've used to fix WishList errors before due to people adding drops to AtlasLoot incorrectly.
+		local box = k or "Unknown"
+		local cat = categories[k][1][5] or "Unknown"
+		print("box: "..box.." - cat: "..cat)
+		table.insert(result, { 0, "INV_Box_01", "=q6="..box, "=q0="..GetLootTableParent(strsplit("|", cat)) });]]--
+		
 		table.insert(result, { 0, "INV_Box_01", "=q6="..k, "=q0="..GetLootTableParent(strsplit("|", categories[k][1][5])) });
 		-- Sort first then add items
 		table.sort(v, AtlasLoot_WishListSortCheck); -- not works?
