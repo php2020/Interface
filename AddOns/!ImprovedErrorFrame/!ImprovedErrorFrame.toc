@@ -8,4 +8,4 @@
 ..\..\FrameXML\ClassTrainerFrameTemplates.xml
 ImprovedErrorFrame.xml
 
-## X-Turtle-Shell-Version: 1692243374
+## X-Turtle-Shell-Version: 1693510853
