@@ -128,24 +128,24 @@ IEF_MSG_VIEWED   = 2; -- Message was viewed by user
 IEF_LINE_LENGTH   = 40; -- Length of lines in the IEF frame.
 
 ImprovedErrorSettings = {
-	-- Show error when it occurs
-	displayOnError = false;
-	-- To Blink or not to Blink
+		-- 当错误发生时显示错误
+	displayOnError = true;
+	-- 是否闪烁通知
 	blinkNotification = true;
-	-- Display count of errors
+	-- 显示错误计数
 	displayCount = true;
-	-- Display even when no errors pending
-	alwaysShow = false;
-	-- Prevent sound from playing when error occurs
+	-- 即使没有挂起的错误也显示
+	alwaysShow = true;
+	-- 防止错误发生时播放声音
 	gagNoise = false;
-	-- Empty out the icon when blinking (allows numbers to be seen easier)
+	-- 在闪烁时清空图标（使数字更容易看到）
 	emptyButton = false;
-	-- Verbose XML errror logging
-	XMLDebug = false;
-	-- Capture Sea debug prints
-	debugCapture = false;
-	-- Capture stack trace
-	stackTraceCapture = false;
+	-- 详细的 XML 错误日志记录
+	XMLDebug = true;
+	-- 捕获 Sea 调试信息
+	debugCapture = true;
+	-- 捕获堆栈跟踪
+	stackTraceCapture = true;
 };
 
 ImprovedErrorFrame = {
@@ -1146,7 +1146,7 @@ IEF_TEST_FLAG2 = false;
 			ImprovedErrorFrame.errorButtonActive = true;
 			if (not ImprovedErrorSettings.gagNoise) then
 				PlaySoundFile("Interface\\AddOns\\!ImprovedErrorFrame\\Sound\\ErrorSound.mp3");
-	 		end
+			end
 			if (ImprovedErrorSettings.alwaysShow) then
 				IEFMinimapButton:Enable();
 			else
