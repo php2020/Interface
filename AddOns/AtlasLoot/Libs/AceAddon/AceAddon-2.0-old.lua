@@ -1,6 +1,6 @@
 --[[
 Name: AceAddon-2.0
-Revision: $Rev: 14832 $
+Revision: $Rev: 14196 $
 Developed by: The Ace Development Team (http://www.wowace.com/index.php/The_Ace_Development_Team)
 Inspired By: Ace 1.x by Turan (turan@gryphon.com)
 Website: http://www.wowace.com/
@@ -11,8 +11,8 @@ Dependencies: AceLibrary, AceOO-2.0, AceEvent-2.0, (optional) AceConsole-2.0
 ]]
 
 local MAJOR_VERSION = "AceAddon-2.0"
-local MINOR_VERSION = "$Revision: 14832 $"
-AtlasLootResultPage= true
+local MINOR_VERSION = "$Revision: 14196 $"
+
 -- This ensures the code is only executed if the libary doesn't already exist, or is a newer version
 if not AceLibrary then error(MAJOR_VERSION .. " requires AceLibrary.") end
 if not AceLibrary:IsNewVersion(MAJOR_VERSION, MINOR_VERSION) then return end
@@ -44,7 +44,7 @@ if GetLocale() == "deDE" then
 		["Buffs"] = "Buffs",
 		["Chat/Communication"] = "Chat/Kommunikation",
 		["Druid"] = "Druide",
-		["Hunter"] = "J�ger",
+		["Hunter"] = "J�ger",
 		["Mage"] = "Magier",
 		["Paladin"] = "Paladin",
 		["Priest"] = "Priester",
@@ -173,108 +173,6 @@ elseif GetLocale() == "koKR" then
 		["Raid"] = "공격대",
 		["Tradeskill"] = "전문기술",
 		["UnitFrame"] = "유닛 프레임",
-	}
-elseif GetLocale() == "zhTW" then
-	STANDBY = "|cffff5050(待命)|r"
-	
-	TITLE = "標題"
-	NOTES = "註記"
-	VERSION = "版本"
-	AUTHOR = "作者"
-	DATE = "日期"
-	CATEGORY = "類別"
-	EMAIL = "E-mail"
-	WEBSITE = "網站"
-	
-	ABOUT = "關於"
-	PRINT_ADDON_INFO = "顯示插件資訊"
-	
-	CATEGORIES = {
-		["Action Bars"] = "動作列",
-		["Auction"] = "拍賣",
-		["Audio"] = "音樂",
-		["Battlegrounds/PvP"] = "戰場/PvP",
-		["Buffs"] = "增益",
-		["Chat/Communication"] = "聊天/通訊",
-		["Druid"] = "德魯伊",
-		["Hunter"] = "獵人",
-		["Mage"] = "法師",
-		["Paladin"] = "聖騎士",
-		["Priest"] = "牧師",
-		["Rogue"] = "盜賊",
-		["Shaman"] = "薩滿",
-		["Warlock"] = "術士",
-		["Warrior"] = "戰士",
-		["Healer"] = "治療者",
-		["Tank"] = "坦克",
-		["Caster"] = "施法者",
-		["Combat"] = "戰鬥",
-		["Compilations"] = "編輯",
-		["Data Export"] = "資料匯出",
-		["Development Tools"] = "開發工具",
-		["Guild"] = "公會",
-		["Frame Modification"] = "框架修改",
-		["Interface Enhancements"] = "介面增強",
-		["Inventory"] = "背包",
-		["Library"] = "資料庫",
-		["Map"] = "地圖",
-		["Mail"] = "郵件",
-		["Miscellaneous"] = "綜合",
-		["Quest"] = "任務",
-		["Raid"] = "團隊",
-		["Tradeskill"] = "商業技能",
-		["UnitFrame"] = "單位框架",
-	}
-elseif GetLocale() == "zhCN" then
-	STANDBY = "|cffff5050(\230\154\130\230\140\130)|r"
-	
-	TITLE = "\230\160\135\233\162\152"
-	NOTES = "\233\153\132\230\179\168"
-	VERSION = "\231\137\136\230\156\172"
-	AUTHOR = "\228\189\156\232\128\133"
-	DATE = "\230\151\165\230\156\159"
-	CATEGORY = "\229\136\134\231\177\187"
-	EMAIL = "\231\148\181\229\173\144\233\130\174\228\187\182"
-	WEBSITE = "\231\189\145\231\171\153"
-	
-	ABOUT = "\229\133\179\228\186\142"
-	PRINT_ADDON_INFO = "\229\141\176\229\136\151\229\135\186\230\143\146\228\187\182\228\191\161\230\129\175"
-	
-	CATEGORIES = {
-		["Action Bars"] = "\229\138\168\228\189\156\230\157\161",
-		["Auction"] = "\230\139\141\229\141\150",
-		["Audio"] = "\233\159\179\233\162\145",
-		["Battlegrounds/PvP"] = "\230\136\152\229\156\186/PvP",
-		["Buffs"] = "\229\162\158\231\155\138\233\173\148\230\179\149",
-		["Chat/Communication"] = "\232\129\138\229\164\169/\228\186\164\230\181\129",
-		["Druid"] = "\229\190\183\233\178\129\228\188\138",
-		["Hunter"] = "\231\140\142\228\186\186",
-		["Mage"] = "\230\179\149\229\184\136",
-		["Paladin"] = "\229\156\163\233\170\145\229\163\171",
-		["Priest"] = "\231\137\167\229\184\136",
-		["Rogue"] = "\231\155\151\232\180\188",
-		["Shaman"] = "\232\144\168\230\187\161\231\165\173\229\143\184",
-		["Warlock"] = "\230\156\175\229\163\171",
-		["Warrior"] = "\230\136\152\229\163\171",
---		["Healer"] = "\230\178\187\231\150\151\228\191\157\233\154\156",
---		["Tank"] = "\232\191\145\230\136\152\230\142\167\229\136\182",
---		["Caster"] = "\232\191\156\231\168\139\232\190\147\229\135\186",
-		["Combat"] = "\230\136\152\230\150\151",
-		["Compilations"] = "\231\188\150\232\175\145",
-		["Data Export"] = "\230\149\176\230\141\174\229\175\188\229\135\186",
-		["Development Tools"] = "\229\188\128\229\143\145\229\183\165\229\133\183",
-		["Guild"] = "\229\133\172\228\188\154",
-		["Frame Modification"] = "\230\161\134\230\158\182\228\191\174\230\148\185",
-		["Interface Enhancements"] = "\231\149\140\233\157\162\229\162\158\229\188\186",
-		["Inventory"] = "\232\131\140\229\140\133",
-		["Library"] = "\229\186\147",
-		["Map"] = "\229\156\176\229\155\190",
-		["Mail"] = "\233\130\174\228\187\182",
-		["Miscellaneous"] = "\230\157\130\233\161\185",
-		["Quest"] = "\228\187\187\229\138\161",
-		["Raid"] = "\229\155\162\233\152\159",
-		["Tradeskill"] = "\229\149\134\228\184\154\230\138\128\232\131\189",
-		["UnitFrame"] = "\229\164\180\229\131\143\230\161\134\230\158\182",
 	}
 else -- enUS
 	STANDBY = "|cffff5050(standby)|r"

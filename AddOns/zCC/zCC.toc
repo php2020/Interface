@@ -4,7 +4,6 @@
 ## Title-zhCN: |cFF1C86EE战斗 |r炽火带闪光冷却计时
 ## Notes-zhCN: |cFF1C86EE战斗|r zCC炽火带闪光冷却计时
 ## Author: Zero Fire
-## Author-zhCN: 炽火 Zero ℃
 ## Version: 0.29
 ## OptionalDeps: !!Warmup
 ## SavedVariables: zCC

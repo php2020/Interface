@@ -37,7 +37,7 @@ LunaUnitFrames = 露娜框架
 
 ```
 ShaguTweaks   = Shagu 德国作者暗黑风格 UI
-zUI           = ZUI 和 Shagu 其中一些插件需要禁用，在 ZUI 组件里禁用
+zUI           = ZUI 和 Shagu 其中一些插件需要禁用，在 ZUI 组件里禁用 https://github.com/Ko0z/zUI
 ```
 
 ### 4、战斗伤害
@@ -84,7 +84,7 @@ BuyEmAll   = 批量购买 (使用：shift + 右键购买物品)
 ### 9、实用三件套
 
 ```
-AtlasLoot  = 掉落查询
+AtlasLoot  = 掉落查询 https://github.com/Lexiebean/AtlasLoot
 Atlas      = 副本地图
 AtlasQuest = 副本任务
 ```
@@ -222,6 +222,10 @@ EquipColor                  = 背包不可用物品红色插件
 
 ```
 在 .toc 文件里加入 ## DefaultState: Disable
+
+## OptionalDeps: zUI ## 如果可用，应首先加载的附加组件。
+## Dependencies: zUI ## 必须首先加载的附加组件。别名包括RequiredDeps 和 任何以 开头的单词Dep。
+
 ```
 
 ### 其他
@@ -300,6 +304,7 @@ RAID_CLASS_COLORS = {
     颜色转换： https://rgbacolorpicker.com/rgba-to-hex
     色轮选择器：https://rgbacolorpicker.com/color-wheel-picker
     魔兽里声音列表 PlaySound("")：https://wow.tools/files/sounds.php#search=&page=1
+    宏命令：https://docs.qq.com/doc/DREZBVGZrUW9ucUZ6
 ```
 
 ### 内置函数的说明
@@ -313,9 +318,6 @@ inRange = IsActionInRange(actionSlot);
 
 在范围内 inRange
 标志Flag - 如果动作槽没有动作或者没有当前目标，则为零。如果操作超出范围，则为 0；如果操作在范围内，则为 1。请注意，如果范围不适用于此操作或者您无法对目标使用该法术，则它始终返回 1。
-
-
-
 
 
 ```

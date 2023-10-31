@@ -1,8 +1,6 @@
 ﻿## Interface: 11200
-## Title: AtlasLoot TW Edition
-## Title-zhCN: AtlasLootp[装备掉落查询]
-## Notes: Shows the possible loot from the bosses
-## Notes-zhCN: 副本、野外、PVP、制造等装备来源查询
+## Title: AtlasLoot TW Editiond 掉落查询
+## Notes: Shows the possible loot from the bosses 显示boss可能掉落的物品
 ## Author: Daviesh, Pompa (Turtle WoW World Bosses), Xerron (Turtle WoW World Bosses), Gurky (Turtle WoW 1.16/1.16.1 Dungeons), |cffbe5effLexie|r
 ## Version: 1.1.0
 ## SavedVariables: AtlasLoot_updateavailable
@@ -18,7 +16,6 @@ Libs\AceAddon\AceAddon-2.0.lua
 Libs\Hewdrop\Hewdrop-2.0.lua
 
 Locale\Locale.xml
-# Bossnames\BossNames.xml
 Sets\Sets.xml
 Crafting\Crafting.xml
 PvP\PvP.xml

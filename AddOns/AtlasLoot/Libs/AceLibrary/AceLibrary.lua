@@ -1,25 +1,24 @@
 --[[
 Name: AceLibrary
-Revision: $Rev: 17722 $
+Revision: $Rev: 14130 $
 Developed by: The Ace Development Team (http://www.wowace.com/index.php/The_Ace_Development_Team)
 Inspired By: Iriel (iriel@vigilance-committee.org)
-			 Tekkub (tekkub@gmail.com)
-			 Revision: $Rev: 17722 $
+             Tekkub (tekkub@gmail.com)
+             Revision: $Rev: 14130 $
 Website: http://www.wowace.com/
 Documentation: http://www.wowace.com/index.php/AceLibrary
 SVN: http://svn.wowace.com/root/trunk/Ace2/AceLibrary
 Description: Versioning library to handle other library instances, upgrading,
-			 and proper access.
-			 It also provides a base for libraries to work off of, providing
-			 proper error tools. It is handy because all the errors occur in the
-			 file that called it, not in the library file itself.
+             and proper access.
+             It also provides a base for libraries to work off of, providing
+             proper error tools. It is handy because all the errors occur in the
+             file that called it, not in the library file itself.
 Dependencies: None
 ]]
 
 local ACELIBRARY_MAJOR = "AceLibrary"
-local ACELIBRARY_MINOR = "$Revision: 17722 $"
+local ACELIBRARY_MINOR = "$Revision: 14130 $"
 
-if loadstring("return function(...) return ... end") and AceLibrary and AceLibrary:HasInstance(ACELIBRARY_MAJOR) then return end -- lua51 check
 local table_setn
 do
 	local version = GetBuildInfo()
@@ -36,11 +35,6 @@ local string_gfind = string.gmatch or string.gfind
 local _G = getfenv(0)
 local previous = _G[ACELIBRARY_MAJOR]
 if previous and not previous:IsNewVersion(ACELIBRARY_MAJOR, ACELIBRARY_MINOR) then return end
-
-local function safecall(func,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
-	local success, err = pcall(func,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10)
-	if not success then geterrorhandler()(err) end
-end
 
 -- @table AceLibrary
 -- @brief System to handle all versioning of libraries.
@@ -258,7 +252,7 @@ do
 end
 
 -- @function destroyTable
--- @brief	remove all the contents of a table
+-- @brief    remove all the contents of a table
 -- @param t  table to destroy
 local function destroyTable(t)
 	setmetatable(t, nil)
@@ -298,9 +292,9 @@ do
 end
 
 -- @function   copyTable
--- @brief	  Create a shallow copy of a table and return it.
+-- @brief      Create a shallow copy of a table and return it.
 -- @param from The table to copy from
--- @return	 A shallow copy of the table
+-- @return     A shallow copy of the table
 local function copyTable(from)
 	local to = new()
 	for k,v in pairs(from) do to[k] = v end
@@ -309,20 +303,20 @@ local function copyTable(from)
 	return to
 end
 
--- @function		 deepTransfer
--- @brief			Fully transfer all data, keeping proper previous table
---				   backreferences stable.
--- @param to		 The table with which data is to be injected into
--- @param from	   The table whose data will be injected into the first
+-- @function         deepTransfer
+-- @brief            Fully transfer all data, keeping proper previous table
+--                   backreferences stable.
+-- @param to         The table with which data is to be injected into
+-- @param from       The table whose data will be injected into the first
 -- @param saveFields If available, a shallow copy of the basic data is saved
---				   in here.
--- @param list	   The account of table references
--- @param list2	  The current status on which tables have been traversed.
+--                   in here.
+-- @param list       The account of table references
+-- @param list2      The current status on which tables have been traversed.
 local deepTransfer
 do
 	-- @function   examine
-	-- @brief	  Take account of all the table references to be shared
-	--			 between the to and from tables.
+	-- @brief      Take account of all the table references to be shared
+	--             between the to and from tables.
 	-- @param to   The table with which data is to be injected into
 	-- @param from The table whose data will be injected into the first
 	-- @param list An account of the table references
@@ -392,11 +386,11 @@ do
 	end
 end
 
--- @method	  TryToLoadStandalone
--- @brief	   Attempt to find and load a standalone version of the requested library
+-- @method      TryToLoadStandalone
+-- @brief       Attempt to find and load a standalone version of the requested library
 -- @param major A string representing the major version
--- @return	  If library is found, return values from the call to LoadAddOn are returned
---			  If the library has been requested previously, nil is returned.
+-- @return      If library is found, return values from the call to LoadAddOn are returned
+--              If the library has been requested previously, nil is returned.
 local function TryToLoadStandalone(major)
 	if not AceLibrary.scannedlibs then AceLibrary.scannedlibs = {} end
 	if AceLibrary.scannedlibs[major] then return end
@@ -418,14 +412,14 @@ local function TryToLoadStandalone(major)
 	end
 end
 
--- @method	  IsNewVersion
--- @brief	   Obtain whether the supplied version would be an upgrade to the
---			  current version. This allows for bypass code in library
---			  declaration.
+-- @method      IsNewVersion
+-- @brief       Obtain whether the supplied version would be an upgrade to the
+--              current version. This allows for bypass code in library
+--              declaration.
 -- @param major A string representing the major version
 -- @param minor An integer or an svn revision string representing the minor version
--- @return	  whether the supplied version would be newer than what is
---			  currently available.
+-- @return      whether the supplied version would be newer than what is
+--              currently available.
 function AceLibrary:IsNewVersion(major, minor)
 	argCheck(self, major, 2, "string")
 	TryToLoadStandalone(major)
@@ -446,11 +440,11 @@ function AceLibrary:IsNewVersion(major, minor)
 	return data.minor < minor
 end
 
--- @method	  HasInstance
--- @brief	   Returns whether an instance exists. This allows for optional support of a library.
+-- @method      HasInstance
+-- @brief       Returns whether an instance exists. This allows for optional support of a library.
 -- @param major A string representing the major version.
 -- @param minor (optional) An integer or an svn revision string representing the minor version.
--- @return	  Whether an instance exists.
+-- @return      Whether an instance exists.
 function AceLibrary:HasInstance(major, minor)
 	argCheck(self, major, 2, "string")
 	TryToLoadStandalone(major)
@@ -473,11 +467,11 @@ function AceLibrary:HasInstance(major, minor)
 	return self.libs[major] and true
 end
 
--- @method	  GetInstance
--- @brief	   Returns the library with the given major/minor version.
+-- @method      GetInstance
+-- @brief       Returns the library with the given major/minor version.
 -- @param major A string representing the major version.
 -- @param minor (optional) An integer or an svn revision string representing the minor version.
--- @return	  The library with the given major/minor version.
+-- @return      The library with the given major/minor version.
 function AceLibrary:GetInstance(major, minor)
 	argCheck(self, major, 2, "string")
 	TryToLoadStandalone(major)
@@ -512,20 +506,20 @@ local donothing
 
 local AceEvent
 
--- @method			   Register
--- @brief				Registers a new version of a given library.
--- @param newInstance	the library to register
--- @param major		  the major version of the library
--- @param minor		  the minor version of the library
+-- @method               Register
+-- @brief                Registers a new version of a given library.
+-- @param newInstance    the library to register
+-- @param major          the major version of the library
+-- @param minor          the minor version of the library
 -- @param activateFunc   (optional) A function to be called when the library is
---					   fully activated. Takes the arguments
---					   (newInstance [, oldInstance, oldDeactivateFunc]). If
---					   oldInstance is given, you should probably call
---					   oldDeactivateFunc(oldInstance).
+--                       fully activated. Takes the arguments
+--                       (newInstance [, oldInstance, oldDeactivateFunc]). If
+--                       oldInstance is given, you should probably call
+--                       oldDeactivateFunc(oldInstance).
 -- @param deactivateFunc (optional) A function to be called by a newer library's
---					   activateFunc.
+--                       activateFunc.
 -- @param externalFunc   (optional) A function to be called whenever a new
---					   library is registered.
+--                       library is registered.
 function AceLibrary:Register(newInstance, major, minor, activateFunc, deactivateFunc, externalFunc)
 	argCheck(self, newInstance, 2, "table")
 	argCheck(self, major, 3, "string")
@@ -583,20 +577,20 @@ function AceLibrary:Register(newInstance, major, minor, activateFunc, deactivate
 		end
 		addToPositions(instance, major)
 		if activateFunc then
-			safecall(activateFunc, instance, nil, nil) -- no old version, so explicit nil
+			activateFunc(instance, nil, nil) -- no old version, so explicit nil
 		end
 
 		if externalFunc then
 			for k,data in pairs(self.libs) do
 				if k ~= major then
-					safecall(externalFunc, instance, k, data.instance)
+					externalFunc(instance, k, data.instance)
 				end
 			end
 		end
 
 		for k,data in pairs(self.libs) do
 			if k ~= major and data.externalFunc then
-				safecall(data.externalFunc, data.instance, major, instance)
+				data.externalFunc(data.instance, major, instance)
 			end
 		end
 		if major == "AceEvent-2.0" then
@@ -675,16 +669,16 @@ function AceLibrary:Register(newInstance, major, minor, activateFunc, deactivate
 		end
 	end
 	if activateFunc then
-		safecall(activateFunc, instance, oldInstance, oldDeactivateFunc)
+		activateFunc(instance, oldInstance, oldDeactivateFunc)
 	else
-		safecall(oldDeactivateFunc, oldInstance)
+		oldDeactivateFunc(oldInstance)
 	end
 	del(oldInstance)
 
 	if externalFunc then
 		for k,data in pairs(self.libs) do
 			if k ~= major then
-				safecall(externalFunc, instance, k, data.instance)
+				externalFunc(instance, k, data.instance)
 			end
 		end
 	end
@@ -707,11 +701,11 @@ function AceLibrary:IterateLibraries()
 	return iter, self.libs, nil
 end
 
--- @function			Activate
--- @brief			   The activateFunc for AceLibrary itself. Called when
---					  AceLibrary properly registers.
--- @param self		  Reference to AceLibrary
--- @param oldLib		(optional) Reference to an old version of AceLibrary
+-- @function            Activate
+-- @brief               The activateFunc for AceLibrary itself. Called when
+--                      AceLibrary properly registers.
+-- @param self          Reference to AceLibrary
+-- @param oldLib        (optional) Reference to an old version of AceLibrary
 -- @param oldDeactivate (optional) Function to deactivate the old lib
 local function activate(self, oldLib, oldDeactivate)
 	if not self.libs then
