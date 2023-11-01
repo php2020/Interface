@@ -566,11 +566,11 @@ function SW_Stats_OnEvent()
 		-- putting this on a timer we just rebuild the group/raid once
 		SW_Timed_Calls.rebuildGR = true;
 		SW_Timed_Calls.passedGR = 0;
-		--[[
+		--
 		if SW_BarSyncFrame:IsVisible() then
 			SW_BarSyncFrame:UpdateARPVis();
 		end
-		--]]
+		--
 		--SW_DataCollection:checkGroup();
 	--]]
 	elseif (event == "PARTY_MEMBERS_CHANGED") or 

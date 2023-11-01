@@ -397,11 +397,9 @@ SW_IntTblAscii85 = {
 		for i=1, 5 do
 			--[[
 			tmpMod = bit.mod(tmpInt/self.pow85[i], 85);
-			--[[
 			if tmpMod < 0 then
 				SW_printStr(tmpInt/self.pow85[i].."=>"..tmpMod);
 			end
-			--]]
 			-- wtf? but it happens 
 			if tmpMod < 0 then
 				tmpMod = 85 + tmpMod + 1;
