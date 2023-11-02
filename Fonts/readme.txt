@@ -3,8 +3,8 @@ FZJZJW.TTF（打怪时显示）
 FZLBJW.TTF（登陆画面及人物、物品、装备、技能等.主字体）
 FZXHJW.TTF（物品技能说明字体）
 FZXHLJW.TTF（聊天）
-FRIZQT__.TTF 和 ARIALN.TTF（各种英文符号）
-
+FRIZQT__.TTF （各种英文符号）
+ARIALN.TTF (各种英文符号）
 
 
 ARIALN.ttf 方正粗圆_GBK
