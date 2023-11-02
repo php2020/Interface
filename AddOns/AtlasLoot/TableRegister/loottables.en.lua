@@ -1976,3 +1976,4 @@ AtlasLoot_TableNamesBoss = {
 		["PVPWarrior"] = { AL["Warrior"] .. " - " .. AL["PvP Sets"], "AtlasLootGeneralPvPItems" },
 	},
 };
+
