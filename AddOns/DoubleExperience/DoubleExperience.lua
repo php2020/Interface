@@ -55,7 +55,7 @@ end
 -- 创建显示文本的字体对象
 function DoubleExperience:CreateDoubleXpText()
 	self.DoubleXpText = self.DoubleXpWindowFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-	self.DoubleXpText:SetPoint("CENTER", 0, 0)
+	self.DoubleXpText:SetPoint("CENTER", 0, 8)
 end
 
 -- 创建进度条框架
@@ -65,8 +65,8 @@ function DoubleExperience:CreateDoubleXpProgressBar()
 	self.DoubleXpProgressBar:SetWidth(180)
 	self.DoubleXpProgressBar:SetHeight(10)
 	self.DoubleXpProgressBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
-	self.DoubleXpProgressBar:SetStatusBarColor(0, 0, 1)
-	-- 创建进度条背景
+	self.DoubleXpProgressBar:SetStatusBarColor(0, 0.4, 1)
+	-- 创建进度条背景#013f8d
 	local background = self.DoubleXpProgressBar:CreateTexture(nil, "BACKGROUND")
 	background:SetAllPoints(true)
 	background:SetTexture("Interface\\TargetingFrame\\UI-StatusBar")
@@ -83,13 +83,13 @@ function DoubleExperience:UpdateDoubleXpTextAndProgressBar()
 	local currentXP = UnitXP("player")
 	local maxXP = UnitXPMax("player")
 	local maxExhaustion = maxXP * 1.5
-
+	local percent = (exhaustionXP / maxExhaustion) * 100
 	-- 文本
-	self.DoubleXpText:SetText("当前累计双倍经验\n" .. exhaustionXP .. " / " .. maxExhaustion)
+	self.DoubleXpText:SetText("当前累计双倍经验\n" .. " " .. string.format("%.2f", percent) .. "%\n" .. exhaustionXP .. " / " .. maxExhaustion )
 
 	-- 进度条
-	local percent = (exhaustionXP / maxExhaustion) * 100
-	-- showText(".." .. percent .. "..", { r = 0, g = 1, b = 0 })
+	
+	-- showText(".." .. string.format("%.f", percent) .. "..", { r = 0, g = 1, b = 0 })  
 	self.DoubleXpProgressBar:SetValue(percent)
 end
 
