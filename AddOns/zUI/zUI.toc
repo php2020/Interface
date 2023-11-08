@@ -4,11 +4,11 @@
 ## Notes: 暴雪风格，并添加了一些不错的功能./zui
 ## Version: 0.2.1
 ## SavedVariables: zUI_profiles, zUI_addon_profiles, Lern2SpellDB
-## SavedVariablesPerCharacter: zUI_config, zUI_init, BCSConfig,zUI_playerDB
+## SavedVariablesPerCharacter: zUI_config, zUI_init, BCSConfig, zUI_playerDB
 
 # main
 zUI.lua
-components\zFont.lua
+# components\zFont.lua
 # locales
 env\locales_enUS.lua
 env\locales_zhCN.lua
@@ -20,7 +20,7 @@ env\profiles.lua
 # api
 api\config.lua
 api\api.lua
-api\exapi.lua
+# api\exapi.lua
 # libs
 libs\libtipscan.lua
 libs\libspell.lua

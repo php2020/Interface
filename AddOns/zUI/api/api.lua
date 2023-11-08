@@ -306,13 +306,12 @@ function zUI.api.zSkin(f, offset, square, _type)
 	offset = offset or 0
 	_type = _type or "";
 	if square then square = "-square"; else square = ""; end
-		
 	for i = 1, 4 do
-        local section = sections[i]
-        local x = f:CreateTexture(nil, 'OVERLAY', nil, 1)
-		x:SetTexture('Interface\\AddOns\\zUI\\img\\borders\\'.._type..'border-'..section..square..'.tga')
-        t[sections[i]] = x
-    end
+    local section = sections[i]
+    local x = f:CreateTexture(nil, 'OVERLAY', nil, 1)
+    x:SetTexture('Interface\\AddOns\\zUI\\img\\borders\\'.._type..'border-'..section..square..'.tga')
+    t[sections[i]] = x
+  end
 
 	for i = 5, 8 do
 		local section = sections[i]
@@ -321,16 +320,20 @@ function zUI.api.zSkin(f, offset, square, _type)
 		t[sections[i]] = x
 	end
 
-    t.TOPLEFT:SetWidth(8)       t.TOPLEFT:SetHeight(8)
+    t.TOPLEFT:SetWidth(8)
+    t.TOPLEFT:SetHeight(8)
     t.TOPLEFT:SetPoint('BOTTOMRIGHT', f, 'TOPLEFT', 4 + offset, -4 - offset)
 
-    t.TOPRIGHT:SetWidth(8)      t.TOPRIGHT:SetHeight(8)
+    t.TOPRIGHT:SetWidth(8)
+    t.TOPRIGHT:SetHeight(8)
     t.TOPRIGHT:SetPoint('BOTTOMLEFT', f, 'TOPRIGHT', -4 - offset, -4 - offset)
 
-    t.BOTTOMLEFT:SetWidth(8)    t.BOTTOMLEFT:SetHeight(8)
+    t.BOTTOMLEFT:SetWidth(8)
+    t.BOTTOMLEFT:SetHeight(8)
     t.BOTTOMLEFT:SetPoint('TOPRIGHT', f, 'BOTTOMLEFT', 4 + offset, 4 + offset)
 
-    t.BOTTOMRIGHT:SetWidth(8)   t.BOTTOMRIGHT:SetHeight(8)
+    t.BOTTOMRIGHT:SetWidth(8)
+    t.BOTTOMRIGHT:SetHeight(8)
     t.BOTTOMRIGHT:SetPoint('TOPLEFT', f, 'BOTTOMRIGHT', -4 - offset, 4 + offset)
 
     t.TOP:SetHeight(8)

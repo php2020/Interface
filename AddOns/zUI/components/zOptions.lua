@@ -1,7 +1,7 @@
 -- Option frame system credits to Shagu, pfUI
 zUI:RegisterComponent("[内核]全局依赖", function ()
-	local  _, class = UnitClass("player")
-	local color = RAID_CLASS_COLORS[class].colorStr
+local  _, class = UnitClass("player")
+local color = RAID_CLASS_COLORS[class].colorStr
 ZUI_MINIMAPBUTTON_LINE1 = "Click to toggle Options"
 ZUI_MINIMAPBUTTON_LINE2 = "Right-click and drag"
 local zSkin=zUI.api.zSkin

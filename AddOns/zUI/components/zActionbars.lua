@@ -1,4 +1,4 @@
-zUI:RegisterComponent("z动作条", function () 
+zUI:RegisterComponent("zActionbars-动作条", function ()
 	
 	UIPARENT_MANAGED_FRAME_POSITIONS["CastingBarFrame"] = {baseY = 70, bottomEither = 50, pet = 50, reputation = 19}; -- {baseY = 60, bottomEither = 40, pet = 40, reputation = 9};
 
@@ -6,7 +6,6 @@ zUI:RegisterComponent("z动作条", function ()
 	local xpbarwidth,setpoint,leftbar1h,rightbar1h,petbarh,petleftbarh,Reputbar,Reputbarh=542,0,-6,38,51,5,530,4
 	-- BFA
 	local function LoadActionBarBFA()
-		local liv_cat = UnitLevel("player")
 		----------------------==[ zUI.zBars.ActionBarArtSmall-Frame ]==----------------------------------------------->
 		zUI.zBars.ActionBarArtSmall = CreateFrame("Frame","zActionBarArtSmall",MainMenuBar)
 		zUI.zBars.ActionBarArtSmall:SetFrameStrata("MEDIUM")

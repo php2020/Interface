@@ -2,61 +2,66 @@
 zUI:RegisterComponent("姓名版", function ()
 	local zSkin=zUI.api.zSkin
 	local zSkinColor=zUI.api.zSkinColor
-	NAMEPLATE_OBJECTORDER = { "border", "glow", "name", "level", "levelicon",
-	"raidicon" }
+	NAMEPLATE_OBJECTORDER = { "border", "glow", "name", "level", "levelicon", "raidicon" }
 	local healthbarhight = 1
-		--mrbcat 20230815添加宽姓名版
-		if C.nameplates.bg_nameplates=="1" then
-			healthbarhight=4
-		end
+	if C.nameplates.bg_nameplates == "1" then
+		healthbarhight = 4
+	end
 	local font = STANDARD_TEXT_FONT
-	local font_size = C.nameplates.font_size+healthbarhight
-
-	--if C.nameplates["showdebuffs"] = "1" then
+	local font_size = C.nameplates.font_size + healthbarhight
 
 	zUI.nameplates = CreateFrame("Frame", nil, UIParent)
 
-	-- catch all nameplates
+	-- 捕获所有姓名版
 	local childs
 	local regions
 	local nameplate
 	local initialized = 0
 	local parentCount = 0
 	
-
+	-- 扫描器
 	zUI.nameplates.scanner = CreateFrame("Frame", "zNameplateScanner", UIParent)
 	zUI.nameplates.scanner:SetScript("OnUpdate", function()
-	parentCount = WorldFrame:GetNumChildren()
-	if initialized < parentCount then
-		
-		childs = { WorldFrame:GetChildren() }
-
-		for i=initialized + 1, parentCount do
-			nameplate = childs[i]
-			--if nameplate:GetObjectType() == NAMEPLATE_FRAMETYPE then
-			if nameplate:GetObjectType() == "Button" then
-				regions = nameplate:GetRegions()
-					if regions and regions:GetObjectType() == "Texture" and regions:GetTexture() == "Interface\\Tooltips\\Nameplate-Border" then
-						local visible = nameplate:IsVisible()
-						nameplate:Hide()
-						nameplate:SetScript("OnShow", zUI.nameplates.OnShow)
-						nameplate:SetScript("OnUpdate", zUI.nameplates.OnUpdate)
-						nameplate:SetAlpha(1)
-						if visible then nameplate:Show() end
+		-- 获取整个世界的框架数量
+		parentCount = WorldFrame:GetNumChildren()
+		if initialized < parentCount then
+			-- 所有子集
+			childs = { WorldFrame:GetChildren() }
+			-- 遍历所有子集
+			for i=initialized + 1, parentCount do
+				nameplate = childs[i]
+				-- 子框架类型是 Button 
+				if nameplate:GetObjectType() == "Button" then
+						-- 获取子框架上的属性
+						regions = nameplate:GetRegions()
+						--如果 子框架上的属性是 Texture 并且 是 Nameplate-Border ，表示 该子框架 是姓名版
+						if regions and regions:GetObjectType() == "Texture" and regions:GetTexture() == "Interface\\Tooltips\\Nameplate-Border" then
+							-- 是否可见
+							local visible = nameplate:IsVisible()
+							-- 先隐藏原有的
+							nameplate:Hide()
+							-- 替换OnShow
+							nameplate:SetScript("OnShow", zUI.nameplates.OnShow)
+							-- 替换OnUpdate
+							nameplate:SetScript("OnUpdate", zUI.nameplates.OnUpdate)
+							-- 设置透明度 显示
+							nameplate:SetAlpha(1)
+							-- 再次展示
+							if visible then nameplate:Show() end
+						end
 					end
 				end
+				initialized = parentCount
 			end
-			initialized = parentCount
-		end
 	end)
 
 	local plate_width = C.nameplates.width + 50
-	--
 	local plate_height = C.nameplates.heighthealth + font_size + 10
 	local plate_height_cast = C.nameplates.heighthealth + font_size + 5 + C.nameplates.heightcast + 5
 
+	-- 姓名版展示
 	function zUI.nameplates.OnShow()
-		-- initialize nameplate frames
+		-- 如果没有，初始化姓名版框架
 		if not this.nameplate then
 			this.nameplate = CreateFrame("Button", nil, this)
 			this.nameplate.parent = this
@@ -168,8 +173,8 @@ zUI:RegisterComponent("姓名版", function ()
 
 		if not this.healthbar.bgtarget then
 			this.healthbar.bgtarget = this.healthbar:CreateTexture(nil, "BACKGROUND")
-			this.healthbar.bgtarget:SetTexture(1,1,1,.8)
-			this.healthbar.bgtarget:ClearAllPoints()
+			this.healthbar.bgtarget:SetTexture(1,1,1,.8) -- 设置颜色 白色 0.8的透明度 1不透明 0完全透明
+			this.healthbar.bgtarget:ClearAllPoints()-- 移除一个框架上所有已设置的锚点 重新定位锚点
 			this.healthbar.bgtarget:SetPoint("CENTER", this.healthbar, "CENTER", 0, 0)
 			this.healthbar.bgtarget:SetWidth(this.healthbar:GetWidth() + 5)
 			this.healthbar.bgtarget:SetHeight(this.healthbar:GetHeight() + 5)
@@ -394,7 +399,7 @@ zUI:RegisterComponent("姓名版", function ()
 
 		this.setup = true
 	end
-
+	-- 姓名版更新
 	function zUI.nameplates.OnUpdate()
 		
 		if not this.setup then zUI.nameplates:OnShow() return end
@@ -445,16 +450,19 @@ zUI:RegisterComponent("姓名版", function ()
 		-- TODO make nice change
 		if this.needEliteUpdate and uelite then
 			if level:GetText() ~= nil then
+				-- 精英
 				if uelite == "elite" then
 					level:SetText(level:GetText() .. "+")
 					--zSkinColor(healthbar, 0.4, 0.4, 0.4); 
-					zSkinColor(healthbar, 1, 1, 0); 
+					zSkinColor(healthbar, 1, 1, 0);
+				-- 稀有精英
 				elseif uelite == "rareelite" then
 					level:SetText(level:GetText() .. "R+")
-					zSkinColor(healthbar, 1, 1, 1); 
+					zSkinColor(healthbar, 1, 1, 1);
+				--稀有的
 				elseif uelite == "rare" then
 					level:SetText(level:GetText() .. "R")
-					zSkinColor(healthbar, 1, 1, 1); 
+					zSkinColor(healthbar, 1, 1, 1);
 				end
 			end
 			this.needEliteUpdate = nil
@@ -517,7 +525,7 @@ zUI:RegisterComponent("姓名版", function ()
 			name:SetTextColor(1,1,1,0.85)
 		end
 
-		-- target indicator
+		-- 目标指示器
 		if UnitExists("target") and healthbar:GetAlpha() == 1 and C.nameplates.targethighlight == "1" then
 			healthbar.bgtarget:Show()
 		else
@@ -698,9 +706,9 @@ zUI:RegisterComponent("姓名版", function ()
 		end
 
 	end
-
-	zUI.nameplates:RegisterEvent("PLAYER_TARGET_CHANGED")
-	zUI.nameplates:RegisterEvent("UNIT_AURA")
+	-- 事件
+	zUI.nameplates:RegisterEvent("PLAYER_TARGET_CHANGED")-- 目标更改
+	zUI.nameplates:RegisterEvent("UNIT_AURA") -- debuffs发生变化
 	zUI.nameplates:SetScript("OnEvent", function()
 		if not arg1 or arg1 == "target" then
 			zUI.nameplates.debuffs = {}
@@ -712,10 +720,10 @@ zUI:RegisterComponent("姓名版", function ()
 		end
 	end)
 
-	-- combat tracker
+	-- 战斗状态
 	zUI.nameplates.combat = CreateFrame("Frame")
-	zUI.nameplates.combat:RegisterEvent("PLAYER_ENTER_COMBAT")
-	zUI.nameplates.combat:RegisterEvent("PLAYER_LEAVE_COMBAT")
+	zUI.nameplates.combat:RegisterEvent("PLAYER_ENTER_COMBAT") -- 进入战斗
+	zUI.nameplates.combat:RegisterEvent("PLAYER_LEAVE_COMBAT") -- 离开战斗
 	zUI.nameplates.combat:SetScript("OnEvent", function()
 		if event == "PLAYER_ENTER_COMBAT" then
 			this.inCombat = 1
@@ -726,7 +734,7 @@ zUI:RegisterComponent("姓名版", function ()
 		end
 	end)
 
-	-- emulate fake rightclick
+	-- 自动攻击
 	zUI.nameplates.emulateRightClick = CreateFrame("Frame", nil, UIParent)
 	zUI.nameplates.emulateRightClick.time = nil
 	zUI.nameplates.emulateRightClick.frame = nil

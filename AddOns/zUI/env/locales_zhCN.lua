@@ -63,7 +63,7 @@
     ["Debuffs"] = "Debuffs",
     ["Castbars"] = "施法条",
     ["Spell Names"] = "技能名称",
-    ["Clickthrough"] = "点击穿过",
+    ["Clickthrough"] = "右键自动攻击",
     ["Combopoints"] = "盗贼连击点",
     ["Class Colored Friendly Bars"] = "友方姓名版职业着色",
     ["Class Colored Hostile Bars"] = "敌对姓名版职业着色",

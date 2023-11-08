@@ -313,12 +313,36 @@ RAID_CLASS_COLORS = {
 ## 是否可攻击目标
 UnitCanAttack("player","target")
 
+## 目标存在
+UnitExists("target")
+
+## 目标名称
+GetUnitName("target")
+
 ## 测试某个操作是否在使用范围内。 参数 动作槽
 inRange = IsActionInRange(actionSlot);
 
 在范围内 inRange
 标志Flag - 如果动作槽没有动作或者没有当前目标，则为零。如果操作超出范围，则为 0；如果操作在范围内，则为 1。请注意，如果范围不适用于此操作或者您无法对目标使用该法术，则它始终返回 1。
 
+## 通过ID获取公会信息
+local guildName, guildRankName, guildRankIndex = GetGuildInfo(unitid)
+local guildName, guildRank = GetGuildInfo("player")
+local guildName, guildRank = GetGuildInfo("target")
+
+## 在一个Frame上创建纹理
+Frame:CreateTexture("MyTexture", "BACKGROUND", "MyTexturePath", 0)
+参数：
+1、名字（name）：纹理的名称，用于在代码中引用该纹理。
+2、层级（layer）：指定纹理所在的层级，如"BACKGROUND"、"BORDER"、"ARTWORK"等。
+3、材质路径（subLayer）：用于指定纹理的材质路径。可以是文件路径或者是具体的材质ID。
+4、标志位（inheritsFrom）：一个可选的参数，用于指定纹理继承自另一个框架或纹理的名称。
+
+BACKGROUND - Level 0. 框架的底色，起基础作用
+BORDER - Level 1. 框架的艺术边框，为其增添一些花样。
+ARTWORK - Level 2. 框架的核心艺术元素，定义整体风格。
+OVERLAY - Level 3. 放置文本、按钮等互动元素的层次。
+HIGHLIGHT - Level 4. 突出显示效果的层次。
 
 ```
 
@@ -346,4 +370,46 @@ CHARACTER_POINTS_CHANGED 当玩家的可用天赋点发生变化时触发。
         end
     </OnMouseUp>
 </Scripts>
+```
+
+## 框架
+
+### CreateFrame
+
+```
+local myFrame = CreateFrame(frameType, frameName, parent, template, id);
+
+frameType：要创建的框架的类型，通常是字符串。常见的值包括 "Frame"、"Button"、"StatusBar" 等，表示不同类型的UI元素。
+
+选项：
+1、"Frame"：通用的UI框架，可以包含其他UI元素。
+2、"Button"：按钮框架，用于创建可点击的按钮。
+3、"CheckButton"：复选框按钮，带有选中和未选中两种状态。
+4、"EditBox"：文本框框架，用于接收用户输入的文本。
+5、"Slider"：滑动条框架，用于选择一个范围内的数值。
+6、"StatusBar"：状态条框架，用于显示进度、生命值等。
+7、"FontString"：字体字符串框架，用于显示文本。
+8、"GameTooltip"：游戏提示框架，用于显示鼠标悬停时的信息。
+
+frameName：框架的名字，是一个字符串，用于在代码中引用这个框架。
+
+parent：新框架的父框架，表示新框架将被放置在哪个父框架中。
+
+template：可选参数，用于指定一个预定义的框架模板，可以继承该模板的属性和设置。
+选项：
+1、"ButtonTemplate"：按钮模板，适用于创建具有按钮功能的框架。
+2、"CheckButtonTemplate"：复选框按钮模板，创建带有选中和未选中状态的复选框按钮。
+3、"InsetFrameTemplate"：插图框架模板，用于创建带有插图效果的框架。
+4、"FrameTemplate"：通用框架模板，适用于创建基本的通用框架。
+5、"PortraitFrameTemplate"：肖像框架模板，适用于创建包含角色头像的框架。
+6、"StatusBarTemplate"：状态条框架模板，用于创建带有状态条的框架。
+
+id：可选参数，用于为框架指定一个唯一的ID，有助于在代码中识别和操作特定的框架实例。
+
+例如：CreateFrame("Frame", nil, UIParent)
+
+UIParent 是一个表示整个用户界面的顶层框架。在World of Warcraft插件开发中，UIParent 是一个特殊的框架，它是所有其他框架的父框架，包括玩家头像、技能栏、任务追踪等。
+
+使用 UIParent 作为新框架的父框架意味着新框架将直接嵌套在整个用户界面之下。这是因为在插件开发中，你通常希望你的自定义框架（如姓名板、技能栏等）成为整个UI的一部分，而不是嵌套在其他框架中。
+
 ```
