@@ -90,7 +90,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<FontString name="$parentRank" inherits="GameFontNormalSmall">
+				<FontString name="$parentRank" font="GameFontNormalSmall">
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parentRankBorder">
 							<Offset>
@@ -111,7 +111,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<FontString name="$parentPlanned" inherits="GameFontNormalSmall">
+				<FontString name="$parentPlanned" font="GameFontNormalSmall">
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parentPlannedBorder">
 							<Offset>
@@ -203,7 +203,7 @@
 				</Texture>
 			</Layer>
 			<Layer level="ARTWORK">
-				<FontString name="$parentSpentPoints" inherits="GameFontHighlightSmall">
+				<FontString name="$parentSpentPoints" font="GameFontHighlightSmall">
 					<Anchors>
 						<Anchor point="TOP">
 							<Offset>

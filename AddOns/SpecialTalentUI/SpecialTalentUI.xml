@@ -9,7 +9,7 @@
 		<Anchors>
 			<Anchor point="TOPLEFT">
 				<Offset>
-					<AbsDimension x="0" y="-104"/>
+					<AbsDimension x="110" y="-104"/>
 				</Offset>
 			</Anchor>
 		</Anchors>
@@ -186,7 +186,7 @@
 				</Texture>
 			</Layer>
 			<Layer level="OVERLAY">
-				<FontString name="SpecialTalentFrameTitleText" inherits="GameFontNormal" text="SPECIAL_TALENT">
+				<FontString name="SpecialTalentFrameTitleText" font="GameFontNormal" text="SPECIAL_TALENT">
 					<Anchors>
 						<Anchor point="TOP">
 							<Offset>
@@ -195,34 +195,34 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="SpecialTalentFrameLearnedPointsText" inherits="GameFontHighlightSmall">
+				<FontString name="SpecialTalentFrameLearnedPointsText" font="GameFontHighlightSmall">
 					<Anchors>
 						<Anchor point="RIGHT" relativePoint="TOP">
-							<Offset>
-								<AbsDimension x="-25" y="-60"/>
-							</Offset>
-						</Anchor>
-					</Anchors>
-				</FontString>
-				<FontString name="SpecialTalentFramePlannedPointsText" inherits="GameFontHighlightSmall">
-					<Anchors>
-						<Anchor point="RIGHT" relativePoint="TOP">
-							<Offset>
-								<AbsDimension x="-25" y="-81"/>
-							</Offset>
-						</Anchor>
-					</Anchors>
-				</FontString>
-				<FontString name="SpecialTalentFrameTalentPointsText" inherits="GameFontHighlightSmall">
-					<Anchors>
-						<Anchor point="LEFT" relativePoint="TOP">
 							<Offset>
 								<AbsDimension x="25" y="-60"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="SpecialTalentFrameTalentPoints" inherits="GameFontNormalSmall" text="TALENT_POINTS">
+				<FontString name="SpecialTalentFramePlannedPointsText" font="GameFontHighlightSmall">
+					<Anchors>
+						<Anchor point="RIGHT" relativePoint="TOP">
+							<Offset>
+								<AbsDimension x="25" y="-81"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="SpecialTalentFrameTalentPointsText" font="GameFontHighlightSmall">
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="SpecialTalentFrameLearnedPointsText" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="60" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="SpecialTalentFrameTalentPoints" font="GameFontNormalSmall" text="TALENT_POINTS">
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="SpecialTalentFrameTalentPointsText" relativePoint="RIGHT">
 							<Offset>
@@ -231,16 +231,16 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="SpecialTalentFrameUnspentPointsText" inherits="GameFontHighlightSmall">
+				<FontString name="SpecialTalentFrameUnspentPointsText" font="GameFontHighlightSmall">
 					<Anchors>
-						<Anchor point="LEFT" relativePoint="TOP">
+						<Anchor point="LEFT" relativeTo="SpecialTalentFramePlannedPointsText" relativePoint="RIGHT">
 							<Offset>
-								<AbsDimension x="25" y="-81"/>
+								<AbsDimension x="60" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="SpecialTalentFrameUnspentPoints" inherits="GameFontNormalSmall" text="UNSPENT_POINTS">
+				<FontString name="SpecialTalentFrameUnspentPoints" font="GameFontNormalSmall" text="UNSPENT_POINTS">
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="SpecialTalentFrameUnspentPointsText" relativePoint="RIGHT">
 							<Offset>
@@ -284,15 +284,15 @@
 					<AbsDimension x="24" y="24"/>
 				</Size>
 				<Anchors>
-					<Anchor point="RIGHT" relativePoint="TOP">
+					<Anchor point="CENTER" relativePoint="TOP">
 						<Offset>
-							<AbsDimension x="-165" y="-60"/>
+							<AbsDimension x="-160" y="-60"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Layers>
 					<Layer>
-						<FontString name="$parentText" inherits="GameFontNormalSmall" text="TALENTS_LEARNED">
+						<FontString name="$parentText" font="GameFontNormalSmall" text="TALENTS_LEARNED">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -317,15 +317,19 @@
 				end
 					</OnShow>
 					<OnClick>
-				if ( this:GetChecked() ) then
-					PlaySound("igMainMenuOptionCheckBoxOff");
+				if ( PlayerOfRealm == ActivePlayerOfRealm ) then
+					if ( this:GetChecked() ) then
+						PlaySound("igMainMenuOptionCheckBoxOff");
+					else
+						PlaySound("igMainMenuOptionCheckBoxOn");
+					end
+					this:SetChecked(1);
+					SpecialTalentFramePlannedCheckButton:SetChecked(0);
+					SpecialTalentFrame.learnMode = "learned";
+					SpecialTalentFrame_Update();
 				else
-					PlaySound("igMainMenuOptionCheckBoxOn");
+					this:SetChecked(0);
 				end
-				this:SetChecked(1);
-				SpecialTalentFramePlannedCheckButton:SetChecked(0);
-				SpecialTalentFrame.learnMode = "learned";
-				SpecialTalentFrame_Update();
 					</OnClick>
 				</Scripts>
 			</CheckButton>
@@ -334,15 +338,15 @@
 					<AbsDimension x="24" y="24"/>
 				</Size>
 				<Anchors>
-					<Anchor point="RIGHT" relativePoint="TOP">
+					<Anchor point="CENTER" relativePoint="TOP">
 						<Offset>
-							<AbsDimension x="-165" y="-81"/>
+							<AbsDimension x="-160" y="-81"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Layers>
 					<Layer>
-						<FontString name="$parentText" inherits="GameFontNormalSmall" text="TALENTS_PLANNED">
+						<FontString name="$parentText" font="GameFontNormalSmall" text="TALENTS_PLANNED">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -379,49 +383,6 @@
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<CheckButton name="SpecialTalentFrameForceShiftCheckButton">
-				<Size>
-					<AbsDimension x="24" y="24"/>
-				</Size>
-				<Anchors>
-					<Anchor point="LEFT" relativePoint="TOPLEFT">
-						<Offset>
-							<AbsDimension x="215" y="-60"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Layers>
-					<Layer>
-						<FontString name="$parentText" inherits="GameFontNormalSmall" text="SHIFT_CLICK_LEARN_TALENT">
-							<Anchors>
-								<Anchor point="RIGHT" relativePoint="LEFT">
-									<Offset>
-										<AbsDimension x="0" y="0"/>
-									</Offset>
-								</Anchor>
-							</Anchors>
-						</FontString>
-					</Layer>
-				</Layers>
-				<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
-				<PushedTexture file="Interface\Buttons\UI-CheckBox-Down"/>
-				<HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD"/>
-				<CheckedTexture file="Interface\Buttons\UI-CheckBox-Check"/>
-				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
-				<Scripts>
-					<OnShow>
-				this:SetChecked( (SpecialTalentFrameSaved and SpecialTalentFrameSaved.forceShift) or 0);
-					</OnShow>
-					<OnClick>
-				if ( this:GetChecked() ) then
-					PlaySound("igMainMenuOptionCheckBoxOff");
-				else
-					PlaySound("igMainMenuOptionCheckBoxOn");
-				end
-				SpecialTalentFrame_SetForceShift( this:GetChecked() )
-					</OnClick>
-				</Scripts>
-			</CheckButton>
 			<CheckButton name="SpecialTalentFrameTab1" inherits="SpecialTalentFrameTabTemplate" id="1">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
@@ -449,32 +410,6 @@
 					</Anchor>
 				</Anchors>
 			</CheckButton>
-			<Button name="SpecialTalentFrameDragButton">
-				<Size>
-					<AbsDimension x="60" y="60"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPLEFT">
-						<Offset>
-							<AbsDimension x="7" y="-6"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-
-				<Scripts>
-					<OnLoad>
-				this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-				SpecialTalentFrame:StartMoving();
-					</OnDragStart>
-					<OnDragStop>
-				SpecialTalentFrame:StopMovingOrSizing();
-				ValidateFramePosition(SpecialTalentFrame);
-				SpecialTalentFrame_OnDrag();
-					</OnDragStop>
-				</Scripts>
-			</Button>
 			<Button name="SpecialTalentFrameCloseButton" inherits="UIPanelCloseButton">
 				<Anchors>
 					<Anchor point="TOPRIGHT" relativeTo="SpecialTalentFrame">
@@ -484,135 +419,20 @@
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="SpecialTalentFrameMinimizeButton" inherits="UIPanelButtonTemplate" text="v">
+			<Button name="SpecialTalentFrameResetButton" inherits="UIPanelButtonTemplate" text="RESET_PLANNED_TEMPLATE">
 				<Size>
-					<AbsDimension x="39" y="23"/>
+					<AbsDimension x="100" y="23"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="SpecialTalentFrame">
+					<Anchor point="LEFT" relativePoint="TOPLEFT">
 						<Offset>
-							<AbsDimension x="-55" y="-13"/>
+							<AbsDimension x="75" y="-60"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if ( SpecialTalentFrameSaved.frameMinimized ) then
-							SpecialTalentFrameSaved.frameMinimized = nil;
-						else
-							SpecialTalentFrameSaved.frameMinimized = 1;
-						end
-						SpecialTalentFrame_ResetDrag();
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentRename" inherits="UIPanelButtonTemplate" text="rename">
-				<Size>
-					<AbsDimension x="59" y="23"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="SpecialTalentFrame">
-						<Offset>
-							<AbsDimension x="-35" y="-34"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						if (SpecialTalentUI_RenamePanel:IsVisible()) then
-							HideUIPanel(SpecialTalentUI_RenamePanel);
-						else
-							ShowUIPanel(SpecialTalentUI_RenamePanel);
-						end
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentFrameNextButtonSmall" inherits="UIPanelButtonTemplate" text="/\">
-				<Size>
-					<AbsDimension x="38" y="23"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="SpecialTalentFrame">
-						<Offset>
-							<AbsDimension x="4" y="-13"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_NextPlan();
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentFramePreviousButtonSmall" inherits="UIPanelButtonTemplate" text="\/">
-				<Size>
-					<AbsDimension x="39" y="23"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="SpecialTalentFrame">
-						<Offset>
-							<AbsDimension x="4" y="-32"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_PreviousPlan();
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentFrameNextButtonLarge" inherits="UIPanelButtonTemplate" text="/\">
-				<Size>
-					<AbsDimension x="59" y="23"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="SpecialTalentFrame">
-						<Offset>
-							<AbsDimension x="-35" y="-54"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_NextPlan();
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentFramePreviousButtonLarge" inherits="UIPanelButtonTemplate" text="\/">
-				<Size>
-					<AbsDimension x="59" y="23"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPRIGHT" relativeTo="SpecialTalentFrame">
-						<Offset>
-							<AbsDimension x="-35" y="-74"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_PreviousPlan();
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentFrameResetButton" inherits="UIPanelButtonTemplate" text="reset">
-				<Size>
-					<AbsDimension x="44" y="23"/>
-				</Size>
-				<Anchors>
-					<Anchor point="RIGHT" relativePoint="TOPRIGHT" relativeTo="SpecialTalentFrame">
-						<Offset>
-							<AbsDimension x="-42" y="-108"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						if (SpecialTalentUI_ResetConfirmationPanel:IsVisible()) then
-							HideUIPanel(SpecialTalentUI_ResetConfirmationPanel);
-						else
-							ShowUIPanel(SpecialTalentUI_ResetConfirmationPanel);
-						end
+						SpecialTalent_ResetTemplate()
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -626,244 +446,18 @@
 			</OnHide>
 			<OnLoad>
 				SpecialTalentFrame_OnLoad();
+				this:RegisterForDrag("LeftButton")
 			</OnLoad>
+			<OnDragStart>
+				SpecialTalentFrame:StartMoving();
+			</OnDragStart>
+			<OnDragStop>
+				SpecialTalentFrame:StopMovingOrSizing();
+				ValidateFramePosition(SpecialTalentFrame);
+			</OnDragStop>			
 			<OnEvent>
 				SpecialTalentFrame_OnEvent();
 			</OnEvent>
 		</Scripts>
-	</Frame>
-
-	<Frame name="SpecialTalentUI_ResetConfirmationPanel" enableMouse="true" toplevel="true" parent="SpecialTalentFrame" hidden="true">
-		<Size>
-			<AbsDimension x="130" y="126"/>
-		</Size>
-		<Anchors>
-			<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="SpecialTalentFrame">
-				<Offset>
-					<AbsDimension x="3" y="-12"/>
-				</Offset>
-			</Anchor>
-		</Anchors>
-		<Backdrop bgFile="Interface\Minimap\TooltipBackdrop-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-			<EdgeSize>
-				<AbsValue val="16"/>
-			</EdgeSize>
-			<TileSize>
-				<AbsValue val="16"/>
-			</TileSize>
-			<BackgroundInsets>
-				<AbsInset left="4" right="4" top="4" bottom="4"/>
-			</BackgroundInsets>
-		</Backdrop>
-		<Layers>
-			<Layer level="OVERLAY">
-				<FontString name="SpecialTalentUI_ResetInstructions" inherits="GameFontNormalSmall" text="Reset talent tree plan:">
-					<Anchors>
-						<Anchor point="TOP" relativeTo="$parent">
-							<Offset>
-								<AbsDimension x="0" y="-6"/>
-							</Offset>
-						</Anchor>
-					</Anchors>
-				</FontString>
-			</Layer>
-		</Layers>
-		<Frames>
-			<Button name="SpecialTalentUI_ResetOneButton" inherits="UIPanelButtonTemplate" text="1st Tab">
-				<Size>
-					<AbsDimension x="120" y="21"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOP" relativeTo="$parent">
-						<Offset>
-							<AbsDimension x="0" y="-18"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_ResetTree(1);
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentUI_ResetTwoButton" inherits="UIPanelButtonTemplate" text="2nd Tab">
-				<Size>
-					<AbsDimension x="120" y="21"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOP" relativeTo="$parent">
-						<Offset>
-							<AbsDimension x="0" y="-38"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_ResetTree(2);
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentUI_ResetThreeButton" inherits="UIPanelButtonTemplate" text="3rd Tab">
-				<Size>
-					<AbsDimension x="120" y="21"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOP" relativeTo="$parent">
-						<Offset>
-							<AbsDimension x="0" y="-58"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_ResetTree(3);
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentUI_ResetAllButton" inherits="UIPanelButtonTemplate" text="All of them">
-				<Size>
-					<AbsDimension x="120" y="21"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOP" relativeTo="$parent">
-						<Offset>
-							<AbsDimension x="0" y="-78"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_ResetTree(0);
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentUI_ResetCancel" inherits="UIPanelButtonTemplate" text="Close">
-				<Size>
-					<AbsDimension x="120" y="21"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOP" relativeTo="$parent">
-						<Offset>
-							<AbsDimension x="0" y="-98"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						HideUIPanel(SpecialTalentUI_ResetConfirmationPanel);
-					</OnClick>
-				</Scripts>
-			</Button>
-		</Frames>
-		<Scripts>
-			<OnLoad>
-				SpecialTalentUI_ResetOneButton:SetText(GetTalentTabInfo(1));
-				SpecialTalentUI_ResetTwoButton:SetText(GetTalentTabInfo(2));
-				SpecialTalentUI_ResetThreeButton:SetText(GetTalentTabInfo(3));
-			</OnLoad>
-		</Scripts>
-	</Frame>
-
-	<Frame name="SpecialTalentUI_RenamePanel" enableMouse="true" toplevel="true" parent="SpecialTalentFrame" hidden="true">
-		<Size>
-			<AbsDimension x="250" y="64"/>
-		</Size>
-		<Anchors>
-			<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="SpecialTalentFrame">
-				<Offset>
-					<AbsDimension x="-32" y="-12"/>
-				</Offset>
-			</Anchor>
-		</Anchors>
-		<Backdrop bgFile="Interface\Minimap\TooltipBackdrop-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-			<EdgeSize>
-				<AbsValue val="16"/>
-			</EdgeSize>
-			<TileSize>
-				<AbsValue val="16"/>
-			</TileSize>
-			<BackgroundInsets>
-				<AbsInset left="4" right="4" top="4" bottom="4"/>
-			</BackgroundInsets>
-		</Backdrop>
-		<Layers>
-			<Layer level="OVERLAY">
-				<FontString name="SpecialTalentUI_RenameInstructions" inherits="GameFontNormalSmall" text="Rename your talent plan:">
-					<Anchors>
-						<Anchor point="TOPLEFT" relativeTo="$parent">
-							<Offset>
-								<AbsDimension x="5" y="-5"/>
-							</Offset>
-						</Anchor>
-					</Anchors>
-				</FontString>
-			</Layer>
-		</Layers>
-		<Frames>
-			<EditBox name="SpecialTalentUI_RenameEditBox" autoFocus="false" inherits="InputBoxTemplate" letters="25">
-				<Size>
-					<AbsDimension x="235" y="16"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="SpecialTalentUI_RenameInstructions" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="5" y="-5	"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<FontString inherits="ChatFontNormal" bytes="64"/>
-				<Layers>
-					<Layer level="OVERLAY">
-						<FontString name="SpecialTalentUI_RenameEditBox" inherits="GameFontNormalSmall" justifyH="LEFT">
-							<Size>
-								<AbsDimension x="120" y="20"/>
-							</Size>
-							<Anchors>
-								<Anchor point="LEFT" relativeTo="SpecialTalentUI_Rename" relativePoint="RIGHT">
-									<Offset>
-										<AbsDimension x="0" y="0"/>
-									</Offset>
-								</Anchor>
-							</Anchors>
-						</FontString>
-					</Layer>
-				</Layers>
-			</EditBox>
-			<Button name="SpecialTalentUI_Rename" inherits="UIPanelButtonTemplate" text="Rename">
-				<Size>
-					<AbsDimension x="120" y="21"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="SpecialTalentUI_RenameEditBox">
-						<Offset>
-							<AbsDimension x="-5" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						SpecialTalentUI_RenameCurrentPlan(SpecialTalentUI_RenameEditBox:GetText());
-						HideUIPanel(SpecialTalentUI_RenamePanel);
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="SpecialTalentUI_RenameCancel" inherits="UIPanelButtonTemplate" text="Cancel">
-				<Size>
-					<AbsDimension x="120" y="21"/>
-				</Size>
-				<Anchors>
-					<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="SpecialTalentUI_Rename">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnClick>
-						HideUIPanel(SpecialTalentUI_RenamePanel);
-					</OnClick>
-				</Scripts>
-			</Button>
-		</Frames>
 	</Frame>
 </Ui>
