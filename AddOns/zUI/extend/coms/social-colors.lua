@@ -91,31 +91,21 @@ zUI:RegisterComponent("聊天职业色", function()
               local real, _ = strsplit(":", name)
         
               local color = NewColor(name)
-              local class, level, _, _ = GetUnitData(name)
+              local class, level, _, guild, _ = GetUnitData(name)
               local clevel
               if class and class ~= UNKNOWN then
                 color = rgbhex(RAID_CLASS_COLORS[class])
-                
               end
               clevel=""
-
               if playerdb[name] and C.quality.showlevel == "1" then
                 level =playerdb[name].level
                 local lcolor = GetDifficultyColor(tonumber(level)) or { 1, 1, 1 }
                 clevel =" "..rgbhex(lcolor) .. level .. "|r"             
               end
-              
-                text =string.gsub(text, "|Hplayer:" .. name .."|h%[" .. real .. "%]|h(.-:-)",
+              text =string.gsub(text, "|Hplayer:" .. name .."|h%[" .. real .. "%]|h(.-:-)",
               "|r[".. color .. "|Hplayer:" .. name .."|h" .. color .. real .. "|h|r" ..clevel.. "]|r" .. "%1%1")
-              
-              
-
-             
-             
-              
             end
           end
-
           _G["ChatFrame" .. i].HookAddMessageColor(frame, text, a1, a2, a3, a4, a5)
         end
       end

@@ -205,8 +205,8 @@ zUI.backdrop_hover  = {
 
 -- 平面纹理
 --ZUI_FLAT_TEXTURE   = [[Interface\AddOns\zUI\img\name]]
-ZUI_FLAT_TEXTURE    = [[Interface\BUTTONS\WHITE8X8]]
-ZUI_ORIG_TEXTURE    = [[Interface\TargetingFrame\UI-StatusBar.blp]]
+ZUI_FLAT_TEXTURE    = [[Interface\BUTTONS\WHITE8X8]] -- FLAT材质
+ZUI_ORIG_TEXTURE    = [[Interface\TargetingFrame\UI-StatusBar.blp]] -- 默认什么条材质
 
 -- 颜色
 fontLightBlue  = "|cff00e0ff"

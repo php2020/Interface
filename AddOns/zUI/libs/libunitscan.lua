@@ -34,22 +34,23 @@ local queue = { }
 function GetUnitData(name, active)
   if units["players"][name] then
     local ret = units["players"][name]
-    return ret.class, ret.level, ret.elite, true
+    return ret.class, ret.level, ret.elite, ret.guild, true
   elseif units["mobs"][name] then
     local ret = units["mobs"][name]
-    return ret.class, ret.level, ret.elite, nil
+    return ret.class, ret.level, ret.elite, nil, nil
   elseif active then
     queue[name] = true
     libunitscan:Show()
   end
 end
 
-local function AddData(db, name, class, level, elite)
+local function AddData(db, name, class, level, guild, elite)
   if not name then return end
   units[db][name] = units[db][name] or {}
   units[db][name].class = class or units[db][name].class
   units[db][name].level = level or units[db][name].level
   units[db][name].elite = elite or units[db][name].elite
+  units[db][name].guild = guild or units[db][name].guild
   queue[name] = nil
 end
 
@@ -64,6 +65,8 @@ libunitscan:RegisterEvent("WHO_LIST_UPDATE")
 libunitscan:RegisterEvent("CHAT_MSG_SYSTEM")
 libunitscan:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
 libunitscan:SetScript("OnEvent", function()
+  
+  -- 进入世界
   if event == "PLAYER_ENTERING_WORLD" then
 
     -- load zUI_playerDB
@@ -73,64 +76,77 @@ libunitscan:SetScript("OnEvent", function()
     local name = UnitName("player")
     local _, class = UnitClass("player")
     local level = UnitLevel("player")
-    AddData("players", name, class, level)
+    local elite = nil
+    local guild, _, _ = GetGuildInfo("player")
 
+    AddData("players", name, class, level, elite, guild)
+
+    -- 好友更新
   elseif event == "FRIENDLIST_UPDATE" then
-    local name, class, level
+    local name, class, level, guild
     for i = 1, GetNumFriends() do
       name, level, class = GetFriendInfo(i)
       class = L["class"][class] or nil
-      AddData("players", name, class, level)
+      guild, _, _ = GetGuildInfo(name)
+      AddData("players", name, class, level, guild)
     end
 
+    --公会成员更新
   elseif event == "GUILD_ROSTER_UPDATE" then
-    local name, class, level, _
+    local name, class, level, guild, _
     for i = 1, GetNumGuildMembers() do
       name, _, _, level, class = GetGuildRosterInfo(i)
       class = L["class"][class] or nil
-      AddData("players", name, class, level)
+      guild, _, _ = GetGuildInfo(name)
+      AddData("players", name, class, level, guild)
     end
 
+    -- 团队成员更新
   elseif event == "RAID_ROSTER_UPDATE" then
     local name, class, SubGroup, level, _
     for i = 1, GetNumRaidMembers() do
       name, _, SubGroup, level, class = GetRaidRosterInfo(i)
       class = L["class"][class] or nil
-      AddData("players", name, class, level)
+      local guild, _, _ = GetGuildInfo("player")
+      AddData("players", name, class, level, guild)
     end
 
+    -- 小队成员更新
   elseif event == "PARTY_MEMBERS_CHANGED" then
-    local name, class, level, unit, _
+    local name, class, level, unit, guild, _
     for i = 1, GetNumPartyMembers() do
       unit = "party" .. i
       _, class = UnitClass(unit)
       name = UnitName(unit)
       level = UnitLevel(unit)
-      AddData("players", name, class, level)
+      guild, _, _ = GetGuildInfo(unit)
+      AddData("players", name, class, level, guild)
     end
 
   elseif event == "WHO_LIST_UPDATE" or event == "CHAT_MSG_SYSTEM" then
-    local name, class, level, _
+    local name, class, level, guild, _
     for i = 1, GetNumWhoResults() do
-      name, _, level, _, class, _ = GetWhoInfo(i)
+      name, guild, level, _, class, _  = GetWhoInfo(i)
       class = L["class"][class] or nil
-      AddData("players", name, class, level)
+      guild, _, _ = GetGuildInfo(name)
+      AddData("players", name, class, level, guild)
     end
 
   elseif event == "UPDATE_MOUSEOVER_UNIT" or event == "PLAYER_TARGET_CHANGED" then
     local scan = event == "PLAYER_TARGET_CHANGED" and "target" or "mouseover"
-    local name, class, level, elite, _
+    local name, class, level, elite, guild, _
     if UnitIsPlayer(scan) then
       _, class = UnitClass(scan)
       level = UnitLevel(scan)
       name = UnitName(scan)
-      AddData("players", name, class, level)
+      guild, _, _ = GetGuildInfo(scan)
+      AddData("players", name, class, level, guild)
     else
       _, class = UnitClass(scan)
       elite = UnitClassification(scan)
       level = UnitLevel(scan)
       name = UnitName(scan)
-      AddData("mobs", name, class, level, elite)
+      AddData("mobs", name, class, level, nil, elite)
     end
   end
 end)

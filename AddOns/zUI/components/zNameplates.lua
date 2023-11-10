@@ -68,6 +68,8 @@ zUI:RegisterComponent("姓名版", function ()
 			this.healthbar = this:GetChildren()
 			this.healthbar:SetScript("OnEnter", function() return nil end)
 			for i, frame in pairs({this:GetRegions()}) do
+				-- i 都有哪些，需要打印一下看看
+				-- print(i);
 				if NAMEPLATE_OBJECTORDER[i] == "_" then
 					frame.Show = function() return end
 					frame:Hide()
@@ -82,6 +84,7 @@ zUI:RegisterComponent("姓名版", function ()
 			this.name:SetParent(this.healthbar)
 			this.level:SetParent(this.nameplate)
 			this.levelicon:SetParent(this.nameplate)
+			this.guild:SetParent(this.nameplate)
 			this.raidicon:SetParent(this.healthbar)
 		end
 
@@ -91,27 +94,30 @@ zUI:RegisterComponent("姓名版", function ()
 			this:EnableMouse(false)
 		end
 
-		-- enable plate overlap
+		-- 是否启用姓名面板的重叠
 		if C.nameplates.overlap == "1" and C.nameplates["legacy"] == "0" then
+			-- 设置高度宽度为最小
 			this:SetWidth(1)
 			this:SetHeight(1)
 		else
+			-- 乘以缩放比例
 			this:SetWidth(plate_width * UIParent:GetScale())
 			this:SetHeight(plate_height * UIParent:GetScale())
 		end
 
-		-- set dimensions
+		-- 设置姓名版的缩放比例和宽高
 		this.nameplate:SetScale(UIParent:GetScale())
 		this.nameplate:SetWidth(plate_width)
 		this.nameplate:SetHeight(plate_height)
-
+		
+		--设置姓名面板垂直偏移量
 		if C.nameplates["legacy"] == "0" then
 			this.nameplate:SetPoint("TOP", this, "TOP", 0, -tonumber(C.nameplates.vpos))
 		else
 			this.nameplate:SetPoint("TOP", this, "TOP", 0, 0)
 		end
 
-		-- add click handlers
+		-- 鼠标点击处理
 		if C.nameplates["clickthrough"] == "0" then
 			if C.nameplates["legacy"] == "0" and zUI.client < 20000 then
 				this.nameplate:SetScript("OnClick", function() this.parent:Click() end)
@@ -137,30 +143,39 @@ zUI:RegisterComponent("姓名版", function ()
 			this.nameplate:EnableMouse(false)
 		end
 
+		--隐藏边框
 		this.border:Hide()
-
+		--隐藏发光
 		this.glow:Hide()
+		--全透明
 		this.glow:SetAlpha(0)
+		--show 为空
 		this.glow.Show = function() return end
 		--名字+4,变大一点
 		this.name:SetFont(font, font_size+4, "OUTLINE")
 		this.name:ClearAllPoints()
-		this.name:SetPoint("TOP", this.nameplate, "TOP", 0, 0)
+		-- this.name:SetPoint("TOP", this.nameplate, "TOP", 0, 0) --顶部对齐
+		this.name:SetPoint("CENTER", this.nameplate, "CENTER", 0, 0) --  试试居中对齐
+
+		-- 生命条材质
 		if (C.nameplates.flat_health_textures == "1") then
-			--this.healthbar:SetStatusBarTexture(ZUI_FLAT_TEXTURE);
+			-- FLAT材质
 			this.healthbar:SetStatusBarTexture("Interface\\BUTTONS\\WHITE8X8")
 		else
+			-- 默认材质
 			this.healthbar:SetStatusBarTexture(ZUI_ORIG_TEXTURE);
 		end
 		
 		this.healthbar:ClearAllPoints()
-		this.healthbar:SetPoint("TOP", this.name, "BOTTOM", 0, -3)
+		--this.healthbar:SetPoint("TOP", this.name, "BOTTOM", 0, -3)
+		this.name:SetPoint("CENTER", this.name, "CENTER", 0, -3) --  试试居中对齐
 		--this.healthbar:SetPoint("TOP", this.nameplate, "TOP", 0, -14)
 		this.healthbar:SetWidth(C.nameplates.width)
 		this.healthbar:SetHeight(font_size)
-		zSkin(this.healthbar); -- square
-		zSkinColor(this.healthbar, 0.4, 0.4, 0.4);
+		zSkin(this.healthbar); -- 边框
+		zSkinColor(this.healthbar, 0.4, 0.4, 0.4); -- 颜色
 		
+		-- 设置背景
 		if not this.healthbar.bg then
 			this.healthbar.bg = this.healthbar:CreateTexture(nil, "BORDER")
 			--this.healthbar.bg:SetTexture(0,0,0,0.90)
@@ -171,6 +186,7 @@ zUI:RegisterComponent("姓名版", function ()
 			this.healthbar.bg:SetHeight(this.healthbar:GetHeight() + 3)
 		end
 
+		-- 当作为目标时的背景
 		if not this.healthbar.bgtarget then
 			this.healthbar.bgtarget = this.healthbar:CreateTexture(nil, "BACKGROUND")
 			this.healthbar.bgtarget:SetTexture(1,1,1,.8) -- 设置颜色 白色 0.8的透明度 1不透明 0完全透明
@@ -180,38 +196,44 @@ zUI:RegisterComponent("姓名版", function ()
 			this.healthbar.bgtarget:SetHeight(this.healthbar:GetHeight() + 5)
 		end
 
+		-- 当前目标标志
+		if not this.healthbar.arrow then
+			this.healthbar.arrow = this.healthbar:CreateTexture(nil, "OVERLAY")
+			this.healthbar.arrow:SetTexture("Interface\\Addons\\Textures\\NeonRedArrow.tga") -- 使用你的路径
+			this.healthbar.arrow:ClearAllPoints()
+			this.healthbar.arrow:SetPoint("CENTER", this.name, "CENTER", 0, -10)
+		end
+
 		this.healthbar.reaction = nil
 
 		-- level 修改+4 原来太小
 		this.level:SetFont(font, font_size+6, "OUTLINE")
 		this.level:ClearAllPoints()
-		--this.level:SetPoint("RIGHT", this.healthbar, "LEFT", 0, 0)
 		this.level:SetPoint("LEFT", this.healthbar, "RIGHT", 1, 1)
 		this.level.needUpdate = true
 		this.healthbar.needReactionUpdate = true
 
 		-- adjust font
 		this.levelicon:ClearAllPoints()
-		--this.levelicon:SetPoint("RIGHT", this.healthbar, "LEFT", -1, 0)
 		this.levelicon:SetPoint("LEFT", this.healthbar, "RIGHT", -1, 0)
 
-		-- raidtarget
+		--团队标记
 		this.raidicon:ClearAllPoints()
 		this.raidicon:SetWidth(C.nameplates.raidiconsize)
 		this.raidicon:SetHeight(C.nameplates.raidiconsize)
-		this.raidicon:SetPoint("CENTER", this.healthbar, "CENTER", 0, -5)
+		this.raidicon:SetPoint("CENTER", this.name, "CENTER", 0, -26)
 		this.raidicon:SetDrawLayer("OVERLAY")
 		this.raidicon:SetTexture("Interface\\AddOns\\zUI\\img\\raidicons")
 
-		-- add debuff frames
+		-- debuff 框体
 		if C.nameplates["showdebuffs"] == "1" then
 			if not this.debuffs then this.debuffs = {} end
 			for j=1, 16, 1 do
 				if this.debuffs[j] == nil then
 					this.debuffs[j] = CreateFrame("Frame", nil, this.nameplate)
 					this.debuffs[j]:ClearAllPoints()
-					this.debuffs[j]:SetWidth(16)
-					this.debuffs[j]:SetHeight(16)
+					this.debuffs[j]:SetWidth(18)
+					this.debuffs[j]:SetHeight(18)
 					zSkin(this.debuffs[j], 0);
 					if j == 1 then
 						this.debuffs[j]:SetPoint("TOPLEFT", this.healthbar, "BOTTOMLEFT", 0, -3)
@@ -224,13 +246,18 @@ zUI:RegisterComponent("姓名版", function ()
 					this.debuffs[j].icon = this.debuffs[j]:CreateTexture(nil, "BORDER")
 					this.debuffs[j].icon:SetTexture(0,0,0,0)
 					this.debuffs[j].icon:SetAllPoints(this.debuffs[j])
+					
+					-- 创建用于显示倒计时的文本框架
+					-- this.debuffs[j].cooldown = CreateFrame("Cooldown", nil, this.debuffs[j], "CooldownFrameTemplate")
+					-- this.debuffs[j].cooldown:SetAllPoints(this.debuffs[j])
+					-- this.debuffs[j].cooldown.noCooldownCount = true -- 显示倒计时数字
 
 					this.debuffs[j]:Hide();
 				end
 			end
 		end
 		
-		-- combopoints
+		-- 连接点
 		if C.nameplates.cpdisplay == "1" then
 			local combo_size = 12
 			local offset = 5 + C.nameplates.heightcast + C.nameplates.heighthealth + C.appearance.border.default*2
@@ -285,7 +312,7 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
-		-- add castbar
+		-- 计时条
 		if zUI.castbar and C.nameplates["showcastbar"] == "1" then
 			local plate = this
 
@@ -345,14 +372,14 @@ zUI:RegisterComponent("姓名版", function ()
 				this.healthbar.castbar.text:SetNonSpaceWrap(false)
 				this.healthbar.castbar.text:SetFontObject(GameFontWhite)
 				this.healthbar.castbar.text:SetTextColor(1,1,1,.5)
-				this.healthbar.castbar.text:SetFont(font, font_size, "OUTLINE")
+				this.healthbar.castbar.text:SetFont(font, C.nameplates.heightcast, "OUTLINE")
 
 				this.healthbar.castbar.spell = this.healthbar.castbar:CreateFontString("Status", "DIALOG", "GameFontNormal")
 				this.healthbar.castbar.spell:SetPoint("CENTER", this.healthbar.castbar, "CENTER")
 				this.healthbar.castbar.spell:SetNonSpaceWrap(false)
 				this.healthbar.castbar.spell:SetFontObject(GameFontWhite)
 				this.healthbar.castbar.spell:SetTextColor(1,1,1,1)
-				this.healthbar.castbar.spell:SetFont(font, font_size, "OUTLINE")
+				this.healthbar.castbar.spell:SetFont(font, C.nameplates.heightcast, "OUTLINE")
 
 				this.healthbar.castbar.icon = this.healthbar.castbar:CreateTexture(nil, "BORDER")
 				this.healthbar.castbar.icon:ClearAllPoints()
@@ -378,6 +405,7 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
+		--显示血量
 		if C.nameplates.showhp == "1" and not this.healthbar.hptext then
 			this.healthbar.hptext = this.healthbar:CreateFontString("Status", "DIALOG", "GameFontNormal")
 			this.healthbar.hptext:SetPoint("RIGHT", this.healthbar, "RIGHT")
@@ -387,8 +415,9 @@ zUI:RegisterComponent("姓名版", function ()
 			this.healthbar.hptext:SetFont(font, font_size)
 		end
 
+		--精英
 		if C.nameplates.players == "1" then
-			local _, _, _, uplayer = GetUnitData(this.name:GetText(), true)
+			local _, _, _, _, uplayer = GetUnitData(this.name:GetText(), true)
 			zPrint(this.name:GetText())
 			if uplayer then this:Hide() end
 		end
@@ -399,15 +428,15 @@ zUI:RegisterComponent("姓名版", function ()
 
 		this.setup = true
 	end
+
 	-- 姓名版更新
 	function zUI.nameplates.OnUpdate()
-		
 		if not this.setup then zUI.nameplates:OnShow() return end
 
 		local healthbar = this.healthbar
 		local border, glow, name, level, levelicon , raidicon, combopoints = this.border, this.glow, this.name, this.level, this.levelicon , this.raidicon, this.combopoints
 		local unitname = name:GetText()
-		local uclass, ulevel, uelite, uplayer = GetUnitData(unitname, true)
+		local uclass, ulevel, uelite, uguild, uplayer = GetUnitData(unitname, true)
 
 		if unitname == UNKNOWN then
 			this.needClassColorUpdate = true
@@ -415,12 +444,12 @@ zUI:RegisterComponent("姓名版", function ()
 			this.needEliteUpdate = true
 		end
 
-		-- hide non-player frames
+		-- 隐藏不是玩家的
 		if C.nameplates.players == "1" then
 			if uplayer then this:Hide() end
 		end
 
-		-- hide critters
+		-- 隐藏小动物的
 		if C.nameplates.critters == "1" then
 			local red, green, blue, _ = healthbar:GetStatusBarColor()
 			local name_val = unitname
@@ -431,7 +460,7 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
-		-- hide totems
+		-- 隐藏图腾的
 		if C.nameplates.totems == "1" then
 			for totem in pairs(L["totems"]) do
 				if string.find(unitname, totem) then
@@ -440,13 +469,13 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
-		-- disable click events while spell is targeting
+		-- 在法术定位时禁用点击事件
 		local mouseEnabled = this.nameplate:IsMouseEnabled()
 		if C.nameplates["clickthrough"] == "0" and C.nameplates["legacy"] == "0" and SpellIsTargeting() == mouseEnabled then
 			this.nameplate:EnableMouse(not mouseEnabled)
 		end
 
-		-- level elite indicator 
+		-- 精英的表示
 		-- TODO make nice change
 		if this.needEliteUpdate and uelite then
 			if level:GetText() ~= nil then
@@ -468,7 +497,7 @@ zUI:RegisterComponent("姓名版", function ()
 			this.needEliteUpdate = nil
 		end
 
-		-- level colors
+		-- 等级颜色
 		if this.needBasicColorUpdate then
 			local red, green, blue, _ = level:GetTextColor()
 			if red > 0.99 and green == 0 and blue == 0 then
@@ -497,7 +526,7 @@ zUI:RegisterComponent("姓名版", function ()
 			this.needBasicColorUpdate = nil
 		end
 
-		-- add class colors
+		-- 添加等级颜色
 		if this.needClassColorUpdate and uplayer and uclass then
 			if healthbar.reaction == 0 then
 				if C.nameplates["enemyclassc"] == "1" and RAID_CLASS_COLORS[uclass] then
@@ -514,10 +543,10 @@ zUI:RegisterComponent("姓名版", function ()
 			this.needClassColorUpdate = nil
 		end
 
-		-- color changes are done within the C-API, we need to overwrite on each paint
+		-- 颜色更改是在C-API中完成的，我们需要在每个Bar上覆盖
 		healthbar:SetStatusBarColor(healthbar.r, healthbar.g, healthbar.b, healthbar.a)
 
-		-- name color
+		-- 名字颜色
 		local red, green, blue, _ = name:GetTextColor()
 		if red > 0.99 and green == 0 and blue == 0 then
 			name:SetTextColor(.9,.1,.1,0.85) -- 1,0.4,0.2,0.85 nice orange
@@ -525,14 +554,16 @@ zUI:RegisterComponent("姓名版", function ()
 			name:SetTextColor(1,1,1,0.85)
 		end
 
-		-- 目标指示器
+		-- 目标背景
 		if UnitExists("target") and healthbar:GetAlpha() == 1 and C.nameplates.targethighlight == "1" then
 			healthbar.bgtarget:Show()
+			healthbar.arrow:Show() -- 目标箭头显示
 		else
 			healthbar.bgtarget:Hide()
+			healthbar.arrow:Hide()-- 目标箭头隐藏
 		end
 
-		-- target zoom
+		-- 目标缩放
 		local w, h = healthbar:GetWidth(), healthbar:GetHeight()
 		if UnitExists("target") and healthbar:GetAlpha() == 1 and C.nameplates.targetzoom == "1" then
 			local wc = tonumber(C.nameplates.width)*1.4
@@ -604,7 +635,7 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
-		-- update combopoints
+		-- 更新连击点
 		if combopoints and C.nameplates.cpdisplay == "1" then
 			for point=1, 5 do
 				combopoints["combopoint" .. point]:Hide()
@@ -623,7 +654,7 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
-		-- show castbar
+		-- 显示计时条
 		if healthbar.castbar and zUI.castbar and C.nameplates["showcastbar"] == "1" then
 			local cast, nameSubtext, text, texture, startTime, endTime, isTradeSkill = UnitCastingInfo(unitname)
 
@@ -658,7 +689,7 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
-		-- update debuffs
+		-- 更新debuffs
 		if this.debuffs and zUI.nameplates.debuffs and C.nameplates["showdebuffs"] == "1" then
 			if UnitExists("target") and healthbar:GetAlpha() == 1 then
 				local j = 1
@@ -673,8 +704,8 @@ zUI:RegisterComponent("姓名版", function ()
 					if icon then
 						this.debuffs[j].cd = this.debuffs[j].cd or CreateFrame("Model", nil, this.debuffs[j], "CooldownFrameTemplate")
 						this.debuffs[j].cd.zCooldownType = "ALL"
-						this.debuffs[j].cd.zTextSize = 10;
-						local name, rank, texture, stacks, dtype, duration, timeleft = libdebuff:UnitDebuff("target", j)
+						this.debuffs[j].cd.zTextSize = 8;
+						local bname, rank, texture, stacks, dtype, duration, timeleft = libdebuff:UnitDebuff("target", j)
 						local colour    = DebuffTypeColor[dtype] or DebuffTypeColor['none']
 						zSkinColor(this.debuffs[j], colour.r*1.4, colour.g*1.4, colour.b*1.4);
 						if duration and timeleft then
@@ -695,7 +726,7 @@ zUI:RegisterComponent("姓名版", function ()
 			end
 		end
 
-		-- show hp text
+		-- 显示HP
 		if C.nameplates.showhp == "1" and healthbar.hptext then
 			local min, max = healthbar:GetMinMaxValues()
 			local cur = healthbar:GetValue()
