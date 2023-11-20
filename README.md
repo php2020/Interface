@@ -215,6 +215,7 @@ AutoMessage                 = 自动发送消息
 TWSunders                   = BOSS五层破甲检测助手
 EquipColor                  = 背包不可用物品红色插件
 SW_Stats                    = 伤害统计
+Interruptor                 = 打断通告
 
 ```
 
@@ -318,6 +319,9 @@ UnitExists("target")
 
 ## 目标名称
 GetUnitName("target")
+
+## 目标是否死亡
+UnitIsDead('target')
 
 ## 测试某个操作是否在使用范围内。 参数 动作槽
 inRange = IsActionInRange(actionSlot);
