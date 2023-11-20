@@ -15,7 +15,7 @@ OneStorage = AceLibrary("AceAddon-2.0"):new("AceEvent-2.0", "AceHook-2.0")
 local AL = AceLibrary("AceLocale-2.1")
 
 AL:RegisterTranslation("OneStorage", "enUS", function() return { ["Quiver"] = true, ["Soul Bag"] = true, ["Container"] = true, ["Bag"] = true, ["Player of Realm"] = "(.+) .* (.+)" } end) -- (.+) of (.+) not working... wtf?!
-AL:RegisterTranslation("OneStorage", "zhCN", function() return { ["Quiver"] = "箭袋", ["Soul Bag"] = "灵魂袋", ["Container"] = "背包", ["Bag"] = "包裹", ["Player of Realm"] = "(.+)的(.+)" } end)
+AL:RegisterTranslation("OneStorage", "zhCN", function() return { ["Quiver"] = "箭袋", ["Soul Bag"] = "灵魂袋", ["Container"] = "背包", ["Bag"] = "包裹", ["Player of Realm"] = "(.+) .* (.+)" } end)
 
 local L = AL:GetInstance("OneStorage", true)
 

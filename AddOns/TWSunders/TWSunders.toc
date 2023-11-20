@@ -1,6 +1,0 @@
-## Interface: 11200
-## Title: TW Sunders 世界BOSS五破甲层数提示助手
-## Author: Xerron/Er
-## Version: 0
-## Notes: 5 Sunder took [based] seconds. 计算时间至 5 层破甲 秒数 并将其输出到聊天中。
-TWSunders.lua

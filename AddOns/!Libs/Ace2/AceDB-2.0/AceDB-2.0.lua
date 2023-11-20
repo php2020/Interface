@@ -36,7 +36,7 @@ if GetLocale() == "zhCN" then
 	SET_PROFILE = "设定这个插件的存档。"
 	SET_PROFILE_USAGE = "{角色 || 职业 || 服务器 || <存档名称>}"
 	PROFILE = "存档"
-	PLAYER_OF_REALM = "%s 于 %s"
+	PLAYER_OF_REALM = "%s of %s"
 	CHOOSE_PROFILE_DESC = "选择一个存档"
 	CHOOSE_PROFILE_GUI = "选择"
 	COPY_PROFILE_DESC = "由其他存档复制设定。"
